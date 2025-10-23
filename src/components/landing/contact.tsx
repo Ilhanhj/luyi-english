@@ -1,119 +1,60 @@
-"use client";
-
-import { useEffect, useActionState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-
-import { submitContactForm, type FormState } from "@/lib/actions";
-import { useToast } from "@/hooks/use-toast";
-
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { MessageCircle, Instagram, Linkedin } from "lucide-react";
 import SectionTitle from "./section-title";
-import SectionSubtitle from "./section-subtitle";
-import { SubmitButton } from "./submit-button";
 
-const contactFormSchema = z.object({
-  name: z.string().min(1, "Nama wajib diisi"),
-  email: z.string().email("Email tidak valid"),
-  phone: z.string().min(10, "Nomor telepon tidak valid"),
-  message: z.string().optional(),
-});
+// Simple SVG for TikTok
+const TikTokIcon = ({ className }: { className?: string }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.03-4.83-.95-6.43-2.88-1.59-1.93-2.3-4.5-2.2-7.15.02-1.55.36-3.09 1.05-4.45.69-1.36 1.72-2.51 2.99-3.36 1.27-.85 2.78-1.36 4.3-1.49.01 2.89-.01 5.78.02 8.66.02 1.14-.43 2.26-1.12 3.17-.69.91-1.64 1.57-2.73 1.82-1.09.26-2.25.18-3.29-.24-1.04-.42-1.92-1.14-2.56-2.03-.64-.89-1-1.96-.98-3.08.02-1.13.43-2.25 1.12-3.18.69-.92 1.64-1.57 2.73-1.82 1.09-.25 2.25-.18 3.29.24.01-2.9.01-5.79-.02-8.68Z" />
+  </svg>
+);
 
-type ContactFormInputs = z.infer<typeof contactFormSchema>;
+const socialLinks = [
+    { Icon: TikTokIcon, href: "#", label: "TikTok" },
+    { Icon: Instagram, href: "#", label: "Instagram" },
+    { Icon: MessageCircle, href: "#", label: "WhatsApp" },
+  ];
 
 export default function Contact() {
-  const { toast } = useToast();
-  const [state, formAction] = useActionState<FormState, FormData>(submitContactForm, {
-    message: "",
-  });
-
-  const form = useForm<ContactFormInputs>({
-    resolver: zodResolver(contactFormSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    },
-  });
-
-  useEffect(() => {
-    if (state.message && !state.errors) {
-      toast({
-        title: "Pesan Terkirim!",
-        description: state.message,
-        variant: "default",
-      });
-      form.reset();
-    } else if (state.message && state.errors) {
-       toast({
-        title: "Gagal Mengirim",
-        description: state.message,
-        variant: "destructive",
-      });
-    }
-  }, [state, toast, form]);
-
   return (
     <section id="contact" className="py-16 md:py-24 bg-transparent relative">
-      <div className="absolute inset-0 -z-10 h-full w-full bg-transparent bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700">
-          <SectionTitle>Siap Memulai?</SectionTitle>
-          <SectionSubtitle>
-            Isi formulir di bawah ini untuk mendaftar kelas trial gratis atau bertanya lebih lanjut.
-          </SectionSubtitle>
-        </div>
-        <div className="max-w-xl mx-auto animate-in fade-in slide-in-from-bottom-12 duration-700 glass-card p-8">
-          <form action={formAction} className="space-y-6">
-            <div className="space-y-2">
-              <Input
-                id="name"
-                name="name"
-                placeholder="Nama Lengkap"
-                aria-label="Nama Lengkap"
-                className="bg-white/10 border-white/20 placeholder:text-gray-400"
-              />
-              {state.errors?.name && <p className="text-sm text-pink-400">{state.errors.name[0]}</p>}
+        <div className="relative glass-card p-8 md:p-12 overflow-hidden animate-in fade-in slide-in-from-bottom-12 duration-700">
+           <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/30 rounded-full blur-[100px] -z-10"></div>
+           <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-pink-500/30 rounded-full blur-[100px] -z-10"></div>
+          
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 z-10 relative">
+            <div className="text-center md:text-left">
+              <SectionTitle className="text-3xl sm:text-4xl lg:text-5xl !text-left">Siap Memulai Belajar di LuyiEnglish?</SectionTitle>
+              <p className="mt-4 text-gray-300">Hubungi kami dan dapatkan sesi trial gratis pertama Anda.</p>
             </div>
-            <div className="space-y-2">
-              <Input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="Alamat Email"
-                aria-label="Alamat Email"
-                className="bg-white/10 border-white/20 placeholder:text-gray-400"
-              />
-              {state.errors?.email && <p className="text-sm text-pink-400">{state.errors.email[0]}</p>}
+            
+            <div className="flex flex-col items-center gap-4">
+               <Button asChild size="lg" className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-pink-500 text-white font-bold rounded-full shadow-lg shadow-pink-500/40 transform hover:scale-105 transition-all duration-300 px-8 py-6 text-lg">
+                <Link href="#">Chat Us Now</Link>
+              </Button>
+               <div className="flex items-center gap-4 mt-2">
+                {socialLinks.map(({ Icon, href, label }) => (
+                  <Link
+                    key={label}
+                    href={href}
+                    aria-label={label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 hover:text-pink-400 transition-all duration-300 transform hover:scale-110 shadow-lg"
+                  >
+                    <Icon className="h-5 w-5" />
+                  </Link>
+                ))}
+              </div>
             </div>
-            <div className="space-y-2">
-              <Input
-                id="phone"
-                name="phone"
-                type="tel"
-                placeholder="Nomor Telepon (WhatsApp)"
-                aria-label="Nomor Telepon"
-                className="bg-white/10 border-white/20 placeholder:text-gray-400"
-              />
-              {state.errors?.phone && <p className="text-sm text-pink-400">{state.errors.phone[0]}</p>}
-            </div>
-            <div className="space-y-2">
-              <Textarea
-                id="message"
-                name="message"
-                placeholder="Pesan (opsional)"
-                aria-label="Pesan"
-                className="bg-white/10 border-white/20 placeholder:text-gray-400"
-              />
-              {state.errors?.message && <p className="text-sm text-pink-400">{state.errors.message[0]}</p>}
-            </div>
-            <SubmitButton className="w-full bg-gradient-to-r from-blue-500 to-pink-500 hover:from-blue-600 hover:to-pink-600 text-white shadow-lg shadow-pink-500/30 transition-all duration-300 transform hover:scale-105" size="lg">
-              Kirim & Daftar Trial
-            </SubmitButton>
-          </form>
+          </div>
         </div>
       </div>
     </section>
