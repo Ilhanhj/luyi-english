@@ -82,10 +82,10 @@ export const tutors: Tutor[] = [
 export const testimonials: Testimonial[] = [
   {
     id: '1',
-    initials: 'AW',
-    summary: 'Awalnya ragu, tapi setelah coba kelas trial, langsung jatuh cinta sama metode belajarnya. Tutornya asik banget!',
-    fullImageUrl: findImage('testimonial-1-full').url,
-    fullImageHint: findImage('testimonial-1-full').hint,
+    initials: 'AO',
+    summary: 'I really enjoyed learning english with you. the class never felt too serious or boring. it was always fun and relaxed. what i like the most is that we can talk about anything, not just the lesson itself. it feels like we can share stories while learning, and that makes the class even more interesting and enjoyable.',
+    fullImageUrl: findImage('testimonial-adwiyah-full').url,
+    fullImageHint: findImage('testimonial-adwiyah-full').hint,
   },
   {
     id: '2',
