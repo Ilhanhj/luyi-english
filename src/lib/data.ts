@@ -91,33 +91,88 @@ export const testimonials: Testimonial[] = [
 
 export const pricingPackages: PricingPackage[] = [
   {
-    id: 'basic',
-    title: 'Basic',
-    price: 'Rp 450rb',
+    id: 'grouping',
+    title: 'Grouping Class',
+    price: 'Rp 350K',
     priceDetails: '/bulan',
-    features: ['4 Sesi / bulan', 'Sesi 30 menit', 'Private (1-on-1)', 'Laporan Belajar'],
+    features: [
+      '12x pertemuan/bulan',
+      'Jadwal ditentukan bersama',
+      'Maks. 15 siswa/ruang',
+      '60 menit/pertemuan',
+      'Materi Bahasa Inggris Harian'
+    ],
     isPopular: false,
     ctaText: 'Pilih Paket'
   },
   {
-    id: 'regular',
-    title: 'Regular',
-    price: 'Rp 800rb',
+    id: 'semi-private',
+    title: 'Semi Private Class',
+    price: 'Rp 550K',
     priceDetails: '/bulan',
-    features: ['8 Sesi / bulan', 'Sesi 30 menit', 'Private (1-on-1)', 'Laporan Belajar', 'Free E-book'],
+    features: [
+      '12x pertemuan/bulan',
+      'Jadwal ditentukan bersama',
+      'Maks. 6 siswa/ruang',
+      '60 menit/pertemuan',
+      'Materi Bahasa Inggris Harian'
+    ],
+    isPopular: false,
+    ctaText: 'Pilih Paket'
+  },
+  {
+    id: 'private',
+    title: 'Private Class',
+    price: 'Rp 750K',
+    priceDetails: '/bulan',
+    features: [
+      '12x pertemuan/bulan (1-on-1)',
+      '60 menit/pertemuan',
+      'Jadwal ditentukan siswa',
+      'Bahasa Inggris Harian & Formal',
+      'Berorientasi pada praktik',
+      'Materi dapat diminta'
+    ],
     isPopular: true,
     ctaText: 'Pilih Paket'
   },
   {
-    id: 'intensif',
-    title: 'Intensif',
-    price: 'Rp 1.5jt',
-    priceDetails: '/bulan',
-    features: ['16 Sesi / bulan', 'Sesi 30 menit', 'Private (1-on-1)', 'Laporan Belajar', 'Free E-book', 'Prioritas Jadwal'],
+    id: 'toefl',
+    title: 'TOEFL Preparation',
+    price: 'Rp 850K',
+    priceDetails: '/program',
+    features: [
+      '12x pertemuan/bulan',
+      '60 menit/pertemuan',
+      'Tutor 1-on-1',
+      'Fokus Grammar, Listening, Reading',
+      'Pre-test & Post-test',
+      'Modul termasuk',
+      'Target kustom'
+    ],
     isPopular: false,
     ctaText: 'Pilih Paket'
-  }
+  },
+  {
+    id: 'ielts',
+    title: 'IELTS Class',
+    price: 'Rp 1.4JT',
+    priceDetails: '/program',
+    features: [
+      'Private 1-on-1',
+      '15x pertemuan/bulan',
+      '60 menit/pertemuan',
+      'Tutor Native Speaker (Band 8)',
+      'Intensif 5 aspek',
+      'Pre-test & Post-test',
+      'Modul termasuk',
+      'Target kustom'
+    ],
+    isPopular: false,
+    ctaText: 'Pilih Paket'
+  },
 ];
+
 
 export const faqItems: FAQItem[] = [
     {
