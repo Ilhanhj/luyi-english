@@ -36,7 +36,7 @@ export default function Tutors() {
             {tutors.map((tutor) => (
               <CarouselItem key={tutor.id} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1 h-full">
-                  <Card className="glass-card flex flex-col h-full overflow-hidden transition-all duration-300 hover:border-blue-400/50 hover:scale-[1.02]">
+                  <Card className="bg-[#111836]/80 backdrop-blur-sm border-white/10 flex flex-col h-full overflow-hidden transition-all duration-300 hover:border-blue-400/50 hover:scale-[1.02]">
                     <CardContent className="p-6 flex flex-col flex-grow">
                       <div className="flex items-center gap-4 mb-4">
                         <Image
