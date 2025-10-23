@@ -31,26 +31,26 @@ export default function Testimonials() {
             align: "start",
             loop: true,
           }}
-          className="w-full max-w-4xl mx-auto animate-in fade-in slide-in-from-bottom-12 duration-700"
+          className="w-full max-w-6xl mx-auto animate-in fade-in slide-in-from-bottom-12 duration-700"
         >
           <CarouselContent>
             {testimonials.map((testimonial) => (
-              <CarouselItem key={testimonial.id}>
-                <div className="p-4">
+              <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-4 h-full">
                   <Dialog>
                     <DialogTrigger asChild>
-                      <div className="flex items-start gap-4 cursor-pointer group">
-                        <Avatar className="w-16 h-16 text-xl border-4 border-white/10 flex-shrink-0">
+                      <div className="flex flex-col items-center text-center gap-4 cursor-pointer group h-full">
+                        <Avatar className="w-20 h-20 text-2xl border-4 border-white/10 flex-shrink-0">
                           <AvatarFallback className="bg-gradient-to-br from-blue-500 to-pink-600 text-white font-bold">
                             {testimonial.initials}
                           </AvatarFallback>
                         </Avatar>
-                        <div className="relative glass-card rounded-2xl p-6 group-hover:border-pink-400/50 transition-all duration-300 shadow-xl shadow-black/20 w-full">
-                           <div className="absolute -left-3 top-6 w-3 h-3 bg-white/5 transform rotate-45 backdrop-blur-lg border-l border-t border-white/10"></div>
-                          <blockquote className="text-lg font-normal italic text-gray-200">
+                        <div className="relative glass-card rounded-2xl p-6 group-hover:border-pink-400/50 transition-all duration-300 shadow-xl shadow-black/20 w-full flex-grow flex flex-col justify-between">
+                           <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white/5 transform rotate-45 backdrop-blur-lg border-l border-t border-white/10"></div>
+                          <blockquote className="text-base font-normal italic text-gray-200 flex-grow">
                             “{testimonial.summary}”
                           </blockquote>
-                          <p className="text-sm text-pink-400/80 mt-4">
+                          <p className="text-xs text-pink-400/80 mt-4">
                             Klik untuk melihat testimoni lengkap
                           </p>
                         </div>
