@@ -1,8 +1,32 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { MoveRight } from "lucide-react";
+import { MoveRight, Users, Star, ThumbsUp, GraduationCap } from "lucide-react";
 import { companyLogos } from "@/lib/data";
+
+const stats = [
+  {
+    icon: Users,
+    value: "10,000+",
+    label: "Siswa Terdaftar",
+  },
+  {
+    icon: GraduationCap,
+    value: "50+",
+    label: "Tutor Profesional",
+  },
+  {
+    icon: ThumbsUp,
+    value: "98%",
+    label: "Tingkat Kepuasan",
+  },
+  {
+    icon: Star,
+    value: "4.9/5",
+    label: "Rating Rata-Rata",
+  },
+];
+
 
 export default function Hero() {
   return (
@@ -31,24 +55,19 @@ export default function Hero() {
               </Button>
             </div>
           </div>
-          <div className="mt-16 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200">
-            <p className="text-sm font-semibold text-gray-400 tracking-wider uppercase mb-8">
-              Dipercaya oleh para profesional dari
-            </p>
-            <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
-              {companyLogos.map((logo) => (
-                <Image
-                  key={logo.id}
-                  src={logo.logoUrl}
-                  alt={logo.name}
-                  width={120}
-                  height={40}
-                  className="object-contain opacity-60 hover:opacity-100 transition-opacity"
-                  data-ai-hint={logo.logoHint}
-                />
+          
+          <div className="mt-20 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto">
+              {stats.map((stat, index) => (
+                <div key={index} className="glass-card p-4 rounded-xl text-center transition-all duration-300 hover:border-blue-400/50 hover:scale-105">
+                  <stat.icon className="h-8 w-8 mx-auto text-pink-400 mb-2" />
+                  <p className="text-2xl font-bold text-white">{stat.value}</p>
+                  <p className="text-sm text-gray-400">{stat.label}</p>
+                </div>
               ))}
             </div>
           </div>
+
         </div>
       </div>
     </section>
