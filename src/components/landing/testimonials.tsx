@@ -39,27 +39,22 @@ export default function Testimonials() {
                 <div className="p-4">
                   <Dialog>
                     <DialogTrigger asChild>
-                      <Card className="glass-card overflow-hidden cursor-pointer hover:scale-[1.02] hover:border-pink-400/50 transition-all duration-300 shadow-xl shadow-black/20">
-                        <CardContent className="p-6">
-                          <div className="flex flex-col sm:flex-row items-center gap-6">
-                            <div className="flex-shrink-0">
-                              <Avatar className="w-20 h-20 text-2xl border-4 border-white/10">
-                                <AvatarFallback className="bg-gradient-to-br from-blue-500 to-pink-600 text-white font-bold">
-                                  {testimonial.initials}
-                                </AvatarFallback>
-                              </Avatar>
-                            </div>
-                            <div className="text-center sm:text-left">
-                              <blockquote className="text-lg font-medium italic text-gray-200">
-                                “{testimonial.summary}”
-                              </blockquote>
-                              <p className="text-sm text-pink-400/80 mt-4">
-                                Klik untuk melihat testimoni lengkap
-                              </p>
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
+                      <div className="flex items-start gap-4 cursor-pointer group">
+                        <Avatar className="w-16 h-16 text-xl border-4 border-white/10 flex-shrink-0">
+                          <AvatarFallback className="bg-gradient-to-br from-blue-500 to-pink-600 text-white font-bold">
+                            {testimonial.initials}
+                          </AvatarFallback>
+                        </Avatar>
+                        <div className="relative glass-card rounded-2xl p-6 group-hover:border-pink-400/50 transition-all duration-300 shadow-xl shadow-black/20 w-full">
+                           <div className="absolute -left-3 top-6 w-3 h-3 bg-white/5 transform rotate-45 backdrop-blur-lg border-l border-t border-white/10"></div>
+                          <blockquote className="text-lg font-normal italic text-gray-200">
+                            “{testimonial.summary}”
+                          </blockquote>
+                          <p className="text-sm text-pink-400/80 mt-4">
+                            Klik untuk melihat testimoni lengkap
+                          </p>
+                        </div>
+                      </div>
                     </DialogTrigger>
                     <DialogContent className="p-0 border-0 max-w-md bg-transparent">
                       <DialogTitle className="sr-only">Testimonial from {testimonial.initials}</DialogTitle>
