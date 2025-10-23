@@ -8,10 +8,11 @@ import { Menu, BookOpenCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
+  { href: "#home", label: "Home" },
   { href: "#tutors", label: "Tutor" },
-  { href: "#testimonials", label: "Testimoni" },
   { href: "#pricing", label: "Harga" },
   { href: "#faq", label: "FAQ" },
+  { href: "#contact", label: "Kontak" },
 ];
 
 export default function Header() {
@@ -44,7 +45,7 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
+        "sticky top-0 z-50 w-full transition-all duration-300 animate-in fade-in-0 slide-in-from-top-4",
         isScrolled ? "border-b border-white/10 bg-background/80 backdrop-blur-lg" : "bg-transparent"
       )}
     >
@@ -69,7 +70,7 @@ export default function Header() {
                 <span className="sr-only">Buka menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-gray-900/90 backdrop-blur-lg border-l-white/20">
+            <SheetContent side="right" className="bg-gray-900/90 backdrop-blur-lg border-l-white/20 w-[250px] sm:w-[300px]">
               <div className="flex flex-col gap-8 pt-10">
                 <NavLinks className="flex-col items-start gap-4 text-lg" />
                 <Button asChild className="bg-gradient-to-r from-blue-500 to-pink-500 text-white font-bold rounded-full shadow-lg shadow-pink-500/30">
