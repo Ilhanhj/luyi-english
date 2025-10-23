@@ -42,15 +42,15 @@ export default function Hero() {
         <div className="absolute inset-0 w-full h-full -z-1">
           {floatingTutors.map((tutor, index) => {
             const positions = [
-              "top-1/4 left-[10%] animate-[float_6s_ease-in-out_infinite]", // Sarah
-              "top-1/2 right-[8%] animate-[float_7s_ease-in-out_infinite_0.5s]", // John
-              "bottom-1/4 left-[15%] animate-[float_8s_ease-in-out_infinite_1s]", // Emily
+              "top-[15%] left-[5%] animate-[float_6s_ease-in-out_infinite]", // Sarah
+              "top-[40%] right-[5%] animate-[float_7s_ease-in-out_infinite_0.5s]", // John
+              "bottom-[20%] left-[10%] animate-[float_8s_ease-in-out_infinite_1s]", // Emily
             ];
             return (
               <div 
                 key={tutor.id} 
                 className={cn(
-                  "absolute hidden lg:block p-1 rounded-2xl bg-gradient-to-br from-blue-500/50 to-pink-500/50 shadow-2xl shadow-black/50",
+                  "absolute hidden lg:block p-1 rounded-2xl bg-gradient-to-br from-blue-500/50 to-pink-500/50 shadow-2xl shadow-black/50 transform scale-90",
                   positions[index % positions.length]
                 )}
                 style={{animationDelay: `${index * 0.5}s`}}
@@ -59,8 +59,8 @@ export default function Hero() {
                   <Image
                     src={tutor.photoUrl}
                     alt={tutor.name}
-                    width={48}
-                    height={48}
+                    width={40}
+                    height={40}
                     className="rounded-full object-cover border-2 border-white/20"
                     data-ai-hint={tutor.photoHint}
                   />
