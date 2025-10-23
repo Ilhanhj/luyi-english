@@ -223,3 +223,5 @@ export const companyLogos: CompanyLogo[] = [
     { id: 'traveloka', name: 'Traveloka', logoUrl: findImage('logo-traveloka').url, logoHint: findImage('logo-traveloka').hint },
     { id: 'microsoft', name: 'Microsoft', logoUrl: findImage('logo-microsoft').url, logoHint: findImage('logo-microsoft').hint },
 ];
+
+    
