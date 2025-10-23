@@ -10,7 +10,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import SectionTitle from "./section-title";
 import SectionSubtitle from "./section-subtitle";
@@ -62,6 +62,7 @@ export default function Testimonials() {
                       </Card>
                     </DialogTrigger>
                     <DialogContent className="p-0 border-0 max-w-md bg-transparent">
+                      <DialogTitle className="sr-only">Testimonial from {testimonial.initials}</DialogTitle>
                       <Image
                         src={testimonial.fullImageUrl}
                         alt={`Testimonial from ${testimonial.initials}`}
