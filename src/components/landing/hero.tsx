@@ -2,7 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { MoveRight, Users, Star, ThumbsUp, GraduationCap } from "lucide-react";
-import { companyLogos } from "@/lib/data";
+import { tutors } from "@/lib/data";
+import { cn } from "@/lib/utils";
+
 
 const stats = [
   {
@@ -29,10 +31,52 @@ const stats = [
 
 
 export default function Hero() {
+  const floatingTutors = tutors.slice(0, 3); // Take first 3 tutors for floating cards
+
   return (
     <section id="home" className="py-24 md:py-40 bg-transparent relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/30 rounded-full blur-[150px] -z-10"></div>
         <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-[600px] h-[600px] bg-pink-500/20 rounded-full blur-[120px] -z-10"></div>
+
+        {/* Floating Tutor Cards */}
+        <div className="absolute inset-0 w-full h-full -z-1">
+          {floatingTutors.map((tutor, index) => {
+            const positions = [
+              "top-1/4 left-[10%] animate-[float_6s_ease-in-out_infinite]", // Sarah
+              "top-1/2 right-[8%] animate-[float_7s_ease-in-out_infinite_0.5s]", // John
+              "bottom-1/4 left-[15%] animate-[float_8s_ease-in-out_infinite_1s]", // Emily
+            ];
+            return (
+              <div 
+                key={tutor.id} 
+                className={cn(
+                  "absolute hidden lg:block p-1 rounded-2xl bg-gradient-to-br from-blue-500/50 to-pink-500/50 shadow-2xl shadow-black/50",
+                  positions[index % positions.length]
+                )}
+                style={{animationDelay: `${index * 0.5}s`}}
+              >
+                <div className="glass-card !bg-gray-900/50 flex items-center gap-3 p-3 rounded-xl min-w-[200px]">
+                  <Image
+                    src={tutor.photoUrl}
+                    alt={tutor.name}
+                    width={48}
+                    height={48}
+                    className="rounded-full object-cover border-2 border-white/20"
+                    data-ai-hint={tutor.photoHint}
+                  />
+                  <div>
+                    <p className="font-bold text-sm text-white">{tutor.name}</p>
+                    <div className="flex items-center gap-1 text-xs text-yellow-400">
+                      <Star className="w-3.5 h-3.5 fill-current" />
+                      <span>{tutor.rating} / 5</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+
 
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid gap-8 items-center text-center">
