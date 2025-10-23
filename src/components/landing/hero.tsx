@@ -31,7 +31,7 @@ const stats = [
 
 
 export default function Hero() {
-  const floatingTutors = tutors.slice(0, 3); // Take first 3 tutors for floating cards
+  const floatingTutors = tutors.slice(0, 5); // Take first 5 tutors for floating cards
 
   return (
     <section id="home" className="py-24 md:py-40 bg-transparent relative overflow-hidden">
@@ -42,32 +42,34 @@ export default function Hero() {
         <div className="absolute inset-0 w-full h-full -z-1">
           {floatingTutors.map((tutor, index) => {
             const positions = [
-              "top-[15%] left-[5%] animate-[float_6s_ease-in-out_infinite]", // Sarah
-              "top-[40%] right-[5%] animate-[float_7s_ease-in-out_infinite_0.5s]", // John
-              "bottom-[20%] left-[10%] animate-[float_8s_ease-in-out_infinite_1s]", // Emily
+              "top-[10%] left-[5%] animate-[float_6s_ease-in-out_infinite]",
+              "top-[30%] right-[5%] animate-[float_7s_ease-in-out_infinite_0.5s]",
+              "bottom-[40%] left-[10%] animate-[float_8s_ease-in-out_infinite_1s]",
+              "top-[60%] right-[15%] animate-[float_6.5s_ease-in-out_infinite_1.5s]",
+              "top-[15%] right-[25%] animate-[float_7.5s_ease-in-out_infinite_2s]",
             ];
             return (
               <div 
                 key={tutor.id} 
                 className={cn(
-                  "absolute hidden lg:block p-1 rounded-2xl bg-gradient-to-br from-blue-500/50 to-pink-500/50 shadow-2xl shadow-black/50 transform scale-90",
+                  "absolute hidden lg:block p-1 rounded-2xl bg-gradient-to-br from-blue-500/50 to-pink-500/50 shadow-2xl shadow-black/50 transform scale-[0.8]",
                   positions[index % positions.length]
                 )}
                 style={{animationDelay: `${index * 0.5}s`}}
               >
-                <div className="glass-card !bg-gray-900/50 flex items-center gap-3 p-3 rounded-xl min-w-[200px]">
+                <div className="glass-card !bg-gray-900/50 flex items-center gap-3 p-3 rounded-xl min-w-[180px]">
                   <Image
                     src={tutor.photoUrl}
                     alt={tutor.name}
-                    width={40}
-                    height={40}
+                    width={32}
+                    height={32}
                     className="rounded-full object-cover border-2 border-white/20"
                     data-ai-hint={tutor.photoHint}
                   />
                   <div>
-                    <p className="font-bold text-sm text-white">{tutor.name}</p>
-                    <div className="flex items-center gap-1 text-xs text-yellow-400">
-                      <Star className="w-3.5 h-3.5 fill-current" />
+                    <p className="font-bold text-xs text-white">{tutor.name}</p>
+                    <div className="flex items-center gap-1 text-[10px] text-yellow-400">
+                      <Star className="w-3 h-3 fill-current" />
                       <span>{tutor.rating} / 5</span>
                     </div>
                   </div>

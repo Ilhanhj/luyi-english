@@ -63,6 +63,19 @@ export const tutors: Tutor[] = [
       quote: 'Anak saya jadi suka belajar bahasa Inggris. Gurunya sabar dan kreatif.',
       author: 'Rina, Orang Tua Murid'
     }
+  },
+  {
+    id: '5',
+    name: 'Jessica P.',
+    photoUrl: findImage('tutor-5').url,
+    photoHint: findImage('tutor-5').hint,
+    specialization: 'Grammar & Writing',
+    rating: 4.9,
+    bio: 'Ahli dalam tata bahasa dan penulisan, membantu siswa menyusun kalimat dengan benar dan efektif.',
+    review: {
+      quote: 'Penjelasan grammar dari Ms. Jessica sangat jelas. Tulisan saya jadi jauh lebih baik.',
+      author: 'Andi, Penulis'
+    }
   }
 ];
 
