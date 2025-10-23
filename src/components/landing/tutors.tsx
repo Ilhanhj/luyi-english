@@ -42,8 +42,8 @@ export default function Tutors() {
                         <Image
                           src={tutor.photoUrl}
                           alt={`Photo of ${tutor.name}`}
-                          width={80}
-                          height={80}
+                          width={64}
+                          height={64}
                           className="rounded-full object-cover border-4 border-primary/20"
                           data-ai-hint={tutor.photoHint}
                         />
