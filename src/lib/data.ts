@@ -1,3 +1,4 @@
+
 import type { Tutor, Testimonial, PricingPackage, FAQItem, CompanyLogo } from './types';
 import { PlaceHolderImages } from './placeholder-images';
 
@@ -177,23 +178,28 @@ export const pricingPackages: PricingPackage[] = [
 export const faqItems: FAQItem[] = [
     {
         id: 'faq1',
-        question: 'Bagaimana cara mendaftar?',
-        answer: 'Anda bisa langsung mendaftar dengan menekan tombol "Daftar Gratis" di atas atau mengisi form kontak di bagian bawah halaman. Tim kami akan segera menghubungi Anda.'
+        question: 'Kelas apa saja yang tersedia?',
+        answer: 'Kami menyediakan berbagai kelas Bahasa Inggris seperti Speaking, Grammar, Writing, dan Vocabulary. Kamu bisa pilih sesuai dengan tujuan belajar dan level kemampuanmu.'
     },
     {
         id: 'faq2',
-        question: 'Apakah ada kelas percobaan (trial class)?',
-        answer: 'Tentu! Kami menyediakan 1 sesi kelas percobaan gratis agar Anda bisa merasakan pengalaman belajar di LuyiEnglish sebelum memutuskan untuk berlangganan.'
+        question: 'Sistem kelasnya seperti apa?',
+        answer: 'Kelas diadakan secara online melalui Zoom dengan konsep interaktif dan santai. Setiap sesi dipandu langsung oleh tutor (MR) yang bikin suasana belajar tetap seru dan mudah dipahami.'
     },
     {
         id: 'faq3',
-        question: 'Bagaimana jika saya berhalangan hadir?',
-        answer: 'Anda dapat melakukan penjadwalan ulang (reschedule) maksimal 24 jam sebelum kelas dimulai melalui dashboard siswa Anda.'
+        question: 'Biaya kursusnya berapa?',
+        answer: 'Biaya tergantung pada jenis kelas dan durasinya. Tapi tenang, semua program kami dibuat supaya terjangkau dan sebanding dengan manfaatnya. Rincian lengkap akan diberikan setelah kamu memilih kelas yang diinginkan.'
     },
     {
         id: 'faq4',
-        question: 'Apakah materi pembelajarannya bisa disesuaikan?',
-        answer: 'Sangat bisa. Tutor kami akan menyesuaikan materi pembelajaran dengan kebutuhan dan tujuan belajar Anda, baik itu untuk pekerjaan, studi, atau percakapan sehari-hari.'
+        question: 'Apakah bisa bayar secara cicilan?',
+        answer: 'Bisa banget! Kami menyediakan opsi pembayaran fleksibel termasuk sistem cicilan, jadi kamu bisa mulai belajar tanpa harus bayar penuh di awal.'
+    },
+    {
+        id: 'faq5',
+        question: 'Bagaimana cara daftar kelasnya?',
+        answer: 'Mudah banget! Setelah kamu menentukan program yang cocok, tim admin kami akan bantu langkah demi langkah untuk proses pendaftaran. Kamu juga bisa langsung daftar lewat chat atau form di website kami.'
     }
 ];
 
