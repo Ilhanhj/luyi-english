@@ -8,7 +8,7 @@ type SectionTitleProps = {
 
 export default function SectionTitle({ children, className }: SectionTitleProps) {
   return (
-    <h2 className={cn("text-3xl font-extrabold tracking-tight text-center sm:text-4xl lg:text-5xl text-foreground font-headline", className)}>
+    <h2 className={cn("text-4xl font-extrabold tracking-tight text-center sm:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 font-headline", className)}>
       {children}
     </h2>
   );

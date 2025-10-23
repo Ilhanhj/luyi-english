@@ -57,7 +57,8 @@ export default function Contact() {
   }, [state, toast, form]);
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-secondary">
+    <section id="contact" className="py-16 md:py-24 bg-transparent relative">
+      <div className="absolute inset-0 -z-10 h-full w-full bg-transparent bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700">
           <SectionTitle>Siap Memulai?</SectionTitle>
@@ -65,7 +66,7 @@ export default function Contact() {
             Isi formulir di bawah ini untuk mendaftar kelas trial gratis atau bertanya lebih lanjut.
           </SectionSubtitle>
         </div>
-        <div className="max-w-xl mx-auto animate-in fade-in slide-in-from-bottom-12 duration-700">
+        <div className="max-w-xl mx-auto animate-in fade-in slide-in-from-bottom-12 duration-700 glass-card p-8">
           <form action={formAction} className="space-y-6">
             <div className="space-y-2">
               <Input
@@ -73,9 +74,9 @@ export default function Contact() {
                 name="name"
                 placeholder="Nama Lengkap"
                 aria-label="Nama Lengkap"
-                className="bg-background"
+                className="bg-white/10 border-white/20 placeholder:text-gray-400"
               />
-              {state.errors?.name && <p className="text-sm text-destructive">{state.errors.name[0]}</p>}
+              {state.errors?.name && <p className="text-sm text-pink-400">{state.errors.name[0]}</p>}
             </div>
             <div className="space-y-2">
               <Input
@@ -84,9 +85,9 @@ export default function Contact() {
                 type="email"
                 placeholder="Alamat Email"
                 aria-label="Alamat Email"
-                className="bg-background"
+                className="bg-white/10 border-white/20 placeholder:text-gray-400"
               />
-              {state.errors?.email && <p className="text-sm text-destructive">{state.errors.email[0]}</p>}
+              {state.errors?.email && <p className="text-sm text-pink-400">{state.errors.email[0]}</p>}
             </div>
             <div className="space-y-2">
               <Input
@@ -95,9 +96,9 @@ export default function Contact() {
                 type="tel"
                 placeholder="Nomor Telepon (WhatsApp)"
                 aria-label="Nomor Telepon"
-                className="bg-background"
+                className="bg-white/10 border-white/20 placeholder:text-gray-400"
               />
-              {state.errors?.phone && <p className="text-sm text-destructive">{state.errors.phone[0]}</p>}
+              {state.errors?.phone && <p className="text-sm text-pink-400">{state.errors.phone[0]}</p>}
             </div>
             <div className="space-y-2">
               <Textarea
@@ -105,11 +106,11 @@ export default function Contact() {
                 name="message"
                 placeholder="Pesan (opsional)"
                 aria-label="Pesan"
-                className="bg-background"
+                className="bg-white/10 border-white/20 placeholder:text-gray-400"
               />
-              {state.errors?.message && <p className="text-sm text-destructive">{state.errors.message[0]}</p>}
+              {state.errors?.message && <p className="text-sm text-pink-400">{state.errors.message[0]}</p>}
             </div>
-            <SubmitButton className="w-full" size="lg">
+            <SubmitButton className="w-full bg-gradient-to-r from-blue-500 to-pink-500 hover:from-blue-600 hover:to-pink-600 text-white shadow-lg shadow-pink-500/30 transition-all duration-300 transform hover:scale-105" size="lg">
               Kirim & Daftar Trial
             </SubmitButton>
           </form>
