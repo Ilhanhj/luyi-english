@@ -58,7 +58,7 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-6">
           <NavLinks />
           <Button asChild className="bg-gradient-to-r from-blue-500 to-pink-500 text-white font-bold rounded-full shadow-lg shadow-pink-500/30 transition-all duration-300 hover:scale-105 hover:shadow-pink-500/50 hover:-translate-y-px">
-            <Link href="#contact">Daftar Gratis</Link>
+            <Link href="https://wa.me/6281234567890" target="_blank">Chat Us Now</Link>
           </Button>
         </div>
 
@@ -74,7 +74,7 @@ export default function Header() {
               <div className="flex flex-col gap-8 pt-10">
                 <NavLinks className="flex-col items-start gap-4 text-lg" />
                 <Button asChild className="bg-gradient-to-r from-blue-500 to-pink-500 text-white font-bold rounded-full shadow-lg shadow-pink-500/30">
-                  <Link href="#contact" onClick={() => setIsOpen(false)}>Daftar Gratis</Link>
+                  <Link href="https://wa.me/6281234567890" target="_blank" onClick={() => setIsOpen(false)}>Chat Us Now</Link>
                 </Button>
               </div>
             </SheetContent>

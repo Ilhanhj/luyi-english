@@ -36,7 +36,7 @@ export default function Pricing() {
                 )}
               >
                 {pkg.isPopular && (
-                  <Badge className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-500 to-pink-500 text-white border-0 shadow-lg shadow-pink-500/30 text-sm py-1 px-3">Paling Populer</Badge>
+                  <Badge className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-500 to-pink-500 text-white border-0 shadow-lg shadow-pink-500/30 text-sm py-1 px-3 w-auto text-center">Paling Populer</Badge>
                 )}
                 <CardHeader>
                   <CardTitle className="text-xl font-semibold text-blue-600">{pkg.title}</CardTitle>

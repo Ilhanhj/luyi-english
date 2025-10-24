@@ -91,15 +91,15 @@ export default function Hero() {
               Tingkatkan kepercayaan dirimu dalam berbahasa Inggris, mulai hari ini!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-gradient-to-r from-blue-500 to-pink-500 text-white font-bold rounded-full shadow-lg shadow-pink-500/40 transition-all duration-300 hover:scale-105 hover:shadow-pink-500/60 hover:-translate-y-px px-8 py-6 text-lg">
-                <Link href="https://wa.me/6281234567890" target="_blank">
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  Hubungi via WhatsApp
-                </Link>
-              </Button>
               <Button asChild variant="outline" size="lg" className="bg-background/50 border-border text-foreground backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-white/80 hover:border-pink-500/50 hover:text-pink-500 hover:scale-105 hover:-translate-y-px px-8 py-6 text-lg">
                 <Link href="#tutors">
                   Lihat Tutor Kami <MoveRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button asChild size="lg" className="bg-gradient-to-r from-blue-500 to-pink-500 text-white font-bold rounded-full shadow-lg shadow-pink-500/40 transition-all duration-300 hover:scale-105 hover:shadow-pink-500/60 hover:-translate-y-px px-8 py-6 text-lg">
+                <Link href="https://wa.me/6281234567890" target="_blank">
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  Chat Us Now
                 </Link>
               </Button>
             </div>
