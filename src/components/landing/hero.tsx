@@ -63,7 +63,7 @@ export default function Hero() {
                     alt={tutor.name}
                     width={32}
                     height={32}
-                    className="rounded-md object-cover border-2 border-white/20"
+                    className="rounded-lg object-cover border-2 border-white/20"
                     data-ai-hint={tutor.photoHint}
                   />
                   <div>
