@@ -77,7 +77,6 @@ export default function Hero() {
                   animations[index % animations.length]
                 )}
               >
-                <CursorIcon className="w-6 h-6 text-foreground -rotate-12" />
                 <div className="flex items-center gap-2 bg-background/60 backdrop-blur-md border border-border shadow-lg rounded-full p-2">
                     <Image
                       src={tutor.photoUrl}
