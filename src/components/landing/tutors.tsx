@@ -44,7 +44,7 @@ export default function Tutors() {
                           alt={`Photo of ${tutor.name}`}
                           width={72}
                           height={72}
-                          className="rounded-full object-cover border-4 border-white/10"
+                          className="rounded-lg object-cover border-4 border-white/10"
                           data-ai-hint={tutor.photoHint}
                         />
                         <div className="flex-1">

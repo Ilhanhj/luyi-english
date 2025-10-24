@@ -40,8 +40,8 @@ export default function Testimonials() {
                   <Dialog>
                     <DialogTrigger asChild>
                       <div className="flex flex-col items-center text-center gap-4 cursor-pointer group h-full">
-                        <Avatar className="w-20 h-20 text-2xl border-4 border-border flex-shrink-0">
-                          <AvatarFallback className="bg-gradient-to-br from-blue-500 to-pink-600 text-white font-bold">
+                        <Avatar className="w-20 h-20 text-2xl border-4 border-border flex-shrink-0 rounded-lg">
+                          <AvatarFallback className="bg-gradient-to-br from-blue-500 to-pink-600 text-white font-bold rounded-lg">
                             {testimonial.initials}
                           </AvatarFallback>
                         </Avatar>
