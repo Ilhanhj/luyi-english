@@ -28,7 +28,7 @@ export default function Pricing() {
           </SectionSubtitle>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-px animate-in fade-in slide-in-from-bottom-12 duration-700 bg-border rounded-2xl overflow-hidden relative shadow-xl shadow-black/10">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-px animate-in fade-in slide-in-from-bottom-12 duration-700 bg-border rounded-2xl overflow-hidden relative shadow-xl shadow-black/10 mt-8">
           
           {/* Vertical Lines */}
           <div className="hidden lg:block absolute top-0 left-1/5 w-px h-full bg-border"></div>
@@ -38,9 +38,9 @@ export default function Pricing() {
 
             {pricingPackages.map((pkg, index) => (
                 <div key={pkg.id} className={cn(
-                  "flex flex-col bg-card transition-all duration-300 relative z-10",
+                  "flex flex-col bg-card transition-all duration-300 relative",
                   "p-6",
-                   pkg.isPopular && "z-20 bg-background shadow-2xl",
+                   pkg.isPopular && "bg-background",
                    index === 0 && "rounded-tl-2xl lg:rounded-bl-2xl lg:rounded-tr-none",
                    index === pricingPackages.length - 1 && "rounded-br-2xl rounded-bl-2xl lg:rounded-tr-2xl lg:rounded-bl-none",
                 )}>
@@ -76,14 +76,14 @@ export default function Pricing() {
                           const feature = pkg.features.find(f => f.name === featureName);
                           return (
                               <li key={featureName} className="flex items-center gap-3 text-sm h-8">
-                                  {feature ? (
+                                  {feature?.included ? (
                                     <>
                                       <Check className="h-5 w-5 text-pink-500 flex-shrink-0" />
                                       <span className="text-muted-foreground">{feature.name}</span>
                                     </>
                                   ) : (
                                     <>
-                                      <X className="h-5 w-5 text-muted-foreground/50 flex-shrink-0" />
+                                      <X className="h-5 w-5 text-muted-foreground/30 flex-shrink-0" />
                                        <span className="text-muted-foreground/50 line-through">{featureName}</span>
                                     </>
                                   )}
