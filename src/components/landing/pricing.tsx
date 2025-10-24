@@ -28,8 +28,8 @@ export default function Pricing() {
           </SectionSubtitle>
         </div>
 
-        <div className="relative mt-12 pt-8">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-px animate-in fade-in slide-in-from-bottom-12 duration-700 bg-border rounded-2xl shadow-xl shadow-black/10">
+        <div className="relative mt-12 pt-8 animate-in fade-in slide-in-from-bottom-12 duration-700">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-px bg-border rounded-2xl shadow-xl shadow-black/10">
             
             {/* Vertical Lines */}
             <div className="hidden lg:block absolute top-0 left-1/5 w-px h-full bg-border"></div>
@@ -82,10 +82,7 @@ export default function Pricing() {
                                         <span className="text-muted-foreground">{feature.name}</span>
                                         </>
                                     ) : (
-                                        <>
                                         <div className="w-5 h-5 flex-shrink-0" />
-                                        <span className="text-muted-foreground/0">{featureName}</span>
-                                        </>
                                     )}
                                 </li>
                             )
@@ -100,4 +97,3 @@ export default function Pricing() {
     </section>
   );
 }
-
