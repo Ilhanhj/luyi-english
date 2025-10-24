@@ -3,9 +3,10 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { Menu, BookOpenCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "../theme-toggle";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -33,7 +34,7 @@ export default function Header() {
         <Link
           key={link.href}
           href={link.href}
-          className="text-gray-600 transition-colors duration-300 hover:text-pink-500"
+          className="text-muted-foreground transition-colors duration-300 hover:text-pink-500"
           onClick={() => setIsOpen(false)}
         >
           {link.label}
@@ -57,12 +58,14 @@ export default function Header() {
 
         <div className="hidden md:flex items-center gap-6">
           <NavLinks />
+          <ThemeToggle />
           <Button asChild className="bg-gradient-to-r from-blue-500 to-pink-500 text-white font-bold rounded-full shadow-lg shadow-pink-500/30 transition-all duration-300 hover:scale-105 hover:shadow-pink-500/50 hover:-translate-y-px">
             <Link href="https://wa.me/6281234567890" target="_blank">Chat Us Now</Link>
           </Button>
         </div>
 
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">

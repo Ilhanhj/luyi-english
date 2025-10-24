@@ -52,19 +52,19 @@ export default function Tutors() {
                           <p className="text-sm text-blue-500">{tutor.specialization}</p>
                           <div className="flex items-center gap-1 mt-1">
                             <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                            <span className="font-semibold text-sm text-gray-600">{tutor.rating}</span>
+                            <span className="font-semibold text-sm text-muted-foreground">{tutor.rating}</span>
                           </div>
                         </div>
                       </div>
                       <p className="text-sm text-muted-foreground flex-grow mb-4">{tutor.bio}</p>
                       
                       <div className="bg-secondary/50 rounded-lg p-4 mb-6 text-sm italic relative border border-border">
-                        <Quote className="absolute top-2 left-2 w-5 h-5 text-gray-300" />
-                        <p className="z-10 relative text-gray-700">"{tutor.review.quote}"</p>
-                        <p className="text-right font-medium mt-2 text-gray-500">- {tutor.review.author}</p>
+                        <Quote className="absolute top-2 left-2 w-5 h-5 text-gray-300 dark:text-gray-700" />
+                        <p className="z-10 relative text-muted-foreground">"{tutor.review.quote}"</p>
+                        <p className="text-right font-medium mt-2 text-muted-foreground/80">- {tutor.review.author}</p>
                       </div>
 
-                      <Button asChild className="w-full mt-auto bg-gray-100 border-border text-foreground hover:bg-gray-200 rounded-full transition-all duration-300 transform hover:scale-105 hover:-translate-y-px">
+                      <Button asChild className="w-full mt-auto bg-gray-100 dark:bg-gray-800 border-border text-foreground hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full transition-all duration-300 transform hover:scale-105 hover:-translate-y-px">
                         <Link href="#contact">Book Trial</Link>
                       </Button>
                     </CardContent>

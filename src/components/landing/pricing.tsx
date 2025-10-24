@@ -11,8 +11,8 @@ import { Badge } from "@/components/ui/badge";
 export default function Pricing() {
   return (
     <section id="pricing" className="py-16 md:py-24 bg-transparent relative">
-        <div className="absolute -top-40 left-0 w-full h-full bg-cover bg-center opacity-5" style={{backgroundImage: 'url(/grid.svg)'}}></div>
-        <div className="absolute inset-0 w-full h-full bg-[radial-gradient(#d1d5db_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-5"></div>
+        <div className="absolute -top-40 left-0 w-full h-full bg-cover bg-center opacity-5 dark:opacity-[0.02]" style={{backgroundImage: 'url(/grid.svg)'}}></div>
+        <div className="absolute inset-0 w-full h-full bg-[radial-gradient(hsl(var(--border))_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-5"></div>
       <div className="container mx-auto px-4 md:px-6 relative">
         <div className="text-center mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700">
           <SectionTitle>Investasi untuk Masa Depanmu 💫</SectionTitle>
@@ -39,7 +39,7 @@ export default function Pricing() {
                   <Badge className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-500 to-pink-500 text-white border-0 shadow-lg shadow-pink-500/30 text-sm py-1 px-3 w-auto text-center">Paling Populer</Badge>
                 )}
                 <CardHeader>
-                  <CardTitle className="text-xl font-semibold text-blue-600">{pkg.title}</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-blue-600 dark:text-blue-400">{pkg.title}</CardTitle>
                   <div className="flex items-baseline gap-2">
                     <span className="text-3xl font-bold text-foreground">{pkg.price}</span>
                     <span className="text-sm text-muted-foreground">{pkg.priceDetails}</span>
@@ -50,7 +50,7 @@ export default function Pricing() {
                     {pkg.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-3">
                         <Check className="h-5 w-5 text-pink-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-600 text-sm">{feature}</span>
+                        <span className="text-muted-foreground text-sm">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -60,7 +60,7 @@ export default function Pricing() {
                     "w-full rounded-full font-bold transition-all duration-300 transform hover:scale-105 hover:-translate-y-px",
                      pkg.isPopular 
                         ? "bg-gradient-to-r from-blue-500 to-pink-500 text-white shadow-lg shadow-pink-500/30 hover:shadow-pink-500/50" 
-                        : "bg-gray-800 text-white hover:bg-gray-900"
+                        : "bg-foreground text-background hover:bg-foreground/80"
                     )} size="lg">
                     <Link href="#contact">{pkg.ctaText}</Link>
                   </Button>
