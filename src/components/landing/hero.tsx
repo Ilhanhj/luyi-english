@@ -43,12 +43,12 @@ export default function Hero() {
             const positions = [
               "top-[15%] left-[5%]",
               "top-[15%] right-[5%]",
-              "top-[50%] left-[5%]",
-              "top-[50%] right-[5%]",
-              "top-[25%] left-[15%]", // Jessica
-              "top-[25%] right-[15%]", // David
-              "top-[30%] left-[40%]", // Chloe
-              "top-[30%] right-[40%]", // Ryan
+              "top-[65%] left-[10%]", // Emily
+              "top-[65%] right-[10%]", // Michael
+              "top-[5%] left-[20%]", // Jessica
+              "top-[5%] right-[20%]", // David
+              "top-[10%] left-[40%]", // Chloe
+              "top-[10%] right-[40%]", // Ryan
             ];
             const animations = [
               "animate-[float_6s_ease-in-out_infinite]",
@@ -97,7 +97,7 @@ export default function Hero() {
               Tingkatkan kepercayaan dirimu dalam berbahasa Inggris, mulai hari ini!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild variant="outline" size="lg" className="bg-background/50 border-border text-foreground backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-white/80 hover:border-pink-500/50 hover:text-pink-500 hover:scale-105 hover:-translate-y-px px-8 py-6 text-lg">
+              <Button asChild variant="outline" size="lg" className="bg-white/50 border-gray-300/50 backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-white/80 hover:border-pink-500/50 hover:text-pink-500 hover:scale-105 hover:-translate-y-px px-8 py-6 text-lg">
                 <Link href="#tutors">
                   Lihat Tutor Kami <MoveRight className="ml-2 h-5 w-5" />
                 </Link>
