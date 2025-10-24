@@ -2,19 +2,16 @@
 "use client";
 
 import Link from "next/link";
-import { Check, X } from "lucide-react";
+import { Check } from "lucide-react";
 import { pricingPackages } from "@/lib/data";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import SectionTitle from "./section-title";
 import SectionSubtitle from "./section-subtitle";
 import { Badge } from "@/components/ui/badge";
 
 export default function Pricing() {
-  // Find all unique features to create a consistent grid
-  const allFeatures = Array.from(new Set(pricingPackages.flatMap(p => p.features.map(f => f.name))));
-
   return (
     <section id="pricing" className="py-16 md:py-24 bg-transparent relative">
       <div className="absolute -top-40 left-0 w-full h-full bg-cover bg-center opacity-5 dark:opacity-[0.02]" style={{backgroundImage: 'url(/grid.svg)'}}></div>
@@ -72,21 +69,12 @@ export default function Pricing() {
                         <hr className="my-6 border-border" />
                         
                         <ul className="space-y-4 flex-grow">
-                        {allFeatures.map((featureName) => {
-                            const feature = pkg.features.find(f => f.name === featureName);
-                            return (
-                                <li key={featureName} className="flex items-center gap-3 text-sm h-8">
-                                    {feature?.included ? (
-                                        <>
-                                        <Check className="h-5 w-5 text-pink-500 flex-shrink-0" />
-                                        <span className="text-muted-foreground">{feature.name}</span>
-                                        </>
-                                    ) : (
-                                        <div className="w-5 h-5 flex-shrink-0" />
-                                    )}
-                                </li>
-                            )
-                        })}
+                          {pkg.features.filter(f => f.included).map((feature) => (
+                              <li key={feature.name} className="flex items-center gap-3 text-sm">
+                                  <Check className="h-5 w-5 text-pink-500 flex-shrink-0" />
+                                  <span className="text-muted-foreground">{feature.name}</span>
+                              </li>
+                          ))}
                         </ul>
                     </div>
                 ))}
