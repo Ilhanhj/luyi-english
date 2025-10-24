@@ -28,72 +28,74 @@ export default function Pricing() {
           </SectionSubtitle>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-px animate-in fade-in slide-in-from-bottom-12 duration-700 bg-border rounded-2xl overflow-hidden relative shadow-xl shadow-black/10 mt-8">
-          
-          {/* Vertical Lines */}
-          <div className="hidden lg:block absolute top-0 left-1/5 w-px h-full bg-border"></div>
-          <div className="hidden lg:block absolute top-0 left-2/5 w-px h-full bg-border"></div>
-          <div className="hidden lg:block absolute top-0 left-3/5 w-px h-full bg-border"></div>
-          <div className="hidden lg:block absolute top-0 left-4/5 w-px h-full bg-border"></div>
+        <div className="relative mt-12">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-px animate-in fade-in slide-in-from-bottom-12 duration-700 bg-border rounded-2xl shadow-xl shadow-black/10">
+            
+            {/* Vertical Lines */}
+            <div className="hidden lg:block absolute top-0 left-1/5 w-px h-full bg-border"></div>
+            <div className="hidden lg:block absolute top-0 left-2/5 w-px h-full bg-border"></div>
+            <div className="hidden lg:block absolute top-0 left-3/5 w-px h-full bg-border"></div>
+            <div className="hidden lg:block absolute top-0 left-4/5 w-px h-full bg-border"></div>
 
-            {pricingPackages.map((pkg, index) => (
-                <div key={pkg.id} className={cn(
-                  "flex flex-col bg-card transition-all duration-300 relative",
-                  "p-6",
-                   pkg.isPopular && "bg-background",
-                   index === 0 && "rounded-tl-2xl lg:rounded-bl-2xl lg:rounded-tr-none",
-                   index === pricingPackages.length - 1 && "rounded-br-2xl rounded-bl-2xl lg:rounded-tr-2xl lg:rounded-bl-none",
-                )}>
-                    {pkg.isPopular && (
-                      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-pink-500"></div>
-                    )}
-                    {pkg.isPopular && (
-                        <Badge className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-500 to-pink-500 text-white border-0 shadow-lg shadow-pink-500/30 text-sm py-1 px-3 w-auto text-center">
-                          Paling Populer
-                        </Badge>
-                      )}
-                      
-                    <div className="text-center">
-                      <CardTitle className="text-xl font-semibold text-foreground h-14 flex items-center justify-center">{pkg.title}</CardTitle>
-                       <div className="flex items-baseline justify-center gap-2 pt-4">
-                        <span className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground">{pkg.price}</span>
-                        <span className="text-sm text-muted-foreground">{pkg.priceDetails}</span>
-                      </div>
-                      <Button asChild className={cn(
-                          "w-full rounded-full font-bold transition-all duration-300 transform hover:scale-105 hover:-translate-y-px mt-4",
-                          pkg.isPopular 
-                              ? "bg-gradient-to-r from-blue-500 to-pink-500 text-white shadow-lg shadow-pink-500/30 hover:shadow-pink-500/50" 
-                              : "bg-foreground/5 text-foreground border border-border hover:bg-foreground/10"
-                          )} size="lg">
-                          <Link href="#contact">{pkg.ctaText}</Link>
+                {pricingPackages.map((pkg, index) => (
+                    <div key={pkg.id} className={cn(
+                    "flex flex-col bg-card transition-all duration-300 relative p-6",
+                    pkg.isPopular && "bg-background",
+                    index === 0 && "rounded-tl-2xl lg:rounded-bl-2xl lg:rounded-tr-none rounded-tr-2xl",
+                    index === pricingPackages.length - 1 && "rounded-br-2xl rounded-bl-2xl lg:rounded-tr-2xl lg:rounded-bl-none",
+                    )}>
+                        {pkg.isPopular && (
+                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-pink-500"></div>
+                        )}
+                        {pkg.isPopular && (
+                            <Badge className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-500 to-pink-500 text-white border-0 shadow-lg shadow-pink-500/30 text-sm py-1 px-3 w-auto text-center">
+                            Paling Populer
+                            </Badge>
+                        )}
+                        
+                        <div className="text-center">
+                        <CardTitle className="text-xl font-semibold text-foreground h-14 flex items-center justify-center">{pkg.title}</CardTitle>
+                        <div className="flex items-baseline justify-center gap-2 pt-4">
+                            <span className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground">{pkg.price}</span>
+                            <span className="text-sm text-muted-foreground">{pkg.priceDetails}</span>
+                        </div>
+                        <Button asChild className={cn(
+                            "w-full rounded-full font-bold transition-all duration-300 transform hover:scale-105 hover:-translate-y-px mt-4",
+                            pkg.isPopular 
+                                ? "bg-gradient-to-r from-blue-500 to-pink-500 text-white shadow-lg shadow-pink-500/30 hover:shadow-pink-500/50" 
+                                : "bg-foreground/5 text-foreground border border-border hover:bg-foreground/10"
+                            )} size="lg">
+                            <Link href="#contact">{pkg.ctaText}</Link>
                         </Button>
-                    </div>
+                        </div>
 
-                    <hr className="my-6 border-border" />
-                    
-                    <ul className="space-y-4 flex-grow">
-                      {allFeatures.map((featureName) => {
-                          const feature = pkg.features.find(f => f.name === featureName);
-                          return (
-                              <li key={featureName} className="flex items-center gap-3 text-sm h-8">
-                                  {feature?.included ? (
-                                    <>
-                                      <Check className="h-5 w-5 text-pink-500 flex-shrink-0" />
-                                      <span className="text-muted-foreground">{feature.name}</span>
-                                    </>
-                                  ) : (
-                                    <>
-                                      <X className="h-5 w-5 text-muted-foreground/30 flex-shrink-0" />
-                                       <span className="text-muted-foreground/50 line-through">{featureName}</span>
-                                    </>
-                                  )}
-                              </li>
-                          )
-                      })}
-                    </ul>
-                </div>
-            ))}
+                        <hr className="my-6 border-border" />
+                        
+                        <ul className="space-y-4 flex-grow">
+                        {allFeatures.map((featureName) => {
+                            const feature = pkg.features.find(f => f.name === featureName);
+                            return (
+                                <li key={featureName} className="flex items-center gap-3 text-sm h-8">
+                                    {feature?.included ? (
+                                        <>
+                                        <Check className="h-5 w-5 text-pink-500 flex-shrink-0" />
+                                        <span className="text-muted-foreground">{feature.name}</span>
+                                        </>
+                                    ) : (
+                                        <>
+                                        <X className="h-5 w-5 text-muted-foreground/30 flex-shrink-0" />
+                                        <span className="text-muted-foreground/50 line-through">{featureName}</span>
+                                        </>
+                                    )}
+                                </li>
+                            )
+                        })}
+                        </ul>
+                    </div>
+                ))}
+            </div>
         </div>
+
       </div>
     </section>
   );
