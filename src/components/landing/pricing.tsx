@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Check } from "lucide-react";
+import { Check, X } from "lucide-react";
 import { pricingPackages } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { CardTitle } from "@/components/ui/card";
@@ -36,7 +36,6 @@ export default function Pricing() {
                 {pricingPackages.map((pkg, index) => (
                     <div key={pkg.id} className={cn(
                     "flex flex-col bg-card transition-all duration-300 relative p-6",
-                    pkg.isPopular && "bg-background",
                     index === 0 && "rounded-tl-2xl lg:rounded-bl-2xl lg:rounded-tr-none rounded-tr-2xl",
                     index === pricingPackages.length - 1 && "rounded-br-2xl rounded-bl-2xl lg:rounded-tr-2xl lg:rounded-bl-none",
                     )}>
@@ -74,10 +73,12 @@ export default function Pricing() {
                         
                         <ul className="space-y-4 flex-grow">
                           {pkg.features.map((feature) => (
-                              <li key={feature.name} className="flex items-center gap-3 text-sm">
-                                  <Check className="h-5 w-5 text-pink-500 flex-shrink-0" />
-                                  <span className="text-muted-foreground">{feature.name}</span>
-                              </li>
+                            feature.included && (
+                                <li key={feature.name} className="flex items-center gap-3 text-sm">
+                                    <Check className="h-5 w-5 text-pink-500 flex-shrink-0" />
+                                    <span className="text-muted-foreground">{feature.name}</span>
+                                </li>
+                            )
                           ))}
                         </ul>
                     </div>
