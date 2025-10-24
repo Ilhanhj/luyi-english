@@ -29,17 +29,18 @@ const stats = [
   },
 ];
 
-const ReadyToHelpIcon = ({ className }: { className?: string }) => (
-  <svg
-    className={className}
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path d="M19.164 19.3364C19.164 21.054 17.6534 22.4277 15.7818 22.4277C13.9103 22.4277 12.3996 21.054 12.3996 19.3364C12.3996 17.6188 13.9103 16.2451 15.7818 16.2451C17.6534 16.2451 19.164 17.6188 19.164 19.3364Z" stroke="currentColor" strokeWidth="1.5"/>
-    <path d="M5.42436 4.9082L15.3524 15.5391L12.511 15.9333C11.3934 16.0856 10.4242 16.9272 10.1582 17.971L9.771 19.366C9.28315 21.1449 6.84159 21.3211 6.1264 19.5898L4.31682 14.8631C3.8996 13.7548 4.60683 12.5539 5.78783 12.3514L10.5902 11.4552L2.59918 2.871C1.9216 2.1449 2.41503 1 3.44299 1C3.96349 1 4.4587 1.20967 4.81156 1.58606L5.42436 4.9082Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
-  </svg>
-);
+const CursorIcon = ({ className }: { className?: string }) => (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5.22754 4.02172L18.816 10.316C19.7483 10.7412 19.7483 12.0678 18.816 12.493L5.22754 18.7873C4.2543 19.2335 3.25 18.5255 3.25 17.4306V5.37842C3.25 4.28352 4.2543 3.57552 5.22754 4.02172Z"
+      />
+    </svg>
+  );
 
 
 export default function Hero() {
@@ -54,27 +55,39 @@ export default function Hero() {
         <div className="absolute inset-0 w-full h-full -z-20">
           {floatingTutors.map((tutor, index) => {
             const positions = [
-              "top-[10%] left-[5%] animate-[float_6s_ease-in-out_infinite]",
-              "top-[30%] right-[5%] animate-[float_7s_ease-in-out_infinite_0.5s]",
-              "bottom-[40%] left-[10%] animate-[float_8s_ease-in-out_infinite_1s]",
-              "top-[60%] right-[15%] animate-[float_6.5s_ease-in-out_infinite_1.5s]",
-              "top-[15%] right-[25%] animate-[float_7.5s_ease-in-out_infinite_2s]",
+              "top-[15%] left-[5%]",
+              "top-[30%] right-[5%]",
+              "bottom-[35%] left-[10%]",
+              "bottom-[15%] right-[15%]",
+              "top-[15%] right-[25%]",
+            ];
+            const animations = [
+              "animate-[float_6s_ease-in-out_infinite]",
+              "animate-[float_7s_ease-in-out_infinite_0.5s]",
+              "animate-[float_8s_ease-in-out_infinite_1s]",
+              "animate-[float_6.5s_ease-in-out_infinite_1.5s]",
+              "animate-[float_7.5s_ease-in-out_infinite_2s]",
             ];
             return (
               <div 
                 key={tutor.id} 
                 className={cn(
-                  "absolute hidden lg:block p-px rounded-full bg-gradient-to-br from-blue-500/50 to-pink-500/50 shadow-2xl shadow-black/10 transform scale-[0.9]",
-                  positions[index % positions.length]
+                  "absolute hidden lg:flex items-center gap-3",
+                  positions[index % positions.length],
+                  animations[index % animations.length]
                 )}
-                style={{animationDelay: `${index * 0.5}s`}}
               >
-                <div className="glass-card !bg-background/60 flex items-center gap-3 p-2 pr-4 rounded-full">
-                  <ReadyToHelpIcon className="w-6 h-6 text-pink-500" />
-                  <div>
-                    <p className="font-bold text-xs text-foreground">{tutor.name}</p>
-                    <p className="text-[10px] text-muted-foreground">Ready to help</p>
-                  </div>
+                <CursorIcon className="w-6 h-6 text-foreground -rotate-12" />
+                <div className="flex items-center gap-2 bg-background/60 backdrop-blur-md border border-border shadow-lg rounded-full p-2">
+                    <Image
+                      src={tutor.photoUrl}
+                      alt={tutor.name}
+                      width={32}
+                      height={32}
+                      className="rounded-full object-cover"
+                      data-ai-hint={tutor.photoHint}
+                    />
+                    <span className="font-bold text-sm text-foreground pr-3">{tutor.name.split(' ')[0]}</span>
                 </div>
               </div>
             )
@@ -84,7 +97,7 @@ export default function Hero() {
 
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid gap-8 items-center text-center">
-          <div className="space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
+          <div className="space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-1000 z-10">
             <h1 className="text-5xl font-extrabold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl font-headline text-transparent bg-clip-text bg-gradient-to-b from-foreground to-gray-600">
               Buka Potensi Bahasa Inggrismu
             </h1>
