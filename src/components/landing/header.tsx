@@ -8,7 +8,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "../theme-toggle";
-import logo from '@/public/images/logo.png';
+import logo from '@/public/images/logo-luyi.png';
 
 
 const navLinks = [
