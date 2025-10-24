@@ -38,17 +38,17 @@ export default function Hero() {
         <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-[600px] h-[600px] bg-pink-500/10 rounded-full blur-[120px] -z-10"></div>
 
         {/* Floating Tutor Cards */}
-        <div className="absolute inset-0 w-full h-full -z-10">
+        <div className="absolute inset-0 w-full h-full -z-20">
           {floatingTutors.map((tutor, index) => {
             const positions = [
-              "top-[10%] left-[15%]",
-              "top-[10%] right-[15%]",
-              "top-[35%] left-[5%]",
-              "top-[35%] right-[5%]",
-              "top-[60%] left-[15%]",
-              "top-[60%] right-[15%]",
-              "top-[20%] left-[35%]",
-              "top-[20%] right-[35%]",
+              "top-[15%] left-[5%]",
+              "top-[15%] right-[5%]",
+              "top-[50%] left-[5%]",
+              "top-[50%] right-[5%]",
+              "top-[25%] left-[15%]", // Jessica
+              "top-[25%] right-[15%]", // David
+              "top-[30%] left-[40%]", // Chloe
+              "top-[30%] right-[40%]", // Ryan
             ];
             const animations = [
               "animate-[float_6s_ease-in-out_infinite]",
