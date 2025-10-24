@@ -27,7 +27,7 @@ export interface PricingPackage {
   description: string;
   price: string;
   priceDetails: string;
-  features: string[];
+  features: { name: string; included: boolean }[];
   isPopular: boolean;
   ctaText: string;
 }

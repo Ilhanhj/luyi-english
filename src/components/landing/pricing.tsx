@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import { Check } from "lucide-react";
+import { Check, X } from "lucide-react";
 import { pricingPackages } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -19,6 +19,9 @@ import {
 } from "@/components/ui/carousel";
 
 export default function Pricing() {
+  // Find the longest feature list to determine the number of rows
+  const allFeatures = Array.from(new Set(pricingPackages.flatMap(p => p.features.map(f => f.name))));
+
   return (
     <section id="pricing" className="py-16 md:py-24 bg-transparent relative">
       <div className="absolute -top-40 left-0 w-full h-full bg-cover bg-center opacity-5 dark:opacity-[0.02]" style={{backgroundImage: 'url(/grid.svg)'}}></div>
@@ -32,71 +35,72 @@ export default function Pricing() {
           </SectionSubtitle>
         </div>
 
-        <Carousel
-          opts={{
-            align: "center",
-            loop: true,
-          }}
-          className="w-full max-w-4xl mx-auto animate-in fade-in slide-in-from-bottom-12 duration-700"
-        >
-          <CarouselContent className="-ml-4 py-4">
-            {pricingPackages.map((pkg) => (
-              <CarouselItem key={pkg.id} className="md:basis-1/2 lg:basis-1/3 pl-4">
-                <div className="p-1 h-full">
-                   <div
-                    className={cn(
-                      "rounded-2xl p-px transition-all duration-300 h-full",
-                      pkg.isPopular ? "bg-gradient-to-b from-blue-500 to-pink-500" : "bg-border"
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-px animate-in fade-in slide-in-from-bottom-12 duration-700 bg-border rounded-2xl overflow-hidden relative shadow-xl shadow-black/10">
+          
+          {/* Vertical Lines */}
+          <div className="hidden lg:block absolute top-0 left-1/5 w-px h-full bg-border"></div>
+          <div className="hidden lg:block absolute top-0 left-2/5 w-px h-full bg-border"></div>
+          <div className="hidden lg:block absolute top-0 left-3/5 w-px h-full bg-border"></div>
+          <div className="hidden lg:block absolute top-0 left-4/5 w-px h-full bg-border"></div>
+
+            {pricingPackages.map((pkg, index) => (
+                <div key={pkg.id} className={cn(
+                  "flex flex-col bg-card transition-all duration-300 relative z-10",
+                  "p-6",
+                   pkg.isPopular && "z-20 scale-100 lg:scale-105 bg-background shadow-2xl",
+                   index === 0 && "rounded-tl-2xl lg:rounded-bl-2xl lg:rounded-tr-none",
+                   index === pricingPackages.length - 1 && "rounded-br-2xl rounded-bl-2xl lg:rounded-tr-2xl lg:rounded-bl-none",
+                )}>
+                    {pkg.isPopular && (
+                      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-pink-500"></div>
                     )}
-                  >
-                    <Card
-                      className={cn(
-                        "flex flex-col h-full bg-card rounded-[15px] border-0 relative transition-all duration-300",
-                        pkg.isPopular ? "" : ""
-                      )}
-                    >
-                      {pkg.isPopular && (
+                    {pkg.isPopular && (
                         <Badge className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-500 to-pink-500 text-white border-0 shadow-lg shadow-pink-500/30 text-sm py-1 px-3 w-auto text-center">
                           Paling Populer
                         </Badge>
                       )}
-                      <CardHeader className="pt-8">
-                        <CardTitle className="text-xl font-semibold text-blue-600 dark:text-blue-400">{pkg.title}</CardTitle>
-                        <CardDescription className="text-sm !text-muted-foreground">{pkg.description}</CardDescription>
-                        <div className="flex items-baseline gap-2 pt-2">
-                          <span className="text-4xl font-bold text-foreground">{pkg.price}</span>
-                          <span className="text-sm text-muted-foreground">{pkg.priceDetails}</span>
-                        </div>
-                      </CardHeader>
-                      <CardContent className="flex-grow">
-                        <ul className="space-y-3">
-                          {pkg.features.map((feature) => (
-                            <li key={feature} className="flex items-start gap-3">
-                              <Check className="h-5 w-5 text-pink-500 flex-shrink-0 mt-0.5" />
-                              <span className="text-muted-foreground text-sm">{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </CardContent>
-                      <div className="p-6 pt-0">
-                        <Button asChild className={cn(
-                          "w-full rounded-full font-bold transition-all duration-300 transform hover:scale-105 hover:-translate-y-px",
+                      
+                    <div className="text-center">
+                      <CardTitle className="text-xl font-semibold text-foreground h-14 flex items-center justify-center">{pkg.title}</CardTitle>
+                       <div className="flex items-baseline justify-center gap-2 pt-4">
+                        <span className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground">{pkg.price}</span>
+                        <span className="text-sm text-muted-foreground">{pkg.priceDetails}</span>
+                      </div>
+                      <Button asChild className={cn(
+                          "w-full rounded-full font-bold transition-all duration-300 transform hover:scale-105 hover:-translate-y-px mt-4",
                           pkg.isPopular 
                               ? "bg-gradient-to-r from-blue-500 to-pink-500 text-white shadow-lg shadow-pink-500/30 hover:shadow-pink-500/50" 
-                              : "bg-foreground text-background hover:bg-foreground/80"
+                              : "bg-foreground/5 text-foreground border border-border hover:bg-foreground/10"
                           )} size="lg">
                           <Link href="#contact">{pkg.ctaText}</Link>
                         </Button>
-                      </div>
-                    </Card>
-                  </div>
+                    </div>
+
+                    <hr className="my-6 border-border" />
+                    
+                    <ul className="space-y-4 flex-grow">
+                      {allFeatures.map((featureName) => {
+                          const feature = pkg.features.find(f => f.name === featureName);
+                          return (
+                              <li key={featureName} className="flex items-center gap-3 text-sm h-8">
+                                  {feature ? (
+                                    <>
+                                      <Check className="h-5 w-5 text-pink-500 flex-shrink-0" />
+                                      <span className="text-muted-foreground">{feature.name}</span>
+                                    </>
+                                  ) : (
+                                    <>
+                                      <X className="h-5 w-5 text-muted-foreground/50 flex-shrink-0" />
+                                       <span className="text-muted-foreground/50 line-through">{featureName}</span>
+                                    </>
+                                  )}
+                              </li>
+                          )
+                      })}
+                    </ul>
                 </div>
-              </CarouselItem>
             ))}
-          </CarouselContent>
-          <CarouselPrevious className="hidden sm:flex -left-12 bg-background/50 border-border text-foreground hover:bg-secondary" />
-          <CarouselNext className="hidden sm:flex -right-12 bg-background/50 border-border text-foreground hover:bg-secondary" />
-        </Carousel>
+        </div>
       </div>
     </section>
   );
