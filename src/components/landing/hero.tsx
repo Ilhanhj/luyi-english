@@ -39,7 +39,7 @@ export default function Hero() {
         <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-[600px] h-[600px] bg-pink-500/10 rounded-full blur-[120px] -z-10"></div>
 
         {/* Floating Tutor Cards */}
-        <div className="absolute inset-0 w-full h-full -z-1">
+        <div className="absolute inset-0 w-full h-full -z-10">
           {floatingTutors.map((tutor, index) => {
             const positions = [
               "top-[10%] left-[5%] animate-[float_6s_ease-in-out_infinite]",
@@ -63,7 +63,7 @@ export default function Hero() {
                     alt={tutor.name}
                     width={32}
                     height={32}
-                    className="rounded-lg object-cover border-2 border-white/20"
+                    className="w-8 h-8 rounded-lg object-cover border-2 border-white/20"
                     data-ai-hint={tutor.photoHint}
                   />
                   <div>
