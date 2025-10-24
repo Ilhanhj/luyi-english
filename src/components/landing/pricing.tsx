@@ -39,7 +39,7 @@ export default function Pricing() {
           }}
           className="w-full max-w-4xl mx-auto animate-in fade-in slide-in-from-bottom-12 duration-700"
         >
-          <CarouselContent className="-ml-4">
+          <CarouselContent className="-ml-4 py-4">
             {pricingPackages.map((pkg) => (
               <CarouselItem key={pkg.id} className="md:basis-1/2 lg:basis-1/3 pl-4">
                 <div className="p-1 h-full">
