@@ -29,20 +29,6 @@ const stats = [
   },
 ];
 
-const CursorIcon = ({ className }: { className?: string }) => (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M5.22754 4.02172L18.816 10.316C19.7483 10.7412 19.7483 12.0678 18.816 12.493L5.22754 18.7873C4.2543 19.2335 3.25 18.5255 3.25 17.4306V5.37842C3.25 4.28352 4.2543 3.57552 5.22754 4.02172Z"
-      />
-    </svg>
-  );
-
-
 export default function Hero() {
   const floatingTutors = tutors.slice(0, 5); // Take first 5 tutors for floating cards
 
@@ -52,7 +38,7 @@ export default function Hero() {
         <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-[600px] h-[600px] bg-pink-500/10 rounded-full blur-[120px] -z-10"></div>
 
         {/* Floating Tutor Cards */}
-        <div className="absolute inset-0 w-full h-full -z-20">
+        <div className="absolute inset-0 w-full h-full -z-10">
           {floatingTutors.map((tutor, index) => {
             const positions = [
               "top-[15%] left-[5%]",
@@ -77,16 +63,16 @@ export default function Hero() {
                   animations[index % animations.length]
                 )}
               >
-                <div className="flex items-center gap-2 bg-background/60 backdrop-blur-md border border-border shadow-lg rounded-full p-2">
+                <div className="flex items-center gap-2 bg-gradient-to-r from-blue-500/10 to-pink-500/10 backdrop-blur-md border border-white/20 shadow-lg rounded-full p-1 pr-4">
                     <Image
                       src={tutor.photoUrl}
                       alt={tutor.name}
                       width={32}
                       height={32}
-                      className="rounded-full object-cover"
+                      className="rounded-md object-cover w-8 h-8"
                       data-ai-hint={tutor.photoHint}
                     />
-                    <span className="font-bold text-sm text-foreground pr-3">{tutor.name.split(' ')[0]}</span>
+                    <span className="font-bold text-sm text-foreground">{tutor.name.split(' ')[0]}</span>
                 </div>
               </div>
             )
