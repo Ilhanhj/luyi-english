@@ -76,6 +76,45 @@ export const tutors: Tutor[] = [
       quote: 'Penjelasan grammar dari Ms. Jessica sangat jelas. Tulisan saya jadi jauh lebih baik.',
       author: 'Andi, Penulis'
     }
+  },
+  {
+    id: '6',
+    name: 'David K.',
+    photoUrl: findImage('tutor-6').url,
+    photoHint: findImage('tutor-6').hint,
+    specialization: 'Public Speaking',
+    rating: 4.9,
+    bio: 'Pemenang kompetisi debat internasional, David akan mengubahmu menjadi pembicara yang percaya diri.',
+    review: {
+      quote: 'Sesi dengan David membuatku lebih berani bicara di depan umum. Sangat transformatif!',
+      author: 'Eka, Manajer'
+    }
+  },
+  {
+    id: '7',
+    name: 'Chloe T.',
+    photoUrl: findImage('tutor-7').url,
+    photoHint: findImage('tutor-7').hint,
+    specialization: 'Accent Reduction',
+    rating: 4.8,
+    bio: 'Native speaker dari Australia dengan spesialisasi fonetik untuk membantumu terdengar lebih natural.',
+    review: {
+      quote: 'Pelafalan saya jauh membaik. Chloe sangat detail dan sabar.',
+      author: 'Putri, Profesional'
+    }
+  },
+  {
+    id: '8',
+    name: 'Ryan G.',
+    photoUrl: findImage('tutor-8').url,
+    photoHint: findImage('tutor-8').hint,
+    specialization: 'Creative Writing',
+    rating: 5.0,
+    bio: 'Penulis novel yang akan membantumu mengeluarkan ide-ide kreatif dalam bahasa Inggris.',
+    review: {
+      quote: 'Kelas yang sangat inspiratif! Saya jadi semangat menulis lagi.',
+      author: 'Tania, Hobi Menulis'
+    }
   }
 ];
 

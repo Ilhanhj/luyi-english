@@ -30,7 +30,7 @@ const stats = [
 ];
 
 export default function Hero() {
-  const floatingTutors = tutors.slice(0, 5); // Take first 5 tutors for floating cards
+  const floatingTutors = tutors.slice(0, 8); // Take first 8 tutors for floating cards
 
   return (
     <section id="home" className="py-24 md:py-40 bg-transparent relative overflow-hidden">
@@ -46,6 +46,9 @@ export default function Hero() {
               "bottom-[35%] left-[10%]",
               "bottom-[15%] right-[15%]",
               "top-[15%] right-[25%]",
+              "top-[55%] left-[15%]",
+              "top-[75%] right-[5%]",
+              "top-[5%] right-[40%]",
             ];
             const animations = [
               "animate-[float_6s_ease-in-out_infinite]",
@@ -53,6 +56,9 @@ export default function Hero() {
               "animate-[float_8s_ease-in-out_infinite_1s]",
               "animate-[float_6.5s_ease-in-out_infinite_1.5s]",
               "animate-[float_7.5s_ease-in-out_infinite_2s]",
+              "animate-[float_7s_ease-in-out_infinite_0.2s]",
+              "animate-[float_6s_ease-in-out_infinite_0.8s]",
+              "animate-[float_8s_ease-in-out_infinite_1.2s]",
             ];
             return (
               <div 
@@ -63,13 +69,13 @@ export default function Hero() {
                   animations[index % animations.length]
                 )}
               >
-                <div className="flex items-center gap-2 bg-gradient-to-r from-blue-500/10 to-pink-500/10 backdrop-blur-md border border-white/20 shadow-lg rounded-full p-1 pr-4">
+                <div className="flex items-center gap-2 bg-gradient-to-r from-blue-500/10 to-pink-500/10 backdrop-blur-md border border-white/20 shadow-lg rounded-full p-1 pr-4 transition-all duration-300 hover:scale-110">
                     <Image
                       src={tutor.photoUrl}
                       alt={tutor.name}
                       width={32}
                       height={32}
-                      className="rounded-md object-cover w-8 h-8"
+                      className="rounded-lg object-cover w-8 h-8"
                       data-ai-hint={tutor.photoHint}
                     />
                     <span className="font-bold text-sm text-foreground">{tutor.name.split(' ')[0]}</span>
