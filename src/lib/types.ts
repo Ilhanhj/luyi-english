@@ -1,3 +1,4 @@
+
 export interface Tutor {
   id: string;
   name: string;
@@ -23,6 +24,7 @@ export interface Testimonial {
 export interface PricingPackage {
   id: string;
   title: string;
+  description: string;
   price: string;
   priceDetails: string;
   features: string[];

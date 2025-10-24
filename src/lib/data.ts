@@ -146,6 +146,7 @@ export const pricingPackages: PricingPackage[] = [
   {
     id: 'grouping',
     title: 'Grouping Class',
+    description: 'Belajar seru bareng teman-teman baru.',
     price: 'Rp 350K',
     priceDetails: '/bulan',
     features: [
@@ -161,6 +162,7 @@ export const pricingPackages: PricingPackage[] = [
   {
     id: 'semi-private',
     title: 'Semi Private Class',
+    description: 'Kelompok kecil, perhatian lebih personal.',
     price: 'Rp 550K',
     priceDetails: '/bulan',
     features: [
@@ -176,6 +178,7 @@ export const pricingPackages: PricingPackage[] = [
   {
     id: 'private',
     title: 'Private Class',
+    description: 'Fokus penuh pada tujuan belajarmu.',
     price: 'Rp 750K',
     priceDetails: '/bulan',
     features: [
@@ -192,6 +195,7 @@ export const pricingPackages: PricingPackage[] = [
   {
     id: 'toefl',
     title: 'TOEFL Preparation',
+    description: 'Raih skor TOEFL impianmu dengan bimbingan ahli.',
     price: 'Rp 850K',
     priceDetails: '/program',
     features: [
@@ -209,6 +213,7 @@ export const pricingPackages: PricingPackage[] = [
   {
     id: 'ielts',
     title: 'IELTS Class',
+    description: 'Siap taklukkan tes IELTS dengan strategi jitu.',
     price: 'Rp 1.4JT',
     priceDetails: '/program',
     features: [
