@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import { Check } from "lucide-react";
+import { Check, X } from "lucide-react";
 import { pricingPackages } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { CardTitle } from "@/components/ui/card";
@@ -53,7 +53,7 @@ export default function Pricing() {
                         <div className="text-center">
                         <CardTitle className="text-xl font-semibold text-foreground h-14 flex items-center justify-center">{pkg.title}</CardTitle>
                         <div className="flex items-baseline justify-center gap-2 pt-4">
-                            <span className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground">{pkg.price}</span>
+                            <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground">{pkg.price}</span>
                             <span className="text-sm text-muted-foreground">{pkg.priceDetails}</span>
                         </div>
                         <Button asChild className={cn(
