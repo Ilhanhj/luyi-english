@@ -63,10 +63,6 @@ export default function Tutors() {
                         <p className="z-10 relative text-muted-foreground">"{tutor.review.quote}"</p>
                         <p className="text-right font-medium mt-2 text-muted-foreground/80">- {tutor.review.author}</p>
                       </div>
-
-                      <Button asChild className="w-full mt-auto bg-gray-100 dark:bg-gray-800 border-border text-foreground hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full transition-all duration-300 transform hover:scale-105 hover:-translate-y-px">
-                        <Link href="#contact">Book Trial</Link>
-                      </Button>
                     </CardContent>
                   </Card>
                 </div>
