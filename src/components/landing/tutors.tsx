@@ -36,7 +36,7 @@ export default function Tutors() {
             {tutors.map((tutor) => (
               <CarouselItem key={tutor.id} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1 h-full">
-                  <Card className="bg-background/80 backdrop-blur-sm border-border flex flex-col h-full overflow-hidden transition-all duration-300 hover:border-blue-400/50 hover:scale-[1.02] shadow-lg">
+                  <Card className="bg-background/80 backdrop-blur-sm border-border flex flex-col h-full overflow-hidden transition-all duration-300 hover:border-blue-400/50 hover:shadow-2xl hover:-translate-y-1">
                     <CardContent className="p-6 flex flex-col flex-grow">
                       <div className="flex items-center gap-4 mb-4">
                         <Image
@@ -64,7 +64,7 @@ export default function Tutors() {
                         <p className="text-right font-medium mt-2 text-gray-500">- {tutor.review.author}</p>
                       </div>
 
-                      <Button asChild className="w-full mt-auto bg-gray-100 border-border text-foreground hover:bg-gray-200 rounded-full transition-all duration-300 transform hover:scale-105">
+                      <Button asChild className="w-full mt-auto bg-gray-100 border-border text-foreground hover:bg-gray-200 rounded-full transition-all duration-300 transform hover:scale-105 hover:-translate-y-px">
                         <Link href="#contact">Book Trial</Link>
                       </Button>
                     </CardContent>

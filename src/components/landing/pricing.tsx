@@ -31,7 +31,8 @@ export default function Pricing() {
             >
               <Card
                 className={cn(
-                  "flex flex-col h-full bg-card rounded-[15px] border-0 relative",
+                  "flex flex-col h-full bg-card rounded-[15px] border-0 relative transition-all duration-300 hover:shadow-2xl hover:-translate-y-1",
+                   pkg.isPopular ? "" : "hover:border-pink-500/30"
                 )}
               >
                 {pkg.isPopular && (
@@ -56,9 +57,9 @@ export default function Pricing() {
                 </CardContent>
                 <CardFooter>
                   <Button asChild className={cn(
-                    "w-full rounded-full font-bold transition-all duration-300 transform hover:scale-105",
+                    "w-full rounded-full font-bold transition-all duration-300 transform hover:scale-105 hover:-translate-y-px",
                      pkg.isPopular 
-                        ? "bg-gradient-to-r from-blue-500 to-pink-500 text-white shadow-lg shadow-pink-500/30" 
+                        ? "bg-gradient-to-r from-blue-500 to-pink-500 text-white shadow-lg shadow-pink-500/30 hover:shadow-pink-500/50" 
                         : "bg-gray-800 text-white hover:bg-gray-900"
                     )} size="lg">
                     <Link href="#contact">{pkg.ctaText}</Link>

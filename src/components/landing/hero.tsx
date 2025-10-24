@@ -91,13 +91,13 @@ export default function Hero() {
               Tingkatkan kepercayaan dirimu dalam berbahasa Inggris, mulai hari ini!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-gradient-to-r from-blue-500 to-pink-500 text-white font-bold rounded-full shadow-lg shadow-pink-500/30 transform hover:scale-105 transition-all duration-300 px-8 py-6 text-lg">
+              <Button asChild size="lg" className="bg-gradient-to-r from-blue-500 to-pink-500 text-white font-bold rounded-full shadow-lg shadow-pink-500/30 transition-all duration-300 hover:scale-105 hover:shadow-pink-500/50 hover:-translate-y-px">
                 <Link href="https://wa.me/6281234567890" target="_blank">
                   <MessageCircle className="mr-2 h-5 w-5" />
                   Hubungi via WhatsApp
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="bg-background/50 border-border text-foreground backdrop-blur-sm rounded-full hover:bg-secondary hover:border-gray-300 transform hover:scale-105 transition-all duration-300 px-8 py-6 text-lg">
+              <Button asChild variant="outline" size="lg" className="bg-background/50 border-border text-foreground backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-secondary hover:border-pink-500/50 hover:scale-105 hover:-translate-y-px px-8 py-6 text-lg">
                 <Link href="#tutors">
                   Lihat Tutor Kami <MoveRight className="ml-2 h-5 w-5" />
                 </Link>
@@ -108,7 +108,7 @@ export default function Hero() {
           <div className="mt-20 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto">
               {stats.map((stat, index) => (
-                <div key={index} className="glass-card p-4 rounded-xl text-center transition-all duration-300 hover:border-blue-400/50 hover:scale-105">
+                <div key={index} className="glass-card p-4 rounded-xl text-center transition-all duration-300 hover:border-blue-400/50 hover:scale-105 hover:-translate-y-1">
                   <stat.icon className="h-8 w-8 mx-auto text-pink-500 mb-2" />
                   <p className="text-2xl font-bold text-foreground">{stat.value}</p>
                   <p className="text-sm text-muted-foreground">{stat.label}</p>

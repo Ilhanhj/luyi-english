@@ -33,7 +33,7 @@ export default function Header() {
         <Link
           key={link.href}
           href={link.href}
-          className="text-gray-600 transition-colors hover:text-foreground"
+          className="text-gray-600 transition-colors duration-300 hover:text-pink-500"
           onClick={() => setIsOpen(false)}
         >
           {link.label}
@@ -57,7 +57,7 @@ export default function Header() {
 
         <div className="hidden md:flex items-center gap-6">
           <NavLinks />
-          <Button asChild className="bg-gradient-to-r from-blue-500 to-pink-500 text-white font-bold rounded-full shadow-lg shadow-pink-500/30 transform hover:scale-105 transition-all duration-300">
+          <Button asChild className="bg-gradient-to-r from-blue-500 to-pink-500 text-white font-bold rounded-full shadow-lg shadow-pink-500/30 transition-all duration-300 hover:scale-105 hover:shadow-pink-500/50 hover:-translate-y-px">
             <Link href="#contact">Daftar Gratis</Link>
           </Button>
         </div>

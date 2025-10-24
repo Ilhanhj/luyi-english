@@ -36,7 +36,7 @@ export default function Contact() {
             </div>
             
             <div className="flex flex-col items-center gap-4">
-               <Button asChild size="lg" className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-pink-500 text-white font-bold rounded-full shadow-lg shadow-pink-500/40 transform hover:scale-105 transition-all duration-300 px-8 py-6 text-lg">
+               <Button asChild size="lg" className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-pink-500 text-white font-bold rounded-full shadow-lg shadow-pink-500/40 transition-all duration-300 hover:scale-105 hover:shadow-pink-500/60 hover:-translate-y-px px-8 py-6 text-lg">
                 <Link href="#">Chat Us Now</Link>
               </Button>
                <div className="flex items-center gap-4 mt-2">
@@ -47,7 +47,7 @@ export default function Contact() {
                     aria-label={label}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-foreground/10 text-foreground hover:bg-foreground/20 hover:text-pink-500 transition-all duration-300 transform hover:scale-110 shadow-lg"
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-foreground/10 text-foreground hover:bg-foreground/20 hover:text-pink-500 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
                   >
                     <Icon className="h-5 w-5" />
                   </Link>

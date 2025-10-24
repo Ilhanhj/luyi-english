@@ -22,7 +22,7 @@ export default function Faq() {
         <div className="max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom-12 duration-700">
           <Accordion type="single" collapsible className="w-full space-y-4">
             {faqItems.map((item) => (
-              <AccordionItem key={item.id} value={item.id} className="glass-card overflow-hidden !border-0 shadow-sm">
+              <AccordionItem key={item.id} value={item.id} className="glass-card overflow-hidden !border-0 shadow-sm transition-all duration-300 hover:border-pink-500/30 hover:shadow-xl hover:-translate-y-1">
                 <AccordionTrigger className="text-left font-semibold text-lg hover:no-underline px-6 py-4 text-foreground hover:bg-secondary transition-colors">
                   {item.question}
                 </AccordionTrigger>

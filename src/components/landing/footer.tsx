@@ -59,7 +59,7 @@ export default function Footer() {
           
           {/* Column 1: Logo and Tagline */}
           <div className="flex flex-col gap-4 items-center md:items-start text-center md:text-left">
-            <Link href="#home" className="flex items-center gap-2 font-bold text-xl text-primary hover:text-blue-400 transition-colors">
+            <Link href="#home" className="flex items-center gap-2 font-bold text-xl text-primary transition-transform duration-300 hover:scale-105">
               <BookOpenCheck className="h-7 w-7" />
               <span>LuyiEnglish</span>
             </Link>
@@ -88,8 +88,8 @@ export default function Footer() {
             <ul className="space-y-3 text-center md:text-left">
               {contactInfo.map(({ Icon, text, href }) => (
                 <li key={text}>
-                  <a href={href} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 text-muted-foreground hover:text-pink-500 transition-colors duration-300">
-                    <Icon className="h-5 w-5 flex-shrink-0" />
+                  <a href={href} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 text-muted-foreground hover:text-pink-500 transition-colors duration-300 group">
+                    <Icon className="h-5 w-5 flex-shrink-0 transition-transform duration-300 group-hover:scale-110" />
                     <span>{text}</span>
                   </a>
                 </li>
@@ -108,7 +108,7 @@ export default function Footer() {
                   aria-label={label}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-foreground/10 text-foreground hover:bg-foreground/20 hover:text-pink-500 transition-all duration-300 transform hover:scale-110 shadow-lg"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-foreground/10 text-foreground hover:bg-foreground/20 hover:text-pink-500 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
                 >
                   <Icon className="h-5 w-5" />
                 </a>
