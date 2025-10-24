@@ -37,7 +37,7 @@ export default function Contact() {
             
             <div className="flex flex-col items-center gap-4">
                <Button asChild size="lg" className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-pink-500 text-white font-bold rounded-full shadow-lg shadow-pink-500/40 transition-all duration-300 hover:scale-105 hover:shadow-pink-500/60 hover:-translate-y-px px-8 py-6 text-lg">
-                <Link href="#">Chat Us Now</Link>
+                <Link href="https://wa.me/6281234567890" target="_blank">Chat Us Now</Link>
               </Button>
                <div className="flex items-center gap-4 mt-2">
                 {socialLinks.map(({ Icon, href, label }) => (
