@@ -10,16 +10,9 @@ import { cn } from "@/lib/utils";
 import SectionTitle from "./section-title";
 import SectionSubtitle from "./section-subtitle";
 import { Badge } from "@/components/ui/badge";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 export default function Pricing() {
-  // Find the longest feature list to determine the number of rows
+  // Find all unique features to create a consistent grid
   const allFeatures = Array.from(new Set(pricingPackages.flatMap(p => p.features.map(f => f.name))));
 
   return (
