@@ -43,8 +43,8 @@ export default function Hero() {
             const positions = [
               "top-[25%] left-[5%]",
               "top-[25%] right-[5%]",
-              "top-[65%] left-[10%]", // Emily
-              "top-[65%] right-[10%]", // Michael
+              "top-[55%] left-[10%]", // Emily
+              "top-[55%] right-[10%]", // Michael
               "top-[5%] left-[20%]", // Jessica
               "top-[5%] right-[20%]", // David
               "top-[10%] left-[40%]", // Chloe
