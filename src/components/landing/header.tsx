@@ -2,9 +2,10 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, BookOpenCheck } from "lucide-react";
+import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "../theme-toggle";
 
@@ -89,8 +90,14 @@ export default function Header() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         {/* Left: Logo */}
         <Link href="#home" className="flex items-center gap-2 font-bold text-lg text-foreground hover:text-gray-700 transition-colors">
-          <BookOpenCheck className="h-7 w-7 text-blue-500" />
-          <span className="shrink-0">LuyiEnglish</span>
+          <Image
+            src="https://storage.googleapis.com/project-spark-302315.appspot.com/project-L251XQxS/images/clwzm29at0001089z3jprdsry.png"
+            alt="LuyiEnglish Logo"
+            width={150}
+            height={40}
+            className="w-32 md:w-40 object-contain"
+            priority
+          />
         </Link>
 
         {/* Center: Floating Nav */}
@@ -126,9 +133,14 @@ export default function Header() {
               <SheetHeader>
                  <SheetTitle className="sr-only">Main Menu</SheetTitle>
                  <Link href="#home" className="flex items-center gap-2 font-bold text-lg text-foreground mb-4">
-                  <BookOpenCheck className="h-7 w-7 text-blue-500" />
-                  <span>LuyiEnglish</span>
-                </Link>
+                    <Image
+                      src="https://storage.googleapis.com/project-spark-302315.appspot.com/project-L251XQxS/images/clwzm29at0001089z3jprdsry.png"
+                      alt="LuyiEnglish Logo"
+                      width={150}
+                      height={40}
+                      className="w-32 object-contain"
+                    />
+                 </Link>
               </SheetHeader>
               <div className="flex flex-col gap-4 pt-4">
                  <NavLinks className="flex-col items-start gap-2 text-base !px-2" onLinkClick={() => setIsOpen(false)} />

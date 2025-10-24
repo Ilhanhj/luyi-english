@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { BookOpenCheck, Youtube, Mail, MapPin, MessageCircle } from "lucide-react";
 
 // Simple SVG for TikTok
@@ -60,8 +61,13 @@ export default function Footer() {
           {/* Column 1: Logo and Tagline */}
           <div className="flex flex-col gap-4 items-center md:items-start text-center md:text-left">
             <Link href="#home" className="flex items-center gap-2 font-bold text-xl text-primary transition-transform duration-300 hover:scale-105">
-              <BookOpenCheck className="h-7 w-7" />
-              <span>LuyiEnglish</span>
+              <Image
+                  src="https://storage.googleapis.com/project-spark-302315.appspot.com/project-L251XQxS/images/clwzm29at0001089z3jprdsry.png"
+                  alt="LuyiEnglish Logo"
+                  width={180}
+                  height={48}
+                  className="w-36 object-contain"
+                />
             </Link>
             <p className="text-muted-foreground text-sm max-w-xs">
               Learn English the fun and easy way with our professional tutors.
