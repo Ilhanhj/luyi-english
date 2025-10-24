@@ -33,7 +33,7 @@ export default function Header() {
         <Link
           key={link.href}
           href={link.href}
-          className="text-gray-300 transition-colors hover:text-white"
+          className="text-gray-600 transition-colors hover:text-foreground"
           onClick={() => setIsOpen(false)}
         >
           {link.label}
@@ -46,12 +46,12 @@ export default function Header() {
     <header
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300 animate-in fade-in-0 slide-in-from-top-4",
-        isScrolled ? "border-b border-white/10 bg-background/80 backdrop-blur-lg" : "bg-transparent"
+        isScrolled ? "border-b border-border bg-background/80 backdrop-blur-lg" : "bg-transparent"
       )}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-        <Link href="#home" className="flex items-center gap-2 font-bold text-lg text-white hover:text-gray-200 transition-colors">
-          <BookOpenCheck className="h-7 w-7 text-blue-400" />
+        <Link href="#home" className="flex items-center gap-2 font-bold text-lg text-foreground hover:text-gray-700 transition-colors">
+          <BookOpenCheck className="h-7 w-7 text-blue-500" />
           <span>LuyiEnglish</span>
         </Link>
 
@@ -66,11 +66,11 @@ export default function Header() {
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6 text-white" />
+                <Menu className="h-6 w-6 text-foreground" />
                 <span className="sr-only">Buka menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-gray-900/90 backdrop-blur-lg border-l-white/20 w-[250px] sm:w-[300px]">
+            <SheetContent side="right" className="bg-background/90 backdrop-blur-lg border-l-border w-[250px] sm:w-[300px]">
               <div className="flex flex-col gap-8 pt-10">
                 <NavLinks className="flex-col items-start gap-4 text-lg" />
                 <Button asChild className="bg-gradient-to-r from-blue-500 to-pink-500 text-white font-bold rounded-full shadow-lg shadow-pink-500/30">

@@ -36,7 +36,7 @@ export default function Tutors() {
             {tutors.map((tutor) => (
               <CarouselItem key={tutor.id} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1 h-full">
-                  <Card className="bg-[#111836]/80 backdrop-blur-sm border-white/10 flex flex-col h-full overflow-hidden transition-all duration-300 hover:border-blue-400/50 hover:scale-[1.02]">
+                  <Card className="bg-background/80 backdrop-blur-sm border-border flex flex-col h-full overflow-hidden transition-all duration-300 hover:border-blue-400/50 hover:scale-[1.02] shadow-lg">
                     <CardContent className="p-6 flex flex-col flex-grow">
                       <div className="flex items-center gap-4 mb-4">
                         <Image
@@ -48,23 +48,23 @@ export default function Tutors() {
                           data-ai-hint={tutor.photoHint}
                         />
                         <div className="flex-1">
-                          <h3 className="font-bold text-lg text-white">{tutor.name}</h3>
-                          <p className="text-sm text-blue-400">{tutor.specialization}</p>
+                          <h3 className="font-bold text-lg text-foreground">{tutor.name}</h3>
+                          <p className="text-sm text-blue-500">{tutor.specialization}</p>
                           <div className="flex items-center gap-1 mt-1">
                             <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                            <span className="font-semibold text-sm text-gray-300">{tutor.rating}</span>
+                            <span className="font-semibold text-sm text-gray-600">{tutor.rating}</span>
                           </div>
                         </div>
                       </div>
-                      <p className="text-sm text-gray-400 flex-grow mb-4">{tutor.bio}</p>
+                      <p className="text-sm text-muted-foreground flex-grow mb-4">{tutor.bio}</p>
                       
-                      <div className="bg-white/5 rounded-lg p-4 mb-6 text-sm italic relative border border-white/10">
-                        <Quote className="absolute top-2 left-2 w-5 h-5 text-white/10" />
-                        <p className="z-10 relative text-gray-300">"{tutor.review.quote}"</p>
-                        <p className="text-right font-medium mt-2 text-gray-400">- {tutor.review.author}</p>
+                      <div className="bg-secondary/50 rounded-lg p-4 mb-6 text-sm italic relative border border-border">
+                        <Quote className="absolute top-2 left-2 w-5 h-5 text-gray-300" />
+                        <p className="z-10 relative text-gray-700">"{tutor.review.quote}"</p>
+                        <p className="text-right font-medium mt-2 text-gray-500">- {tutor.review.author}</p>
                       </div>
 
-                      <Button asChild className="w-full mt-auto bg-white/10 border-white/20 text-white hover:bg-white/20 rounded-full transition-all duration-300 transform hover:scale-105">
+                      <Button asChild className="w-full mt-auto bg-gray-100 border-border text-foreground hover:bg-gray-200 rounded-full transition-all duration-300 transform hover:scale-105">
                         <Link href="#contact">Book Trial</Link>
                       </Button>
                     </CardContent>
@@ -73,8 +73,8 @@ export default function Tutors() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden sm:flex bg-white/10 border-white/20 text-white hover:bg-white/20" />
-          <CarouselNext className="hidden sm:flex bg-white/10 border-white/20 text-white hover:bg-white/20" />
+          <CarouselPrevious className="hidden sm:flex bg-background/50 border-border text-foreground hover:bg-secondary" />
+          <CarouselNext className="hidden sm:flex bg-background/50 border-border text-foreground hover:bg-secondary" />
         </Carousel>
       </div>
     </section>

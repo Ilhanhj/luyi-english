@@ -26,13 +26,13 @@ export default function Contact() {
     <section id="contact" className="py-16 md:py-24 bg-transparent relative">
       <div className="container mx-auto px-4 md:px-6">
         <div className="relative glass-card p-8 md:p-12 overflow-hidden animate-in fade-in slide-in-from-bottom-12 duration-700">
-           <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/30 rounded-full blur-[100px] -z-10"></div>
-           <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-pink-500/30 rounded-full blur-[100px] -z-10"></div>
+           <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px] -z-10"></div>
+           <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-pink-500/20 rounded-full blur-[100px] -z-10"></div>
           
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 z-10 relative">
             <div className="text-center md:text-left">
               <SectionTitle className="text-3xl sm:text-4xl lg:text-5xl !text-left">Siap Memulai Belajar di LuyiEnglish?</SectionTitle>
-              <p className="mt-4 text-gray-300">Hubungi kami dan dapatkan sesi trial gratis pertama Anda.</p>
+              <p className="mt-4 text-muted-foreground">Hubungi kami dan dapatkan sesi trial gratis pertama Anda.</p>
             </div>
             
             <div className="flex flex-col items-center gap-4">
@@ -47,7 +47,7 @@ export default function Contact() {
                     aria-label={label}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 hover:text-pink-400 transition-all duration-300 transform hover:scale-110 shadow-lg"
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-foreground/10 text-foreground hover:bg-foreground/20 hover:text-pink-500 transition-all duration-300 transform hover:scale-110 shadow-lg"
                   >
                     <Icon className="h-5 w-5" />
                   </Link>
