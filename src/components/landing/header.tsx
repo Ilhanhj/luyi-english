@@ -8,6 +8,8 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "../theme-toggle";
+import logo from '@/public/images/logo.png';
+
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -91,13 +93,12 @@ export default function Header() {
         {/* Left: Logo */}
         <Link href="#home" className="flex items-center gap-2 font-bold text-lg text-foreground hover:text-gray-700 transition-colors">
           <Image
-            src="https://storage.googleapis.com/project-spark-302315.appspot.com/project-L251XQxS/images/clwzm29at0001089z3jprdsry.png"
-            alt="LuyiEnglish Logo"
-            width={150}
-            height={40}
-            className="w-32 md:w-40 object-contain"
-            priority
-          />
+                           src={logo}
+                           alt="LuyiEnglish Logo"
+                           width={180}
+                           height={48}
+                           className="w-36 object-contain"
+                         />
         </Link>
 
         {/* Center: Floating Nav */}

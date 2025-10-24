@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { BookOpenCheck, Youtube, Mail, MapPin, MessageCircle } from "lucide-react";
+import { BookOpenCheck, MessageCircle } from "lucide-react";
+import logo from '@/public/images/logo.png';
 
 // Simple SVG for TikTok
 const TikTokIcon = ({ className }: { className?: string }) => (
@@ -41,13 +42,11 @@ const quickLinks = [
 const socialLinks = [
   { Icon: InstagramIcon, href: "#", label: "Instagram" },
   { Icon: TikTokIcon, href: "#", label: "TikTok" },
-  { Icon: Youtube, href: "#", label: "YouTube" },
+  { Icon: MessageCircle, href: "https://wa.me/6281234567890", label: "WhatsApp" },
 ];
 
 const contactInfo = [
-  { Icon: Mail, text: "hello@luyienglish.com", href: "mailto:hello@luyienglish.com" },
   { Icon: MessageCircle, text: "+62 812 3456 7890", href: "https://wa.me/6281234567890" },
-  { Icon: MapPin, text: "Jakarta, Indonesia", href: "#" },
 ];
 
 export default function Footer() {
@@ -62,7 +61,7 @@ export default function Footer() {
           <div className="flex flex-col gap-4 items-center md:items-start text-center md:text-left">
             <Link href="#home" className="flex items-center gap-2 font-bold text-xl text-primary transition-transform duration-300 hover:scale-105">
               <Image
-                  src="https://storage.googleapis.com/project-spark-302315.appspot.com/project-L251XQxS/images/clwzm29at0001089z3jprdsry.png"
+                  src={logo}
                   alt="LuyiEnglish Logo"
                   width={180}
                   height={48}

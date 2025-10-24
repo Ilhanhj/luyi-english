@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Instagram, Linkedin } from "lucide-react";
+import { MessageCircle, Instagram } from "lucide-react";
 import SectionTitle from "./section-title";
 
 // Simple SVG for TikTok
