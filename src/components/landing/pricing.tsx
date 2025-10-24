@@ -40,7 +40,7 @@ export default function Pricing() {
                 <div key={pkg.id} className={cn(
                   "flex flex-col bg-card transition-all duration-300 relative z-10",
                   "p-6",
-                   pkg.isPopular && "z-20 scale-100 lg:scale-105 bg-background shadow-2xl",
+                   pkg.isPopular && "z-20 bg-background shadow-2xl",
                    index === 0 && "rounded-tl-2xl lg:rounded-bl-2xl lg:rounded-tr-none",
                    index === pricingPackages.length - 1 && "rounded-br-2xl rounded-bl-2xl lg:rounded-tr-2xl lg:rounded-bl-none",
                 )}>
