@@ -30,6 +30,7 @@ export interface PricingPackage {
   features: { name: string; included: boolean }[];
   isPopular: boolean;
   ctaText: string;
+  badgeText?: string;
 }
 
 export interface FAQItem {

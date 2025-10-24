@@ -1,8 +1,7 @@
-
 "use client";
 
 import Link from "next/link";
-import { Check, X } from "lucide-react";
+import { Check } from "lucide-react";
 import { pricingPackages } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { CardTitle } from "@/components/ui/card";
@@ -41,12 +40,17 @@ export default function Pricing() {
                     index === 0 && "rounded-tl-2xl lg:rounded-bl-2xl lg:rounded-tr-none rounded-tr-2xl",
                     index === pricingPackages.length - 1 && "rounded-br-2xl rounded-bl-2xl lg:rounded-tr-2xl lg:rounded-bl-none",
                     )}>
-                        {pkg.isPopular && (
-                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-pink-500"></div>
+                        {pkg.badgeText && (
+                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-pink-500", style={{ display: pkg.isPopular ? 'block' : 'none' }}></div>
                         )}
-                        {pkg.isPopular && (
-                            <Badge className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-500 to-pink-500 text-white border-0 shadow-lg shadow-pink-500/30 text-sm py-1 px-3 w-auto text-center">
-                            Paling Populer
+                        {pkg.badgeText && (
+                            <Badge className={cn(
+                              "absolute -top-4 left-1/2 -translate-x-1/2 border-0 shadow-lg text-sm py-1 px-3 w-auto text-center",
+                              pkg.isPopular 
+                                ? "bg-gradient-to-r from-blue-500 to-pink-500 text-white shadow-pink-500/30"
+                                : "bg-muted text-muted-foreground shadow-black/10"
+                            )}>
+                            {pkg.badgeText}
                             </Badge>
                         )}
                         
@@ -69,7 +73,7 @@ export default function Pricing() {
                         <hr className="my-6 border-border" />
                         
                         <ul className="space-y-4 flex-grow">
-                          {pkg.features.filter(f => f.included).map((feature) => (
+                          {pkg.features.map((feature) => (
                               <li key={feature.name} className="flex items-center gap-3 text-sm">
                                   <Check className="h-5 w-5 text-pink-500 flex-shrink-0" />
                                   <span className="text-muted-foreground">{feature.name}</span>

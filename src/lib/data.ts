@@ -155,12 +155,10 @@ export const pricingPackages: PricingPackage[] = [
       { name: 'Maks. 15 siswa/ruang', included: true },
       { name: '60 menit/pertemuan', included: true },
       { name: 'Materi Bahasa Inggris Harian', included: true },
-      { name: 'Tutor 1-on-1', included: false },
-      { name: 'Pre-test & Post-test', included: false },
-      { name: 'Modul termasuk', included: false },
     ],
     isPopular: false,
-    ctaText: 'Pilih Paket'
+    ctaText: 'Pilih Paket',
+    badgeText: 'Paling Hemat'
   },
   {
     id: 'semi-private',
@@ -174,12 +172,10 @@ export const pricingPackages: PricingPackage[] = [
       { name: 'Maks. 6 siswa/ruang', included: true },
       { name: '60 menit/pertemuan', included: true },
       { name: 'Materi Bahasa Inggris Harian', included: true },
-      { name: 'Tutor 1-on-1', included: false },
-      { name: 'Pre-test & Post-test', included: false },
-      { name: 'Modul termasuk', included: false },
     ],
     isPopular: false,
-    ctaText: 'Pilih Paket'
+    ctaText: 'Pilih Paket',
+    badgeText: 'Fokus Maksimal'
   },
   {
     id: 'private',
@@ -190,15 +186,14 @@ export const pricingPackages: PricingPackage[] = [
     features: [
         { name: '12x pertemuan/bulan', included: true },
         { name: 'Jadwal ditentukan bersama', included: true },
-        { name: 'Maks. 15 siswa/ruang', included: false },
         { name: '60 menit/pertemuan', included: true },
         { name: 'Materi Bahasa Inggris Harian', included: true },
         { name: 'Tutor 1-on-1', included: true },
-        { name: 'Pre-test & Post-test', included: false },
         { name: 'Modul termasuk', included: true },
     ],
     isPopular: true,
-    ctaText: 'Pilih Paket'
+    ctaText: 'Pilih Paket',
+    badgeText: 'Paling Populer'
   },
   {
     id: 'toefl',
@@ -209,15 +204,14 @@ export const pricingPackages: PricingPackage[] = [
     features: [
         { name: '12x pertemuan/bulan', included: true },
         { name: 'Jadwal ditentukan bersama', included: true },
-        { name: 'Maks. 15 siswa/ruang', included: false },
         { name: '60 menit/pertemuan', included: true },
-        { name: 'Materi Bahasa Inggris Harian', included: false },
         { name: 'Tutor 1-on-1', included: true },
         { name: 'Pre-test & Post-test', included: true },
         { name: 'Modul termasuk', included: true },
     ],
     isPopular: false,
-    ctaText: 'Pilih Paket'
+    ctaText: 'Pilih Paket',
+    badgeText: 'Skor Impian'
   },
   {
     id: 'ielts',
@@ -228,15 +222,14 @@ export const pricingPackages: PricingPackage[] = [
     features: [
         { name: '12x pertemuan/bulan', included: true },
         { name: 'Jadwal ditentukan bersama', included: true },
-        { name: 'Maks. 15 siswa/ruang', included: false },
         { name: '60 menit/pertemuan', included: true },
-        { name: 'Materi Bahasa Inggris Harian', included: false },
         { name: 'Tutor 1-on-1', included: true },
         { name: 'Pre-test & Post-test', included: true },
         { name: 'Modul termasuk', included: true },
     ],
     isPopular: false,
-    ctaText: 'Pilih Paket'
+    ctaText: 'Pilih Paket',
+    badgeText: 'Go International'
   },
 ];
 
