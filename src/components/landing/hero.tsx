@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { MoveRight, Users, Star, ThumbsUp, GraduationCap } from "lucide-react";
+import { MoveRight, Users, Star, ThumbsUp, GraduationCap, MessageCircle } from "lucide-react";
 import { tutors } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
@@ -92,7 +92,10 @@ export default function Hero() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-gradient-to-r from-blue-500 to-pink-500 text-white font-bold rounded-full shadow-lg shadow-pink-500/30 transform hover:scale-105 transition-all duration-300 px-8 py-6 text-lg">
-                <Link href="#contact">Daftar Gratis Sekarang</Link>
+                <Link href="https://wa.me/6281234567890" target="_blank">
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  Hubungi via WhatsApp
+                </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="bg-background/50 border-border text-foreground backdrop-blur-sm rounded-full hover:bg-secondary hover:border-gray-300 transform hover:scale-105 transition-all duration-300 px-8 py-6 text-lg">
                 <Link href="#tutors">
