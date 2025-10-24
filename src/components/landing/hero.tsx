@@ -41,14 +41,14 @@ export default function Hero() {
         <div className="absolute inset-0 w-full h-full -z-10">
           {floatingTutors.map((tutor, index) => {
             const positions = [
-              "top-[10%] left-[5%]",
-              "top-[25%] right-[5%]",
-              "top-[45%] left-[10%]",
-              "bottom-[20%] right-[15%]",
-              "top-[10%] right-[25%]",
-              "top-[50%] left-[15%]",
-              "top-[20%] right-[10%]",
-              "top-[5%] right-[40%]",
+              "top-[10%] left-[15%]",
+              "top-[10%] right-[15%]",
+              "top-[35%] left-[5%]",
+              "top-[35%] right-[5%]",
+              "top-[60%] left-[15%]",
+              "top-[60%] right-[15%]",
+              "top-[20%] left-[35%]",
+              "top-[20%] right-[35%]",
             ];
             const animations = [
               "animate-[float_6s_ease-in-out_infinite]",
