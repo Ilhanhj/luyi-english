@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Check, X } from "lucide-react";
+import { Check } from "lucide-react";
 import { pricingPackages } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { CardTitle } from "@/components/ui/card";
@@ -40,7 +40,7 @@ export default function Pricing() {
                     index === pricingPackages.length - 1 && "rounded-br-2xl rounded-bl-2xl lg:rounded-tr-2xl lg:rounded-bl-none",
                     )}>
                         {pkg.badgeText && (
-                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-pink-500", style={{ display: pkg.isPopular ? 'block' : 'none' }}></div>
+                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-pink-500" style={{ display: pkg.isPopular ? 'block' : 'none' }}></div>
                         )}
                         {pkg.badgeText && (
                             <Badge className={cn(
@@ -85,7 +85,6 @@ export default function Pricing() {
                 ))}
             </div>
         </div>
-
       </div>
     </section>
   );
