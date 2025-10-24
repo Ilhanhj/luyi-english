@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { Menu, BookOpenCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -71,6 +71,9 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="bg-background/90 backdrop-blur-lg border-l-border w-[250px] sm:w-[300px]">
+              <SheetHeader>
+                <SheetTitle className="sr-only">Main Menu</SheetTitle>
+              </SheetHeader>
               <div className="flex flex-col gap-8 pt-10">
                 <NavLinks className="flex-col items-start gap-4 text-lg" />
                 <Button asChild className="bg-gradient-to-r from-blue-500 to-pink-500 text-white font-bold rounded-full shadow-lg shadow-pink-500/30">
