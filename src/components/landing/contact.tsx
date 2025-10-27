@@ -31,8 +31,8 @@ export default function Contact() {
           
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 z-10 relative">
             <div className="text-center md:text-left">
-              <SectionTitle className="text-3xl sm:text-4xl lg:text-5xl !text-left">Siap Memulai Belajar di LuyiEnglish?</SectionTitle>
-              <p className="mt-4 text-muted-foreground">Hubungi kami dan dapatkan sesi trial gratis pertama Anda.</p>
+              <SectionTitle className="text-3xl sm:text-4xl lg:text-5xl !text-left">Jangan Tunggu Lagi, Kuasai Bahasa Inggris Sekarang!</SectionTitle>
+              <p className="mt-4 text-muted-foreground">Ambil langkah pertama menuju masa depan yang lebih cerah. Hubungi kami untuk sesi trial gratis.</p>
             </div>
             
             <div className="flex flex-col items-center gap-4">
