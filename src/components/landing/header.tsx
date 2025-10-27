@@ -135,7 +135,7 @@ export default function Header() {
                  <SheetTitle className="sr-only">Main Menu</SheetTitle>
                  <Link href="#home" className="flex items-center gap-2 font-bold text-lg text-foreground mb-4">
                     <Image
-                      src="https://storage.googleapis.com/project-spark-302315.appspot.com/project-L251XQxS/images/clwzm29at0001089z3jprdsry.png"
+                      src={logo}
                       alt="LuyiEnglish Logo"
                       width={150}
                       height={40}
