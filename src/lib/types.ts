@@ -1,4 +1,6 @@
 
+import { StaticImageData } from 'next/image';
+
 export interface Tutor {
   id: string;
   name: string;
@@ -15,10 +17,9 @@ export interface Tutor {
 
 export type Testimonial = {
   id: string;
-  imageUrl: string;
+  imageUrl: StaticImageData;
   imageAlt: string;
 };
-
 
 export interface PricingPackage {
   id: string;
@@ -43,4 +44,10 @@ export interface CompanyLogo {
     name: string;
     logoUrl: string;
     logoHint: string;
+}
+
+export interface GalleryTestimonial {
+  id: string;
+  src: StaticImageData;
+  alt: string;
 }
