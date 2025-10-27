@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -11,6 +12,8 @@ import {
 } from "@/components/ui/carousel";
 import SectionTitle from "./section-title";
 import SectionSubtitle from "./section-subtitle";
+import { Button } from "@/components/ui/button";
+import { MoveRight } from "lucide-react";
 
 import testiAdwiyah from '@/public/images/testimonials/testi-adwiyah.jpg';
 import testiAprial from '@/public/images/testimonials/testi-aprial.jpg';
@@ -109,6 +112,14 @@ export default function Testimonials() {
           <CarouselPrevious className="hidden sm:flex -left-12 bg-background/50 border-border text-foreground hover:bg-secondary" />
           <CarouselNext className="hidden sm:flex -right-12 bg-background/50 border-border text-foreground hover:bg-secondary" />
         </Carousel>
+        
+        <div className="text-center mt-12 animate-in fade-in slide-in-from-bottom-12 duration-700">
+          <Button asChild variant="outline" size="lg" className="bg-transparent backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-background/80 hover:border-pink-500/50 hover:text-pink-500 hover:scale-105 hover:-translate-y-px px-8 py-6 text-lg">
+            <Link href="/testimonials-gallery">
+              Lihat Semua Testimoni <MoveRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
+        </div>
       </div>
     </section>
   );
