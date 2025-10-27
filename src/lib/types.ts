@@ -1,4 +1,7 @@
 
+import type { StaticImageData } from 'next/image';
+
+
 export interface Tutor {
   id: string;
   name: string;
@@ -13,13 +16,12 @@ export interface Tutor {
   };
 }
 
-export interface Testimonial {
+export type Testimonial = {
   id: string;
-  initials: string;
-  summary: string;
-  fullImageUrl: string;
-  fullImageHint: string;
-}
+  imageUrl: string | StaticImageData; // ubah ini
+  imageAlt: string;
+};
+
 
 export interface PricingPackage {
   id: string;

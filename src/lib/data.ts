@@ -93,27 +93,11 @@ export const tutors: Tutor[] = [
 ];
 
 export const testimonials: Testimonial[] = [
-  {
-    id: '1',
-    initials: 'AO',
-    summary: 'I really enjoyed learning english with you. the class never felt too serious or boring. it was always fun and relaxed. what i like the most is that we can talk about anything, not just the lesson itself. it feels like we can share stories while learning, and that makes the class even more interesting and enjoyable.',
-    fullImageUrl: findImage('testimonial-adwiyah-full').url,
-    fullImageHint: findImage('testimonial-adwiyah-full').hint,
+  { 
+    id: '1', 
+    imageUrl: findImage('testimonial-adwiyah-full').url, 
+    imageAlt: 'Testimonial from Adwiyah' 
   },
-  {
-    id: '2',
-    initials: 'SP',
-    summary: 'Materi yang diberikan sangat relevan dengan pekerjaan saya. Kemampuan presentasi saya dalam bahasa Inggris meningkat pesat.',
-    fullImageUrl: findImage('testimonial-2-full').url,
-    fullImageHint: findImage('testimonial-2-full').hint,
-  },
-  {
-    id: '3',
-    initials: 'RF',
-    summary: 'Jadwal fleksibel sangat membantu saya yang punya kesibukan padat. Bisa belajar kapan saja dan di mana saja. Recommended!',
-    fullImageUrl: findImage('testimonial-3-full').url,
-    fullImageHint: findImage('testimonial-3-full').hint,
-  }
 ];
 
 export const pricingPackages: PricingPackage[] = [
