@@ -6,7 +6,8 @@ const findImage = (id: string) => {
     const img = PlaceHolderImages.find(p => p.id === id);
     if (!img) {
         console.error(`Placeholder image with id "${id}" not found.`);
-        return { url: 'https://picsum.photos/seed/error/200/200', hint: 'placeholder' };
+        // Return a default placeholder to avoid crashing the build
+        return { url: 'https://picsum.photos/seed/error/400/600', hint: 'placeholder error' };
     }
     return { url: img.imageUrl, hint: img.imageHint };
 }
@@ -95,8 +96,18 @@ export const tutors: Tutor[] = [
 export const testimonials: Testimonial[] = [
   { 
     id: '1', 
-    imageUrl: findImage('testimonial-adwiyah-full').url, 
+    imageUrl: findImage('testimonial-adwiyah-full').url,
     imageAlt: 'Testimonial from Adwiyah' 
+  },
+  { 
+    id: '2', 
+    imageUrl: findImage('testimonial-april-full').url,
+    imageAlt: 'Testimonial from April' 
+  },
+  { 
+    id: '3', 
+    imageUrl: findImage('testimonial-rani-full').url,
+    imageAlt: 'Testimonial from Rani' 
   },
 ];
 
@@ -221,11 +232,9 @@ export const faqItems: FAQItem[] = [
 ];
 
 export const companyLogos: CompanyLogo[] = [
-    { id: 'google', name: 'Google', logoUrl: findImage('logo-google').url, logoHint: findImage('logo-google').hint },
-    { id: 'gojek', name: 'Gojek', logoUrl: findImage('logo-gojek').url, logoHint: findImage('logo-gojek').hint },
-    { id: 'tokopedia', name: 'Tokopedia', logoUrl: findImage('logo-tokopedia').url, logoHint: findImage('logo-tokopedia').hint },
-    { id: 'traveloka', name: 'Traveloka', logoUrl: findImage('logo-traveloka').url, logoHint: findImage('logo-traveloka').hint },
-    { id: 'microsoft', name: 'Microsoft', logoUrl: findImage('logo-microsoft').url, logoHint: findImage('logo-microsoft').hint },
+    { id: 'google', name: 'Google', logoUrl: findImage('logo-google').url as string, logoHint: findImage('logo-google').hint },
+    { id: 'gojek', name: 'Gojek', logoUrl: findImage('logo-gojek').url as string, logoHint: findImage('logo-gojek').hint },
+    { id: 'tokopedia', name: 'Tokopedia', logoUrl: findImage('logo-tokopedia').url as string, logoHint: findImage('logo-tokopedia').hint },
+    { id: 'traveloka', name: 'Traveloka', logoUrl: findImage('logo-traveloka').url as string, logoHint: findImage('logo-traveloka').hint },
+    { id: 'microsoft', name: 'Microsoft', logoUrl: findImage('logo-microsoft').url as string, logoHint: findImage('logo-microsoft').hint },
 ];
-
-    

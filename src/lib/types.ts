@@ -18,7 +18,7 @@ export interface Tutor {
 
 export type Testimonial = {
   id: string;
-  imageUrl: string | StaticImageData; // ubah ini
+  imageUrl: string;
   imageAlt: string;
 };
 
