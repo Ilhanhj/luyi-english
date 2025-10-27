@@ -1,7 +1,4 @@
 
-import type { StaticImageData } from 'next/image';
-
-
 export interface Tutor {
   id: string;
   name: string;

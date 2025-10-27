@@ -1,13 +1,14 @@
 
 import type { Tutor, Testimonial, PricingPackage, FAQItem, CompanyLogo } from './types';
-import { PlaceHolderImages } from './placeholder-images';
+import jsonData from './placeholder-images.json';
+
+const PlaceHolderImages = jsonData.placeholderImages;
 
 const findImage = (id: string) => {
     const img = PlaceHolderImages.find(p => p.id === id);
     if (!img) {
         console.error(`Placeholder image with id "${id}" not found.`);
-        // Return a default placeholder to avoid crashing the build
-        return { url: 'https://picsum.photos/seed/error/400/600', hint: 'placeholder error' };
+        return { url: `https://picsum.photos/seed/${id}/400/600`, hint: 'placeholder' };
     }
     return { url: img.imageUrl, hint: img.imageHint };
 }
@@ -232,9 +233,9 @@ export const faqItems: FAQItem[] = [
 ];
 
 export const companyLogos: CompanyLogo[] = [
-    { id: 'google', name: 'Google', logoUrl: findImage('logo-google').url as string, logoHint: findImage('logo-google').hint },
-    { id: 'gojek', name: 'Gojek', logoUrl: findImage('logo-gojek').url as string, logoHint: findImage('logo-gojek').hint },
-    { id: 'tokopedia', name: 'Tokopedia', logoUrl: findImage('logo-tokopedia').url as string, logoHint: findImage('logo-tokopedia').hint },
-    { id: 'traveloka', name: 'Traveloka', logoUrl: findImage('logo-traveloka').url as string, logoHint: findImage('logo-traveloka').hint },
-    { id: 'microsoft', name: 'Microsoft', logoUrl: findImage('logo-microsoft').url as string, logoHint: findImage('logo-microsoft').hint },
+    { id: 'google', name: 'Google', logoUrl: 'https://images.unsplash.com/photo-1549924231-f129b911e442?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NjExNTA1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080', logoHint: 'company logo' },
+    { id: 'gojek', name: 'Gojek', logoUrl: 'https://images.unsplash.com/photo-1549924231-f129b911e442?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NjExNTA1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080', logoHint: 'company logo' },
+    { id: 'tokopedia', name: 'Tokopedia', logoUrl: 'https://images.unsplash.com/photo-1562783912-21ad31ee2a83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NjExNTA1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080', logoHint: 'company logo' },
+    { id: 'traveloka', name: 'Traveloka', logoUrl: 'https://images.unsplash.com/photo-1622465911368-72162f8da3e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NjExNTA1MTJ8MA&ixlibrb-4.1.0&q=80&w=1080', logoHint: 'company logo' },
+    { id: 'microsoft', name: 'Microsoft', logoUrl: 'https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NjExNTA1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080', logoHint: 'company logo' },
 ];
