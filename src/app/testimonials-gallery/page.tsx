@@ -25,7 +25,8 @@ export default function TestimonialsGallery() {
                   <Image
                     src={testimonial.src}
                     alt={testimonial.alt}
-                    placeholder="blur"
+                    width={400}
+                    height={600}
                     className="object-cover w-full h-full"
                   />
                 </div>

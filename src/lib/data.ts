@@ -2,21 +2,6 @@
 import type { Tutor, Testimonial, PricingPackage, FAQItem, CompanyLogo, GalleryTestimonial } from './types';
 import jsonData from './placeholder-images.json';
 
-import testiAdwiyah from '@/public/images/testimonials/testi-adwiyah.jpg';
-import testiAprial from '@/public/images/testimonials/testi-aprial.jpg';
-import testiBianca from '@/public/images/testimonials/testi-bianca.jpg';
-import testiDevika from '@/public/images/testimonials/testi-devika.jpg';
-import testiEva from '@/public/images/testimonials/testi-eva.jpg';
-import testiFika from '@/public/images/testimonials/testi-fika.jpg';
-import testiJuliana from '@/public/images/testimonials/testi-juliana.jpg';
-import testiKhalid from '@/public/images/testimonials/testi-khalid.jpg';
-import testiNat from '@/public/images/testimonials/testi-nat.jpg';
-import testiNisa from '@/public/images/testimonials/testi-nisa.jpg';
-import testiNofia from '@/public/images/testimonials/testi-nofvia.jpg';
-import testiTeguh from '@/public/images/testimonials/testi-teguh.jpg';
-import testiVania from '@/public/images/testimonials/testi-vania.jpg';
-import testiWiwin from '@/public/images/testimonials/testi-wiwin.jpg';
-
 const PlaceHolderImages = jsonData.placeholderImages;
 
 const findImage = (id: string) => {
@@ -110,20 +95,20 @@ export const tutors: Tutor[] = [
 ];
 
 export const testimonials: Testimonial[] = [
-  { id: "1", imageUrl: testiAdwiyah, imageAlt: "Adwiyah" },
-  { id: "2", imageUrl: testiAprial, imageAlt: "Aprial" },
-  { id: "3", imageUrl: testiBianca, imageAlt: "Bianca" },
-  { id: "5", imageUrl: testiDevika, imageAlt: "Devika" },
-  { id: "6", imageUrl: testiEva, imageAlt: "Eva" },
-  { id: "7", imageUrl: testiFika, imageAlt: "Fika" },
-  { id: "8", imageUrl: testiJuliana, imageAlt: "Juliana" },
-  { id: "10", imageUrl: testiKhalid, imageAlt: "Khalid" },
-  { id: "11", imageUrl: testiNat, imageAlt: "Nat" },
-  { id: "12", imageUrl: testiNisa, imageAlt: "Nisa" },
-  { id: "13", imageUrl: testiNofia, imageAlt: "Nofvia" },
-  { id: "14", imageUrl: testiTeguh, imageAlt: "Teguh" },
-  { id: "15", imageUrl: testiVania, imageAlt: "Vania" },
-  { id: "16", imageUrl: testiWiwin, imageAlt: "Wiwin" },
+  { id: "1", imageUrl: findImage('testimonial-adwiyah').url, imageAlt: "Adwiyah" },
+  { id: "2", imageUrl: findImage('testimonial-aprial').url, imageAlt: "Aprial" },
+  { id: "3", imageUrl: findImage('testimonial-bianca').url, imageAlt: "Bianca" },
+  { id: "5", imageUrl: findImage('testimonial-devika').url, imageAlt: "Devika" },
+  { id: "6", imageUrl: findImage('testimonial-eva').url, imageAlt: "Eva" },
+  { id: "7", imageUrl: findImage('testimonial-fika').url, imageAlt: "Fika" },
+  { id: "8", imageUrl: findImage('testimonial-juliana').url, imageAlt: "Juliana" },
+  { id: "10", imageUrl: findImage('testimonial-khalid').url, imageAlt: "Khalid" },
+  { id: "11", imageUrl: findImage('testimonial-nat').url, imageAlt: "Nat" },
+  { id: "12", imageUrl: findImage('testimonial-nisa').url, imageAlt: "Nisa" },
+  { id: "13", imageUrl: findImage('testimonial-nofvia').url, imageAlt: "Nofvia" },
+  { id: "14", imageUrl: findImage('testimonial-teguh').url, imageAlt: "Teguh" },
+  { id: "15", imageUrl: findImage('testimonial-vania').url, imageAlt: "Vania" },
+  { id: "16", imageUrl: findImage('testimonial-wiwin').url, imageAlt: "Wiwin" },
 ];
 
 export const pricingPackages: PricingPackage[] = [
@@ -255,18 +240,18 @@ export const companyLogos: CompanyLogo[] = [
 ];
 
 export const galleryTestimonials: GalleryTestimonial[] = [
-  { id: '1', src: testiAdwiyah, alt: 'Testimonial from Adwiyah' },
-  { id: '2', src: testiAprial, alt: 'Testimonial from Aprial' },
-  { id: '3', src: testiBianca, alt: 'Testimonial from Bianca' },
-  { id: '4', src: testiDevika, alt: 'Testimonial from Devika' },
-  { id: '5', src: testiEva, alt: 'Testimonial from Eva' },
-  { id: '6', src: testiFika, alt: 'Testimonial from Fika' },
-  { id: '7', src: testiJuliana, alt: 'Testimonial from Juliana' },
-  { id: '8', src: testiKhalid, alt: 'Testimonial from Khalid' },
-  { id: '9', src: testiNat, alt: 'Testimonial from Nat' },
-  { id: '10', src: testiNisa, alt: 'Testimonial from Nisa' },
-  { id: '11', src: testiNofia, alt: 'Testimonial from Nofvia' },
-  { id: '12', src: testiTeguh, alt: 'Testimonial from Teguh' },
-  { id: '13', src: testiVania, alt: 'Testimonial from Vania' },
-  { id: '14', src: testiWiwin, alt: 'Testimonial from Wiwin' },
+  { id: '1', src: findImage('testimonial-adwiyah').url, alt: 'Testimonial from Adwiyah' },
+  { id: '2', src: findImage('testimonial-aprial').url, alt: 'Testimonial from Aprial' },
+  { id: '3', src: findImage('testimonial-bianca').url, alt: 'Testimonial from Bianca' },
+  { id: '4', src: findImage('testimonial-devika').url, alt: 'Testimonial from Devika' },
+  { id: '5', src: findImage('testimonial-eva').url, alt: 'Testimonial from Eva' },
+  { id: '6', src: findImage('testimonial-fika').url, alt: 'Testimonial from Fika' },
+  { id: '7', src: findImage('testimonial-juliana').url, alt: 'Testimonial from Juliana' },
+  { id: '8', src: findImage('testimonial-khalid').url, alt: 'Testimonial from Khalid' },
+  { id: '9', src: findImage('testimonial-nat').url, alt: 'Testimonial from Nat' },
+  { id: '10', src: findImage('testimonial-nisa').url, alt: 'Testimonial from Nisa' },
+  { id: '11', src: findImage('testimonial-nofvia').url, alt: 'Testimonial from Nofvia' },
+  { id: '12', src: findImage('testimonial-teguh').url, alt: 'Testimonial from Teguh' },
+  { id: '13', src: findImage('testimonial-vania').url, alt: 'Testimonial from Vania' },
+  { id: '14', src: findImage('testimonial-wiwin').url, alt: 'Testimonial from Wiwin' },
 ];

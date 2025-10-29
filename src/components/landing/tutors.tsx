@@ -1,5 +1,5 @@
+
 import Image from "next/image";
-import Link from "next/link";
 import { Star, Quote } from "lucide-react";
 
 import { tutors } from "@/lib/data";
@@ -11,7 +11,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import SectionTitle from "./section-title";
 import SectionSubtitle from "./section-subtitle";
 

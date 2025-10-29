@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -30,7 +31,7 @@ const stats = [
 ];
 
 export default function Hero() {
-  const floatingTutors = tutors.slice(0, 8); // Take first 8 tutors for floating cards
+  const floatingTutors = tutors.slice(0, 8);
 
   return (
     <section id="home" className="py-24 md:py-40 bg-transparent relative overflow-hidden">
@@ -43,12 +44,12 @@ export default function Hero() {
             const positions = [
               "top-[25%] left-[5%]",
               "top-[25%] right-[5%]",
-              "top-[55%] left-[10%]", // Emily
-              "top-[55%] right-[10%]", // Michael
-              "top-[5%] left-[20%]", // Jessica
-              "top-[5%] right-[20%]", // David
-              "top-[10%] left-[40%]", // Chloe
-              "top-[10%] right-[40%]", // Ryan
+              "top-[55%] left-[10%]",
+              "top-[55%] right-[10%]",
+              "top-[5%] left-[20%]",
+              "top-[5%] right-[20%]",
+              "top-[10%] left-[40%]",
+              "top-[10%] right-[40%]",
             ];
             const animations = [
               "animate-[float_6s_ease-in-out_infinite]",
@@ -108,6 +109,13 @@ export default function Hero() {
                   Chat Us Now
                 </Link>
               </Button>
+            </div>
+             <div className="flex justify-center">
+                <Button asChild variant="outline" size="lg" className="bg-transparent backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-background/80 hover:border-blue-500/50 hover:text-blue-500 hover:scale-105 hover:-translate-y-px px-8 py-6 text-lg">
+                    <Link href="/testimonials-gallery">
+                        Lihat Testimoni
+                    </Link>
+                </Button>
             </div>
           </div>
           

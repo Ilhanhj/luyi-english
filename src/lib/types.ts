@@ -17,7 +17,7 @@ export interface Tutor {
 
 export type Testimonial = {
   id: string;
-  imageUrl: StaticImageData;
+  imageUrl: string;
   imageAlt: string;
 };
 
@@ -48,6 +48,6 @@ export interface CompanyLogo {
 
 export interface GalleryTestimonial {
   id: string;
-  src: StaticImageData;
+  src: string;
   alt: string;
 }

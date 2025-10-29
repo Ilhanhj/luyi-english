@@ -37,20 +37,86 @@
       "imageHint": "man portrait"
     },
     {
-      "id": "testimonial-adwiyah-full",
-      "description": "Full screenshot of testimonial from Adwiyah",
+      "id": "testimonial-adwiyah",
+      "description": "Testimonial from Adwiyah",
       "imageUrl": "https://storage.googleapis.com/project-spark-302315.appspot.com/project-L251XQxS/images/clwvyvvq00001la0o48yr0xsz.png",
       "imageHint": "chat screenshot"
     },
     {
-      "id": "testimonial-april-full",
-      "description": "Full screenshot of testimonial from April",
+      "id": "testimonial-aprial",
+      "description": "Testimonial from Aprial",
       "imageUrl": "https://storage.googleapis.com/project-spark-302315.appspot.com/project-L251XQxS/images/clwvyvvq00001la0o48yr0xsz.png",
       "imageHint": "chat screenshot"
     },
     {
-      "id": "testimonial-rani-full",
-      "description": "Full screenshot of testimonial from Rani",
+      "id": "testimonial-bianca",
+      "description": "Testimonial from Bianca",
+      "imageUrl": "https://storage.googleapis.com/project-spark-302315.appspot.com/project-L251XQxS/images/clwvyvvq00001la0o48yr0xsz.png",
+      "imageHint": "chat screenshot"
+    },
+    {
+      "id": "testimonial-devika",
+      "description": "Testimonial from Devika",
+      "imageUrl": "https://storage.googleapis.com/project-spark-302315.appspot.com/project-L251XQxS/images/clwvyvvq00001la0o48yr0xsz.png",
+      "imageHint": "chat screenshot"
+    },
+    {
+      "id": "testimonial-eva",
+      "description": "Testimonial from Eva",
+      "imageUrl": "https://storage.googleapis.com/project-spark-302315.appspot.com/project-L251XQxS/images/clwvyvvq00001la0o48yr0xsz.png",
+      "imageHint": "chat screenshot"
+    },
+    {
+      "id": "testimonial-fika",
+      "description": "Testimonial from Fika",
+      "imageUrl": "https://storage.googleapis.com/project-spark-302315.appspot.com/project-L251XQxS/images/clwvyvvq00001la0o48yr0xsz.png",
+      "imageHint": "chat screenshot"
+    },
+    {
+      "id": "testimonial-juliana",
+      "description": "Testimonial from Juliana",
+      "imageUrl": "https://storage.googleapis.com/project-spark-302315.appspot.com/project-L251XQxS/images/clwvyvvq00001la0o48yr0xsz.png",
+      "imageHint": "chat screenshot"
+    },
+    {
+      "id": "testimonial-khalid",
+      "description": "Testimonial from Khalid",
+      "imageUrl": "https://storage.googleapis.com/project-spark-302315.appspot.com/project-L251XQxS/images/clwvyvvq00001la0o48yr0xsz.png",
+      "imageHint": "chat screenshot"
+    },
+    {
+      "id": "testimonial-nat",
+      "description": "Testimonial from Nat",
+      "imageUrl": "https://storage.googleapis.com/project-spark-302315.appspot.com/project-L251XQxS/images/clwvyvvq00001la0o48yr0xsz.png",
+      "imageHint": "chat screenshot"
+    },
+    {
+      "id": "testimonial-nisa",
+      "description": "Testimonial from Nisa",
+      "imageUrl": "https://storage.googleapis.com/project-spark-302315.appspot.com/project-L251XQxS/images/clwvyvvq00001la0o48yr0xsz.png",
+      "imageHint": "chat screenshot"
+    },
+    {
+      "id": "testimonial-nofvia",
+      "description": "Testimonial from Nofvia",
+      "imageUrl": "https://storage.googleapis.com/project-spark-302315.appspot.com/project-L251XQxS/images/clwvyvvq00001la0o48yr0xsz.png",
+      "imageHint": "chat screenshot"
+    },
+    {
+      "id": "testimonial-teguh",
+      "description": "Testimonial from Teguh",
+      "imageUrl": "https://storage.googleapis.com/project-spark-302315.appspot.com/project-L251XQxS/images/clwvyvvq00001la0o48yr0xsz.png",
+      "imageHint": "chat screenshot"
+    },
+    {
+      "id": "testimonial-vania",
+      "description": "Testimonial from Vania",
+      "imageUrl": "https://storage.googleapis.com/project-spark-302315.appspot.com/project-L251XQxS/images/clwvyvvq00001la0o48yr0xsz.png",
+      "imageHint": "chat screenshot"
+    },
+    {
+      "id": "testimonial-wiwin",
+      "description": "Testimonial from Wiwin",
       "imageUrl": "https://storage.googleapis.com/project-spark-302315.appspot.com/project-L251XQxS/images/clwvyvvq00001la0o48yr0xsz.png",
       "imageHint": "chat screenshot"
     }
