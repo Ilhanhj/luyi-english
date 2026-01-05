@@ -20,7 +20,7 @@ import { testimonials } from "@/lib/data";
 const SpeechBubble = ({ children }: { children: React.ReactNode }) => (
   <div className="relative">
     {children}
-    <div className="absolute bottom-0 left-8 sm:left-12 transform translate-y-1/2 w-0 h-0 border-t-[20px] border-t-card border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent"></div>
+    <div className="absolute bottom-0 left-8 sm:left-12 transform translate-y-[9px] w-0 h-0 border-t-[20px] border-t-slate-900/60 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent"></div>
   </div>
 );
 
@@ -28,7 +28,7 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="py-20 md:py-28 bg-background relative overflow-hidden"
+      className="py-20 md:py-28 relative overflow-hidden"
     >
       <div className="container mx-auto px-4 md:px-8">
         <div
@@ -56,29 +56,29 @@ export default function Testimonials() {
               >
                 <div className="p-4 h-full">
                   <SpeechBubble>
-                    <Card className="overflow-hidden rounded-2xl shadow-md border border-border hover:scale-[1.02] hover:shadow-lg transition-all duration-500 bg-card">
+                    <div className="glass-card overflow-hidden rounded-3xl !bg-slate-900/60 hover:scale-[1.02] hover:shadow-2xl transition-all duration-500">
                       <CardContent className="p-0">
                         <Image
                           src={testimonial.imageUrl}
                           alt={testimonial.imageAlt}
                           width={400}
                           height={600}
-                          className="w-full h-auto object-cover rounded-2xl"
+                          className="w-full h-auto object-cover rounded-3xl"
                         />
                       </CardContent>
-                    </Card>
+                    </div>
                   </SpeechBubble>
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
 
-          <CarouselPrevious className="hidden sm:flex -left-12 bg-card border-border text-foreground hover:bg-secondary" />
-          <CarouselNext className="hidden sm:flex -right-12 bg-card border-border text-foreground hover:bg-secondary" />
+          <CarouselPrevious className="hidden sm:flex -left-12 glass-card text-white hover:bg-white/20" />
+          <CarouselNext className="hidden sm:flex -right-12 glass-card text-white hover:bg-white/20" />
         </Carousel>
         
         <div className="text-center mt-12 animate-in fade-in slide-in-from-bottom-12 duration-700">
-          <Button asChild variant="outline" size="lg" className="bg-card border-border backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-card/80 hover:border-primary hover:text-primary hover:scale-105 hover:-translate-y-px px-8 py-6 text-lg">
+          <Button asChild variant="outline" size="lg" className="glass-card border-white/10 text-white backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover:scale-105 hover:-translate-y-px px-8 py-6 text-lg">
             <Link href="/testimonials-gallery">
               Lihat Semua Testimoni <MoveRight className="ml-2 h-5 w-5" />
             </Link>

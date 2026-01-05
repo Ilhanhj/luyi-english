@@ -25,7 +25,6 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("#home");
   const navRef = useRef<HTMLElement>(null);
-  const [indicatorStyle, setIndicatorStyle] = useState({});
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,18 +45,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    if (navRef.current) {
-      const activeElement = navRef.current.querySelector(`[data-href="${activeLink}"]`) as HTMLElement;
-      if (activeElement) {
-        setIndicatorStyle({
-          left: activeElement.offsetLeft,
-          width: activeElement.offsetWidth,
-        });
-      }
-    }
-  }, [activeLink]);
-
   const NavLinks = ({ className, onLinkClick }: { className?: string, onLinkClick?: () => void }) => (
     <>
       {navLinks.map((link) => (
@@ -66,8 +53,8 @@ export default function Header() {
           href={link.href}
           data-href={link.href}
           className={cn(
-            "relative z-10 px-4 py-2 text-sm font-medium transition-colors duration-300",
-            activeLink === link.href ? "text-primary" : "text-muted-foreground hover:text-foreground",
+            "relative z-10 px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-full",
+            activeLink === link.href ? "text-white bg-white/10" : "text-gray-300 hover:text-white",
             className
           )}
           onClick={(e) => {
@@ -87,36 +74,29 @@ export default function Header() {
     <header
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300 animate-in fade-in-0 slide-in-from-top-4",
-        isScrolled ? "bg-background/80 backdrop-blur-lg border-b border-border" : "bg-transparent"
+        isScrolled ? "bg-slate-950/60 backdrop-blur-lg border-b border-white/10" : "bg-transparent"
       )}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-        {/* Left: Logo */}
-        <Link href="#home" className="flex items-center gap-2 font-bold text-lg text-foreground hover:text-gray-700 transition-colors">
+        <Link href="#home" className="flex items-center gap-2 font-bold text-lg text-white">
           <Image
              src={logo}
              alt="LuyiEnglish Logo"
              width={180}
              height={48}
-             className="w-36 object-contain dark:invert"
+             className="w-36 object-contain invert"
            />
         </Link>
 
-        {/* Center: Floating Nav */}
         <div className="hidden md:flex absolute left-1/2 -translate-x-1/2">
-            <nav ref={navRef} className="relative bg-card flex items-center p-1 rounded-full border border-border shadow-sm">
+            <nav ref={navRef} className="relative glass-card flex items-center p-1 rounded-full !bg-slate-800/60">
                  <NavLinks />
-                 <div
-                    className="absolute top-1 bottom-1 bg-secondary rounded-full transition-all duration-300 ease-in-out"
-                    style={indicatorStyle}
-                ></div>
             </nav>
         </div>
         
-        {/* Right: Actions */}
         <div className="hidden md:flex items-center gap-2">
           <ThemeToggle />
-          <Button asChild className="bg-accent text-accent-foreground font-bold rounded-full shadow-md shadow-yellow-500/20 dark:shadow-yellow-400/10 transition-all duration-300 hover:scale-105 hover:shadow-yellow-500/40 hover:-translate-y-px">
+          <Button asChild className="bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-bold rounded-full shadow-lg shadow-blue-500/30 transition-all duration-300 hover:scale-105 hover:shadow-blue-500/50 hover:-translate-y-px">
             <Link href="https://wa.me/6281234567890" target="_blank">
               <Play className="mr-2 h-4 w-4 fill-current"/>
               Chat Us Now
@@ -124,26 +104,25 @@ export default function Header() {
           </Button>
         </div>
 
-        {/* Mobile Menu */}
         <div className="md:hidden flex items-center gap-2">
           <ThemeToggle />
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6 text-foreground" />
+                <Menu className="h-6 w-6 text-white" />
                 <span className="sr-only">Buka menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-background/90 backdrop-blur-lg border-l-border w-[250px] sm:w-[300px]">
+            <SheetContent side="right" className="bg-slate-950/90 backdrop-blur-xl border-l-white/10 w-[250px] sm:w-[300px]">
               <SheetHeader>
                  <SheetTitle className="sr-only">Main Menu</SheetTitle>
-                 <Link href="#home" className="flex items-center gap-2 font-bold text-lg text-foreground mb-4">
+                 <Link href="#home" className="flex items-center gap-2 font-bold text-lg text-white mb-4">
                     <Image
                       src={logo}
                       alt="LuyiEnglish Logo"
                       width={150}
                       height={40}
-                      className="w-32 object-contain dark:invert"
+                      className="w-32 object-contain invert"
                     />
                  </Link>
               </SheetHeader>
@@ -152,7 +131,7 @@ export default function Header() {
                     <Link
                       key={link.href}
                       href={link.href}
-                      className="text-lg text-muted-foreground hover:text-foreground"
+                      className="text-lg text-gray-300 hover:text-white"
                       onClick={(e) => {
                         e.preventDefault();
                         document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
@@ -162,7 +141,7 @@ export default function Header() {
                       {link.label}
                     </Link>
                   ))}
-                 <Button asChild className="mt-4 bg-accent text-accent-foreground font-bold rounded-full shadow-lg shadow-yellow-500/30">
+                 <Button asChild className="mt-4 bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-bold rounded-full shadow-lg shadow-blue-500/30">
                   <Link href="https://wa.me/6281234567890" target="_blank" onClick={() => setIsOpen(false)}>Chat Us Now</Link>
                 </Button>
               </nav>

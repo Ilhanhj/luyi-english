@@ -53,31 +53,31 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-secondary border-t border-border mt-16 md:mt-24">
+    <footer className="bg-slate-900/40 border-t border-white/10 mt-16 md:mt-24">
       <div className="container mx-auto px-4 md:px-6 py-12 animate-in fade-in slide-in-from-bottom-12 duration-700">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
           <div className="flex flex-col gap-4 items-center md:items-start text-center md:text-left">
-            <Link href="#home" className="flex items-center gap-2 font-bold text-xl text-primary transition-transform duration-300 hover:scale-105">
+            <Link href="#home" className="flex items-center gap-2 font-bold text-xl text-white transition-transform duration-300 hover:scale-105">
               <Image
                   src={logo}
                   alt="LuyiEnglish Logo"
                   width={180}
                   height={48}
-                  className="w-36 object-contain dark:invert"
+                  className="w-36 object-contain invert"
                 />
             </Link>
-            <p className="text-muted-foreground text-sm max-w-xs">
+            <p className="text-gray-400 text-sm max-w-xs">
               Learn English the fun and easy way with our professional tutors.
             </p>
           </div>
 
           <div>
-            <h3 className="font-semibold text-primary mb-4 text-center md:text-left">Quick Links</h3>
+            <h3 className="font-semibold text-white mb-4 text-center md:text-left">Quick Links</h3>
             <ul className="space-y-2 text-center md:text-left">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors duration-300">
+                  <Link href={link.href} className="text-gray-400 hover:text-white transition-colors duration-300">
                     {link.label}
                   </Link>
                 </li>
@@ -86,11 +86,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-primary mb-4 text-center md:text-left">Contact Us</h3>
+            <h3 className="font-semibold text-white mb-4 text-center md:text-left">Contact Us</h3>
             <ul className="space-y-3 text-center md:text-left">
               {contactInfo.map(({ Icon, text, href }) => (
                 <li key={text}>
-                  <a href={href} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 text-muted-foreground hover:text-primary transition-colors duration-300 group">
+                  <a href={href} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 text-gray-400 hover:text-white transition-colors duration-300 group">
                     <Icon className="h-5 w-5 flex-shrink-0 transition-transform duration-300 group-hover:scale-110" />
                     <span>{text}</span>
                   </a>
@@ -100,7 +100,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-primary mb-4 text-center md:text-left">Follow Us</h3>
+            <h3 className="font-semibold text-white mb-4 text-center md:text-left">Follow Us</h3>
             <div className="flex items-center justify-center md:justify-start gap-4">
               {socialLinks.map(({ Icon, href, label }) => (
                 <a
@@ -109,7 +109,7 @@ export default function Footer() {
                   aria-label={label}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-card text-primary hover:bg-primary/20 hover:text-primary transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
                 >
                   <Icon className="h-5 w-5" />
                 </a>
@@ -119,7 +119,7 @@ export default function Footer() {
 
         </div>
 
-        <div className="mt-12 border-t border-border pt-8 text-center text-sm text-gray-500 dark:text-gray-400">
+        <div className="mt-12 border-t border-white/10 pt-8 text-center text-sm text-gray-500">
           <p>&copy; {currentYear} LuyiEnglish. All rights reserved.</p>
         </div>
       </div>

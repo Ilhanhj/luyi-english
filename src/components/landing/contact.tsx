@@ -24,21 +24,20 @@ const socialLinks = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-16 md:py-24 bg-background relative">
+    <section id="contact" className="py-16 md:py-24 relative">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="relative bg-secondary p-8 md:p-12 overflow-hidden rounded-2xl animate-in fade-in slide-in-from-bottom-12 duration-700">
+        <div className="relative glass-card p-8 md:p-12 overflow-hidden rounded-3xl animate-in fade-in slide-in-from-bottom-12 duration-700">
           
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 z-10 relative">
             <div className="text-center md:text-left">
-              <SectionTitle className="text-3xl sm:text-4xl lg:text-5xl !text-left text-primary">
-                <Sparkles className="absolute -top-8 -left-8 text-accent" />
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-amber-400">
                 Jangan Tunggu Lagi, Kuasai Bahasa Inggris Sekarang!
-              </SectionTitle>
-              <p className="mt-4 text-muted-foreground">Ambil langkah pertama menuju masa depan yang lebih cerah. Hubungi kami untuk sesi trial gratis.</p>
+              </h2>
+              <p className="mt-4 text-gray-300">Ambil langkah pertama menuju masa depan yang lebih cerah. Hubungi kami untuk sesi trial gratis.</p>
             </div>
             
             <div className="flex flex-col items-center gap-4">
-               <Button asChild size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground font-bold rounded-full shadow-lg shadow-yellow-500/40 dark:shadow-yellow-400/20 transition-all duration-300 hover:scale-105 hover:shadow-yellow-500/60 hover:-translate-y-px px-8 py-6 text-lg">
+               <Button asChild size="lg" className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-bold rounded-full shadow-lg shadow-blue-500/40 transition-all duration-300 hover:scale-105 hover:shadow-blue-500/60 hover:-translate-y-px px-8 py-6 text-lg">
                 <Link href="https://wa.me/6281234567890" target="_blank">
                   <Play className="mr-2" />
                   Chat Us Now
@@ -52,7 +51,7 @@ export default function Contact() {
                     aria-label={label}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
                   >
                     <Icon className="h-5 w-5" />
                   </Link>

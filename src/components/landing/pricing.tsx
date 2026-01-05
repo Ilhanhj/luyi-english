@@ -13,7 +13,7 @@ import { Badge } from "@/components/ui/badge";
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-16 md:py-24 bg-secondary relative">
+    <section id="pricing" className="py-16 md:py-24 relative">
       <div className="container mx-auto px-4 md:px-6 relative">
         <div className="text-center mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700">
           <SectionTitle>Investasi untuk Masa Depanmu</SectionTitle>
@@ -24,13 +24,13 @@ export default function Pricing() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 animate-in fade-in slide-in-from-bottom-12 duration-700">
           {pricingPackages.map((pkg) => (
-            <Card
+            <div
               key={pkg.id}
               className={cn(
-                "flex flex-col rounded-xl overflow-hidden transition-all duration-300 bg-card shadow-sm",
+                "glass-card flex flex-col rounded-3xl overflow-hidden transition-all duration-300",
                 pkg.isPopular
-                  ? "border-2 border-accent shadow-lg shadow-yellow-500/20 dark:shadow-yellow-400/10"
-                  : "border border-border"
+                  ? "border-2 border-amber-400 shadow-2xl shadow-amber-500/20"
+                  : "!border-white/10"
               )}
             >
               <CardHeader className="p-6 text-center relative">
@@ -39,25 +39,25 @@ export default function Pricing() {
                     className={cn(
                       "absolute -top-4 left-1/2 -translate-x-1/2 border-0 shadow-md text-sm py-1 px-4",
                       pkg.isPopular
-                        ? "bg-accent text-accent-foreground font-semibold"
-                        : "bg-primary text-primary-foreground"
+                        ? "bg-amber-400 text-slate-900 font-semibold"
+                        : "bg-blue-500 text-white"
                     )}
                   >
                     {pkg.badgeText}
                   </Badge>
                 )}
-                <CardTitle className="text-xl font-bold text-foreground pt-4">{pkg.title}</CardTitle>
+                <CardTitle className="text-xl font-bold text-white pt-4">{pkg.title}</CardTitle>
                 <div className="flex items-baseline justify-center gap-1 pt-2">
-                  <span className="text-4xl font-extrabold text-foreground">{pkg.price}</span>
-                  <span className="text-sm text-muted-foreground">{pkg.priceDetails}</span>
+                  <span className="text-4xl font-extrabold text-white">{pkg.price}</span>
+                  <span className="text-sm text-gray-400">{pkg.priceDetails}</span>
                 </div>
               </CardHeader>
               <CardContent className="p-6 flex flex-col flex-grow">
                 <ul className="space-y-4 flex-grow mb-8">
                   {pkg.features.map((feature) => (
                     <li key={feature.name} className="flex items-start gap-3 text-sm">
-                      <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground">{feature.name}</span>
+                      <Check className="h-5 w-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-300">{feature.name}</span>
                     </li>
 
                   ))}
@@ -67,15 +67,15 @@ export default function Pricing() {
                   className={cn(
                     "w-full rounded-full font-bold transition-all duration-300 transform hover:scale-105 hover:-translate-y-px mt-4",
                     pkg.isPopular
-                      ? "bg-accent text-accent-foreground shadow-lg shadow-yellow-500/30 dark:shadow-yellow-400/20 hover:shadow-yellow-500/50"
-                      : "bg-primary text-primary-foreground"
+                      ? "bg-amber-400 text-slate-900 shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50"
+                      : "bg-blue-500 text-white"
                   )}
                   size="lg"
                 >
                   <Link href="#contact">{pkg.ctaText}</Link>
                 </Button>
               </CardContent>
-            </Card>
+            </div>
           ))}
         </div>
       </div>
