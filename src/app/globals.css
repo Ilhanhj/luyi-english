@@ -51,3 +51,50 @@
     @apply bg-slate-900/40 backdrop-blur-lg border border-white/10 rounded-2xl shadow-xl;
   }
 }
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes float-slow {
+    0%, 100% { transform: translateY(0) rotate(var(--tw-rotate)); }
+    50% { transform: translateY(-20px) rotate(var(--tw-rotate)); }
+}
+
+.animate-blob {
+  animation: blob 20s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-float-slow {
+    animation: float-slow 6s ease-in-out infinite;
+}
+
+/* Di file globals.css paling bawah */
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% - 2rem)); }
+}
+
+@keyframes marquee-reverse {
+  from { transform: translateX(calc(-100% - 2rem)); }
+  to { transform: translateX(0); }
+}
+
+/* GANTI DARI 50s KE 100s (Makin besar angka, makin pelan & smooth) */
+.animate-marquee {
+  animation: marquee 100s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 100s linear infinite;
+}
+
+/* Pause pas hover biar user bisa baca */
+.group:hover .animate-marquee,
+.group:hover .animate-marquee-reverse {
+  animation-play-state: paused;
+}
