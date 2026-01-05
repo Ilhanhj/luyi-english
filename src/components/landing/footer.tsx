@@ -53,7 +53,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-secondary border-t border-primary/20 mt-16 md:mt-24">
+    <footer className="bg-secondary border-t border-border mt-16 md:mt-24">
       <div className="container mx-auto px-4 md:px-6 py-12 animate-in fade-in slide-in-from-bottom-12 duration-700">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
@@ -64,7 +64,7 @@ export default function Footer() {
                   alt="LuyiEnglish Logo"
                   width={180}
                   height={48}
-                  className="w-36 object-contain"
+                  className="w-36 object-contain dark:invert"
                 />
             </Link>
             <p className="text-muted-foreground text-sm max-w-xs">
@@ -109,7 +109,7 @@ export default function Footer() {
                   aria-label={label}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary/20 hover:text-accent transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-card text-primary hover:bg-primary/20 hover:text-accent transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
                 >
                   <Icon className="h-5 w-5" />
                 </a>
@@ -119,7 +119,7 @@ export default function Footer() {
 
         </div>
 
-        <div className="mt-12 border-t border-primary/20 pt-8 text-center text-sm text-gray-500">
+        <div className="mt-12 border-t border-border pt-8 text-center text-sm text-gray-500 dark:text-gray-400">
           <p>&copy; {currentYear} LuyiEnglish. All rights reserved.</p>
         </div>
       </div>

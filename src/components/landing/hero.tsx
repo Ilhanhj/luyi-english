@@ -35,8 +35,8 @@ export default function Hero() {
   const floatingTutors = tutors.slice(0, 8);
 
   return (
-    <section id="home" className="py-24 md:py-40 bg-secondary relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[150px] -z-10"></div>
+    <section id="home" className="py-24 md:py-40 bg-background relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 dark:bg-primary/10 rounded-full blur-[150px] -z-10"></div>
 
         {/* Floating Tutor Cards */}
         <div className="absolute inset-0 w-full h-full -z-20">
@@ -100,7 +100,7 @@ export default function Hero() {
               Tingkatkan kepercayaan dirimu dalam berbahasa Inggris, mulai hari ini!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild variant="outline" size="lg" className="bg-background/50 border-primary/50 backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-background/80 hover:border-accent hover:text-accent hover:scale-105 hover:-translate-y-px px-8 py-6 text-lg">
+              <Button asChild variant="outline" size="lg" className="border-primary/50 backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-card/80 hover:border-accent hover:text-accent hover:scale-105 hover:-translate-y-px px-8 py-6 text-lg">
                 <Link href="#tutors">
                   Lihat Tutor Kami <MoveRight className="ml-2 h-5 w-5" />
                 </Link>
@@ -113,7 +113,7 @@ export default function Hero() {
               </Button>
             </div>
              <div className="flex justify-center">
-                <Button asChild variant="outline" size="lg" className="bg-transparent border-primary/50 backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-background/80 hover:border-accent/50 hover:text-accent hover:scale-105 hover:-translate-y-px px-8 py-6 text-lg">
+                <Button asChild variant="outline" size="lg" className="bg-transparent border-primary/20 backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-card hover:border-accent/50 hover:text-accent hover:scale-105 hover:-translate-y-px px-8 py-6 text-lg">
                     <Link href="/testimonials-gallery">
                         Lihat Testimoni
                     </Link>
@@ -124,7 +124,7 @@ export default function Hero() {
           <div className="mt-20 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto">
               {stats.map((stat, index) => (
-                <div key={index} className="bg-card/80 backdrop-blur-sm border border-primary/20 p-4 rounded-xl text-center transition-all duration-300 hover:border-accent/50 hover:scale-105 hover:-translate-y-1 hover:shadow-xl">
+                <div key={index} className="bg-card/80 backdrop-blur-sm border border-border p-4 rounded-xl text-center transition-all duration-300 hover:border-accent/50 hover:scale-105 hover:-translate-y-1 hover:shadow-xl">
                   <stat.icon className="h-8 w-8 mx-auto text-accent mb-2" />
                   <p className="text-2xl font-bold text-primary">{stat.value}</p>
                   <p className="text-sm text-muted-foreground">{stat.label}</p>

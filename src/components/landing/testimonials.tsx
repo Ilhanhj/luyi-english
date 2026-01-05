@@ -28,7 +28,7 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="py-20 md:py-28 bg-secondary relative overflow-hidden"
+      className="py-20 md:py-28 bg-background relative overflow-hidden"
     >
       <div className="container mx-auto px-4 md:px-8">
         <div
@@ -56,7 +56,7 @@ export default function Testimonials() {
               >
                 <div className="p-4 h-full">
                   <SpeechBubble>
-                    <Card className="overflow-hidden rounded-2xl shadow-lg border border-primary/20 hover:scale-[1.02] hover:shadow-xl transition-all duration-500 bg-card">
+                    <Card className="overflow-hidden rounded-2xl shadow-lg border border-border hover:scale-[1.02] hover:shadow-xl transition-all duration-500 bg-card">
                       <CardContent className="p-0">
                         <Image
                           src={testimonial.imageUrl}
@@ -73,12 +73,12 @@ export default function Testimonials() {
             ))}
           </CarouselContent>
 
-          <CarouselPrevious className="hidden sm:flex -left-12 bg-card border-primary/30 text-primary hover:bg-secondary" />
-          <CarouselNext className="hidden sm:flex -right-12 bg-card border-primary/30 text-primary hover:bg-secondary" />
+          <CarouselPrevious className="hidden sm:flex -left-12 bg-card border-border text-foreground hover:bg-secondary" />
+          <CarouselNext className="hidden sm:flex -right-12 bg-card border-border text-foreground hover:bg-secondary" />
         </Carousel>
         
         <div className="text-center mt-12 animate-in fade-in slide-in-from-bottom-12 duration-700">
-          <Button asChild variant="outline" size="lg" className="bg-card border-primary/50 backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-card/80 hover:border-accent hover:text-accent hover:scale-105 hover:-translate-y-px px-8 py-6 text-lg">
+          <Button asChild variant="outline" size="lg" className="bg-card border-border backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-card/80 hover:border-accent hover:text-accent hover:scale-105 hover:-translate-y-px px-8 py-6 text-lg">
             <Link href="/testimonials-gallery">
               Lihat Semua Testimoni <MoveRight className="ml-2 h-5 w-5" />
             </Link>

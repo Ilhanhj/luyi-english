@@ -13,7 +13,7 @@ import { Badge } from "@/components/ui/badge";
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-16 md:py-24 bg-background relative">
+    <section id="pricing" className="py-16 md:py-24 bg-secondary relative">
       <div className="container mx-auto px-4 md:px-6 relative">
         <div className="text-center mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700">
           <SectionTitle>Investasi untuk Masa Depanmu</SectionTitle>
@@ -27,20 +27,20 @@ export default function Pricing() {
             <Card
               key={pkg.id}
               className={cn(
-                "flex flex-col rounded-xl overflow-hidden transition-all duration-300",
+                "flex flex-col rounded-xl overflow-hidden transition-all duration-300 bg-card",
                 pkg.isPopular
-                  ? "border-2 border-accent shadow-2xl shadow-yellow-500/20"
-                  : "border border-primary/20"
+                  ? "border-2 border-accent shadow-2xl shadow-yellow-500/20 dark:shadow-yellow-400/10"
+                  : "border border-border"
               )}
             >
-              <CardHeader className="p-6 bg-secondary/50 text-center relative">
+              <CardHeader className="p-6 text-center relative">
                 {pkg.badgeText && (
                   <Badge
                     className={cn(
                       "absolute -top-4 left-1/2 -translate-x-1/2 border-0 shadow-lg text-sm py-1 px-4",
                       pkg.isPopular
                         ? "bg-accent text-accent-foreground font-semibold"
-                        : "bg-primary/20 text-primary"
+                        : "bg-primary text-primary-foreground"
                     )}
                   >
                     {pkg.badgeText}
@@ -48,7 +48,7 @@ export default function Pricing() {
                 )}
                 <CardTitle className="text-xl font-bold text-primary pt-4">{pkg.title}</CardTitle>
                 <div className="flex items-baseline justify-center gap-1 pt-2">
-                  <span className="text-4xl font-extrabold text-primary">{pkg.price}</span>
+                  <span className="text-4xl font-extrabold text-foreground">{pkg.price}</span>
                   <span className="text-sm text-muted-foreground">{pkg.priceDetails}</span>
                 </div>
               </CardHeader>

@@ -42,6 +42,7 @@ export default function Header() {
       }
     };
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -66,12 +67,11 @@ export default function Header() {
           data-href={link.href}
           className={cn(
             "relative z-10 px-4 py-2 text-sm font-medium transition-colors duration-300",
-            activeLink === link.href ? "text-primary" : "text-muted-foreground hover:text-foreground",
+            activeLink === link.href ? "text-accent-foreground" : "text-muted-foreground hover:text-foreground",
             className
           )}
           onClick={(e) => {
             e.preventDefault();
-            setActiveLink(link.href);
             document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
             if (onLinkClick) onLinkClick();
           }}
@@ -87,24 +87,24 @@ export default function Header() {
     <header
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300 animate-in fade-in-0 slide-in-from-top-4",
-        isScrolled ? "bg-background/80 backdrop-blur-lg border-b" : "bg-transparent"
+        isScrolled ? "bg-background/80 backdrop-blur-lg border-b border-border" : "bg-transparent"
       )}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         {/* Left: Logo */}
         <Link href="#home" className="flex items-center gap-2 font-bold text-lg text-foreground hover:text-gray-700 transition-colors">
           <Image
-                           src={logo}
-                           alt="LuyiEnglish Logo"
-                           width={180}
-                           height={48}
-                           className="w-36 object-contain"
-                         />
+             src={logo}
+             alt="LuyiEnglish Logo"
+             width={180}
+             height={48}
+             className="w-36 object-contain dark:invert"
+           />
         </Link>
 
         {/* Center: Floating Nav */}
         <div className="hidden md:flex absolute left-1/2 -translate-x-1/2">
-            <nav ref={navRef} className="relative bg-card flex items-center p-1 rounded-full border shadow-md">
+            <nav ref={navRef} className="relative bg-card flex items-center p-1 rounded-full border border-border shadow-md">
                  <NavLinks />
                  <div
                     className="absolute top-1 bottom-1 bg-accent rounded-full transition-all duration-300 ease-in-out"
@@ -143,16 +143,29 @@ export default function Header() {
                       alt="LuyiEnglish Logo"
                       width={150}
                       height={40}
-                      className="w-32 object-contain"
+                      className="w-32 object-contain dark:invert"
                     />
                  </Link>
               </SheetHeader>
-              <div className="flex flex-col gap-4 pt-4">
-                 <NavLinks className="flex-col items-start gap-2 text-base !px-2" onLinkClick={() => setIsOpen(false)} />
+              <nav className="flex flex-col gap-4 pt-4">
+                 {navLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="text-lg text-muted-foreground hover:text-foreground"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
+                        setIsOpen(false);
+                      }}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
                  <Button asChild className="mt-4 bg-accent text-accent-foreground font-bold rounded-full shadow-lg shadow-yellow-500/30">
                   <Link href="https://wa.me/6281234567890" target="_blank" onClick={() => setIsOpen(false)}>Chat Us Now</Link>
                 </Button>
-              </div>
+              </nav>
             </SheetContent>
           </Sheet>
         </div>
