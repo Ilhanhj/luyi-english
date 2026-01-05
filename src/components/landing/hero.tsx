@@ -60,13 +60,6 @@ export default function Hero() {
                 </Link>
               </Button>
             </div>
-             <div className="flex justify-center">
-                <Button asChild variant="outline" size="lg" className="glass-card border-white/10 text-white backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover:scale-105 hover:-translate-y-px px-8 py-6 text-lg">
-                    <Link href="/testimonials-gallery">
-                        Lihat Testimoni
-                    </Link>
-                </Button>
-            </div>
           </div>
           
           <div className="mt-20 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200">
