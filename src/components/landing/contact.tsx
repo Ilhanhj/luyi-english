@@ -1,8 +1,9 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Instagram } from "lucide-react";
+import { MessageCircle, Instagram, Play } from "lucide-react";
 import SectionTitle from "./section-title";
+import { Sparkles } from "./sparkles";
 
 const TikTokIcon = ({ className }: { className?: string }) => (
   <svg
@@ -23,21 +24,25 @@ const socialLinks = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-16 md:py-24 bg-transparent relative">
+    <section id="contact" className="py-16 md:py-24 bg-background relative">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="relative glass-card p-8 md:p-12 overflow-hidden animate-in fade-in slide-in-from-bottom-12 duration-700">
-           <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px] -z-10"></div>
-           <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-pink-500/20 rounded-full blur-[100px] -z-10"></div>
+        <div className="relative bg-secondary p-8 md:p-12 overflow-hidden rounded-2xl animate-in fade-in slide-in-from-bottom-12 duration-700">
           
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 z-10 relative">
             <div className="text-center md:text-left">
-              <SectionTitle className="text-3xl sm:text-4xl lg:text-5xl !text-left">Jangan Tunggu Lagi, Kuasai Bahasa Inggris Sekarang!</SectionTitle>
+              <SectionTitle className="text-3xl sm:text-4xl lg:text-5xl !text-left text-primary">
+                <Sparkles className="absolute -top-8 -left-8 text-accent" />
+                Jangan Tunggu Lagi, Kuasai Bahasa Inggris Sekarang!
+              </SectionTitle>
               <p className="mt-4 text-muted-foreground">Ambil langkah pertama menuju masa depan yang lebih cerah. Hubungi kami untuk sesi trial gratis.</p>
             </div>
             
             <div className="flex flex-col items-center gap-4">
-               <Button asChild size="lg" className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-pink-500 text-white font-bold rounded-full shadow-lg shadow-pink-500/40 transition-all duration-300 hover:scale-105 hover:shadow-pink-500/60 hover:-translate-y-px px-8 py-6 text-lg">
-                <Link href="https://wa.me/6281234567890" target="_blank">Chat Us Now</Link>
+               <Button asChild size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground font-bold rounded-full shadow-lg shadow-yellow-500/40 transition-all duration-300 hover:scale-105 hover:shadow-yellow-500/60 hover:-translate-y-px px-8 py-6 text-lg">
+                <Link href="https://wa.me/6281234567890" target="_blank">
+                  <Play className="mr-2" />
+                  Chat Us Now
+                </Link>
               </Button>
                <div className="flex items-center gap-4 mt-2">
                 {socialLinks.map(({ Icon, href, label }) => (
@@ -47,7 +52,7 @@ export default function Contact() {
                     aria-label={label}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-foreground/10 text-foreground hover:bg-foreground/20 hover:text-pink-500 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
                   >
                     <Icon className="h-5 w-5" />
                   </Link>
