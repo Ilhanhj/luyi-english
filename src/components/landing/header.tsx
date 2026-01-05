@@ -67,7 +67,7 @@ export default function Header() {
           data-href={link.href}
           className={cn(
             "relative z-10 px-4 py-2 text-sm font-medium transition-colors duration-300",
-            activeLink === link.href ? "text-accent-foreground" : "text-muted-foreground hover:text-foreground",
+            activeLink === link.href ? "text-primary" : "text-muted-foreground hover:text-foreground",
             className
           )}
           onClick={(e) => {
@@ -104,10 +104,10 @@ export default function Header() {
 
         {/* Center: Floating Nav */}
         <div className="hidden md:flex absolute left-1/2 -translate-x-1/2">
-            <nav ref={navRef} className="relative bg-card flex items-center p-1 rounded-full border border-border shadow-md">
+            <nav ref={navRef} className="relative bg-card flex items-center p-1 rounded-full border border-border shadow-sm">
                  <NavLinks />
                  <div
-                    className="absolute top-1 bottom-1 bg-accent rounded-full transition-all duration-300 ease-in-out"
+                    className="absolute top-1 bottom-1 bg-secondary rounded-full transition-all duration-300 ease-in-out"
                     style={indicatorStyle}
                 ></div>
             </nav>
@@ -116,7 +116,7 @@ export default function Header() {
         {/* Right: Actions */}
         <div className="hidden md:flex items-center gap-2">
           <ThemeToggle />
-          <Button asChild className="bg-accent text-accent-foreground font-bold rounded-full shadow-lg shadow-yellow-500/30 transition-all duration-300 hover:scale-105 hover:shadow-yellow-500/50 hover:-translate-y-px">
+          <Button asChild className="bg-accent text-accent-foreground font-bold rounded-full shadow-md shadow-yellow-500/20 dark:shadow-yellow-400/10 transition-all duration-300 hover:scale-105 hover:shadow-yellow-500/40 hover:-translate-y-px">
             <Link href="https://wa.me/6281234567890" target="_blank">
               <Play className="mr-2 h-4 w-4 fill-current"/>
               Chat Us Now

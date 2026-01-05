@@ -27,9 +27,9 @@ export default function Pricing() {
             <Card
               key={pkg.id}
               className={cn(
-                "flex flex-col rounded-xl overflow-hidden transition-all duration-300 bg-card",
+                "flex flex-col rounded-xl overflow-hidden transition-all duration-300 bg-card shadow-sm",
                 pkg.isPopular
-                  ? "border-2 border-accent shadow-2xl shadow-yellow-500/20 dark:shadow-yellow-400/10"
+                  ? "border-2 border-accent shadow-lg shadow-yellow-500/20 dark:shadow-yellow-400/10"
                   : "border border-border"
               )}
             >
@@ -37,7 +37,7 @@ export default function Pricing() {
                 {pkg.badgeText && (
                   <Badge
                     className={cn(
-                      "absolute -top-4 left-1/2 -translate-x-1/2 border-0 shadow-lg text-sm py-1 px-4",
+                      "absolute -top-4 left-1/2 -translate-x-1/2 border-0 shadow-md text-sm py-1 px-4",
                       pkg.isPopular
                         ? "bg-accent text-accent-foreground font-semibold"
                         : "bg-primary text-primary-foreground"
@@ -46,7 +46,7 @@ export default function Pricing() {
                     {pkg.badgeText}
                   </Badge>
                 )}
-                <CardTitle className="text-xl font-bold text-primary pt-4">{pkg.title}</CardTitle>
+                <CardTitle className="text-xl font-bold text-foreground pt-4">{pkg.title}</CardTitle>
                 <div className="flex items-baseline justify-center gap-1 pt-2">
                   <span className="text-4xl font-extrabold text-foreground">{pkg.price}</span>
                   <span className="text-sm text-muted-foreground">{pkg.priceDetails}</span>
@@ -67,7 +67,7 @@ export default function Pricing() {
                   className={cn(
                     "w-full rounded-full font-bold transition-all duration-300 transform hover:scale-105 hover:-translate-y-px mt-4",
                     pkg.isPopular
-                      ? "bg-accent text-accent-foreground shadow-lg shadow-yellow-500/30 hover:shadow-yellow-500/50"
+                      ? "bg-accent text-accent-foreground shadow-lg shadow-yellow-500/30 dark:shadow-yellow-400/20 hover:shadow-yellow-500/50"
                       : "bg-primary text-primary-foreground"
                   )}
                   size="lg"

@@ -38,7 +38,7 @@ export default function Contact() {
             </div>
             
             <div className="flex flex-col items-center gap-4">
-               <Button asChild size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground font-bold rounded-full shadow-lg shadow-yellow-500/40 transition-all duration-300 hover:scale-105 hover:shadow-yellow-500/60 hover:-translate-y-px px-8 py-6 text-lg">
+               <Button asChild size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground font-bold rounded-full shadow-lg shadow-yellow-500/40 dark:shadow-yellow-400/20 transition-all duration-300 hover:scale-105 hover:shadow-yellow-500/60 hover:-translate-y-px px-8 py-6 text-lg">
                 <Link href="https://wa.me/6281234567890" target="_blank">
                   <Play className="mr-2" />
                   Chat Us Now

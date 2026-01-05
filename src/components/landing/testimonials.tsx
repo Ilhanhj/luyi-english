@@ -56,7 +56,7 @@ export default function Testimonials() {
               >
                 <div className="p-4 h-full">
                   <SpeechBubble>
-                    <Card className="overflow-hidden rounded-2xl shadow-lg border border-border hover:scale-[1.02] hover:shadow-xl transition-all duration-500 bg-card">
+                    <Card className="overflow-hidden rounded-2xl shadow-md border border-border hover:scale-[1.02] hover:shadow-lg transition-all duration-500 bg-card">
                       <CardContent className="p-0">
                         <Image
                           src={testimonial.imageUrl}
@@ -78,7 +78,7 @@ export default function Testimonials() {
         </Carousel>
         
         <div className="text-center mt-12 animate-in fade-in slide-in-from-bottom-12 duration-700">
-          <Button asChild variant="outline" size="lg" className="bg-card border-border backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-card/80 hover:border-accent hover:text-accent hover:scale-105 hover:-translate-y-px px-8 py-6 text-lg">
+          <Button asChild variant="outline" size="lg" className="bg-card border-border backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-card/80 hover:border-primary hover:text-primary hover:scale-105 hover:-translate-y-px px-8 py-6 text-lg">
             <Link href="/testimonials-gallery">
               Lihat Semua Testimoni <MoveRight className="ml-2 h-5 w-5" />
             </Link>

@@ -77,7 +77,7 @@ export default function Footer() {
             <ul className="space-y-2 text-center md:text-left">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-muted-foreground hover:text-accent transition-colors duration-300">
+                  <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors duration-300">
                     {link.label}
                   </Link>
                 </li>
@@ -90,7 +90,7 @@ export default function Footer() {
             <ul className="space-y-3 text-center md:text-left">
               {contactInfo.map(({ Icon, text, href }) => (
                 <li key={text}>
-                  <a href={href} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 text-muted-foreground hover:text-accent transition-colors duration-300 group">
+                  <a href={href} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 text-muted-foreground hover:text-primary transition-colors duration-300 group">
                     <Icon className="h-5 w-5 flex-shrink-0 transition-transform duration-300 group-hover:scale-110" />
                     <span>{text}</span>
                   </a>
@@ -109,7 +109,7 @@ export default function Footer() {
                   aria-label={label}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-card text-primary hover:bg-primary/20 hover:text-accent transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-card text-primary hover:bg-primary/20 hover:text-primary transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
                 >
                   <Icon className="h-5 w-5" />
                 </a>

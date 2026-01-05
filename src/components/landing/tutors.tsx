@@ -29,7 +29,7 @@ export default function Tutors() {
         <div className="hidden lg:grid lg:grid-cols-3 gap-8 animate-in fade-in slide-in-from-bottom-12 duration-700">
           {tutors.slice(0, 6).map((tutor) => (
             <div key={tutor.id} className="h-full">
-              <Card className="bg-card border border-border flex flex-col h-full overflow-hidden transition-all duration-300 hover:border-accent/50 hover:shadow-2xl hover:-translate-y-1">
+              <Card className="bg-card border border-border flex flex-col h-full overflow-hidden transition-all duration-300 hover:border-primary/50 hover:shadow-md hover:-translate-y-1">
                 <CardHeader className="p-6">
                   <div className="flex items-center gap-4">
                     <Image
@@ -42,7 +42,7 @@ export default function Tutors() {
                     />
                     <div className="flex-1">
                       <h3 className="font-bold text-lg text-primary">{tutor.name}</h3>
-                      <p className="text-sm text-accent font-semibold">{tutor.specialization}</p>
+                      <p className="text-sm text-accent-foreground/80 font-semibold">{tutor.specialization}</p>
                       <div className="flex items-center gap-1 mt-1">
                         <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                         <span className="font-semibold text-sm text-muted-foreground">{tutor.rating}</span>
@@ -89,7 +89,7 @@ export default function Tutors() {
                         />
                         <div className="flex-1">
                           <h3 className="font-bold text-lg text-primary">{tutor.name}</h3>
-                          <p className="text-sm text-accent font-semibold">{tutor.specialization}</p>
+                          <p className="text-sm text-accent-foreground/80 font-semibold">{tutor.specialization}</p>
                           <div className="flex items-center gap-1 mt-1">
                             <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                             <span className="font-semibold text-sm text-muted-foreground">{tutor.rating}</span>

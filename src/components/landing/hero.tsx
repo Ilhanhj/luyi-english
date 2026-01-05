@@ -70,7 +70,7 @@ export default function Hero() {
                   animations[index % animations.length]
                 )}
               >
-                <div className="flex items-center gap-2 bg-gradient-to-r from-primary/80 to-accent/80 dark:from-primary/50 dark:to-accent/50 backdrop-blur-md border border-white/20 shadow-lg rounded-full p-1 pr-4 transition-all duration-300 hover:scale-110">
+                <div className="flex items-center gap-2 bg-card/60 dark:bg-card/30 backdrop-blur-md border border-border/50 shadow-md rounded-full p-1 pr-3 transition-all duration-300 hover:scale-110">
                     <Image
                       src={tutor.photoUrl}
                       alt={tutor.name}
@@ -79,7 +79,7 @@ export default function Hero() {
                       className="rounded-full object-cover w-8 h-8"
                       data-ai-hint={tutor.photoHint}
                     />
-                    <span className="font-bold text-sm text-white">{tutor.name.split(' ')[0]}</span>
+                    <span className="font-bold text-sm text-foreground/80">{tutor.name.split(' ')[0]}</span>
                 </div>
               </div>
             )
@@ -90,7 +90,7 @@ export default function Hero() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid gap-8 items-center text-center">
           <div className="space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-1000 z-10">
-            <h1 className="relative text-5xl font-extrabold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl font-headline text-primary">
+            <h1 className="relative text-5xl font-extrabold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl font-headline text-foreground">
               <Sparkles className="absolute -top-12 left-0 w-24 h-24 text-accent" />
               Buka Potensi Bahasa Inggrismu
               <Sparkles className="absolute -bottom-12 right-0 w-24 h-24 text-accent" />
@@ -100,12 +100,12 @@ export default function Hero() {
               Tingkatkan kepercayaan dirimu dalam berbahasa Inggris, mulai hari ini!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild variant="outline" size="lg" className="border-primary/50 backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-card/80 hover:border-accent hover:text-accent hover:scale-105 hover:-translate-y-px px-8 py-6 text-lg">
+              <Button asChild variant="outline" size="lg" className="bg-card border-border backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-card/80 hover:border-primary/50 hover:text-primary hover:scale-105 hover:-translate-y-px px-8 py-6 text-lg">
                 <Link href="#tutors">
                   Lihat Tutor Kami <MoveRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild size="lg" className="bg-accent text-accent-foreground font-bold rounded-full shadow-lg shadow-yellow-500/40 transition-all duration-300 hover:scale-105 hover:shadow-yellow-500/60 hover:-translate-y-px px-8 py-6 text-lg">
+              <Button asChild size="lg" className="bg-accent text-accent-foreground font-bold rounded-full shadow-lg shadow-yellow-500/30 dark:shadow-yellow-400/20 transition-all duration-300 hover:scale-105 hover:shadow-yellow-500/50 hover:-translate-y-px px-8 py-6 text-lg">
                 <Link href="https://wa.me/6281234567890" target="_blank">
                   <Play className="mr-2 h-5 w-5 fill-current" />
                   Daftar Trial Gratis
@@ -113,7 +113,7 @@ export default function Hero() {
               </Button>
             </div>
              <div className="flex justify-center">
-                <Button asChild variant="outline" size="lg" className="bg-transparent border-primary/20 backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-card hover:border-accent/50 hover:text-accent hover:scale-105 hover:-translate-y-px px-8 py-6 text-lg">
+                <Button asChild variant="outline" size="lg" className="bg-card/80 border-border backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-card hover:border-primary/50 hover:text-primary hover:scale-105 hover:-translate-y-px px-8 py-6 text-lg">
                     <Link href="/testimonials-gallery">
                         Lihat Testimoni
                     </Link>
@@ -124,9 +124,9 @@ export default function Hero() {
           <div className="mt-20 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto">
               {stats.map((stat, index) => (
-                <div key={index} className="bg-card/80 backdrop-blur-sm border border-border p-4 rounded-xl text-center transition-all duration-300 hover:border-accent/50 hover:scale-105 hover:-translate-y-1 hover:shadow-xl">
+                <div key={index} className="bg-card/80 backdrop-blur-sm border border-border p-4 rounded-xl text-center transition-all duration-300 hover:border-primary/50 hover:scale-105 hover:-translate-y-1 hover:shadow-md">
                   <stat.icon className="h-8 w-8 mx-auto text-accent mb-2" />
-                  <p className="text-2xl font-bold text-primary">{stat.value}</p>
+                  <p className="text-2xl font-bold text-foreground">{stat.value}</p>
                   <p className="text-sm text-muted-foreground">{stat.label}</p>
                 </div>
               ))}
