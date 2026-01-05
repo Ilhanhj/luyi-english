@@ -13,7 +13,11 @@ import { Badge } from "@/components/ui/badge";
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-16 md:py-24 relative">
+    <section id="pricing" className="py-16 md:py-24 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[100vh] -z-10">
+          <div className="absolute top-0 left-0 w-full h-full bg-blue-500/30 rounded-full blur-3xl animate-[float_10s_ease-in-out_infinite_4s]"></div>
+          <div className="absolute bottom-0 right-0 w-full h-full bg-amber-500/30 rounded-full blur-3xl animate-[float_12s_ease-in-out_infinite_6s]"></div>
+        </div>
       <div className="container mx-auto px-4 md:px-6 relative">
         <div className="text-center mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700">
           <SectionTitle>Investasi untuk Masa Depanmu</SectionTitle>
@@ -48,7 +52,7 @@ export default function Pricing() {
                 )}
                 <CardTitle className="text-xl font-bold text-white pt-4">{pkg.title}</CardTitle>
                 <div className="flex items-baseline justify-center gap-1 pt-2">
-                  <span className="text-4xl font-extrabold text-white">{pkg.price}</span>
+                  <span className="text-3xl sm:text-4xl font-extrabold text-white">{pkg.price}</span>
                   <span className="text-sm text-gray-400">{pkg.priceDetails}</span>
                 </div>
               </CardHeader>

@@ -1,7 +1,6 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
-import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
   title: 'LuyiEnglish - Belajar Bahasa Inggris Online',
@@ -26,15 +25,8 @@ export default function RootLayout({
           <div className="absolute top-0 left-0 w-[80vw] h-[80vh] bg-blue-500/30 rounded-full blur-3xl animate-[float_10s_ease-in-out_infinite]"></div>
           <div className="absolute bottom-0 right-0 w-[70vw] h-[70vh] bg-amber-500/30 rounded-full blur-3xl animate-[float_12s_ease-in-out_infinite_2s]"></div>
         </div>
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-        >
-            {children}
-            <Toaster />
-        </ThemeProvider>
+        {children}
+        <Toaster />
       </body>
     </html>
   );
