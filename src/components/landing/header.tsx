@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Play } from "lucide-react";
+import { Menu, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
 import logo from '@/public/images/logo-luyi.png';
 
@@ -96,7 +96,7 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-2">
           <Button asChild className="bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-bold rounded-full shadow-lg shadow-blue-500/30 transition-all duration-300 hover:scale-105 hover:shadow-blue-500/50 hover:-translate-y-px">
             <Link href="https://wa.me/6281234567890" target="_blank">
-              <Play className="mr-2 h-4 w-4 fill-current"/>
+              <Send className="mr-2 h-4 w-4"/>
               Chat Us Now
             </Link>
           </Button>

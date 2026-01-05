@@ -1,7 +1,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Instagram, Play } from "lucide-react";
+import { MessageCircle, Instagram, Send } from "lucide-react";
 import SectionTitle from "./section-title";
 import { Sparkles } from "./sparkles";
 
@@ -39,7 +39,7 @@ export default function Contact() {
             <div className="flex flex-col items-center gap-4">
                <Button asChild size="lg" className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-bold rounded-full shadow-lg shadow-blue-500/40 transition-all duration-300 hover:scale-105 hover:shadow-blue-500/60 hover:-translate-y-px px-8 py-6 text-lg">
                 <Link href="https://wa.me/6281234567890" target="_blank">
-                  <Play className="mr-2" />
+                  <Send className="mr-2" />
                   Chat Us Now
                 </Link>
               </Button>

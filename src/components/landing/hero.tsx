@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { MoveRight, Users, Star, ThumbsUp, GraduationCap, Play } from "lucide-react";
+import { MoveRight, Users, Star, ThumbsUp, GraduationCap, Send } from "lucide-react";
 import { tutors } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { Sparkles } from "./sparkles";
@@ -55,7 +55,7 @@ export default function Hero() {
               </Button>
               <Button asChild size="lg" className="bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-bold rounded-full shadow-lg shadow-blue-500/40 transition-all duration-300 hover:scale-105 hover:shadow-blue-500/60 hover:-translate-y-px px-8 py-6 text-lg">
                 <Link href="https://wa.me/6281234567890" target="_blank">
-                  <Play className="mr-2 h-5 w-5 fill-current" />
+                  <Send className="mr-2 h-5 w-5" />
                   Daftar Trial Gratis
                 </Link>
               </Button>
