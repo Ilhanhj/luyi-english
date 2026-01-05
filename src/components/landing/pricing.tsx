@@ -32,7 +32,7 @@ function PricingCard({ pkg }: { pkg: typeof pricingPackages[0] }) {
         {pkg.badgeText && (
           <Badge
             className={cn(
-              "absolute top-4 right-4 border-0 shadow-md text-xs py-1 px-3",
+              "absolute -top-4 left-1/2 -translate-x-1/2 border-0 shadow-md text-sm py-1 px-4",
               pkg.isPopular
                 ? "bg-amber-400 text-slate-900 font-semibold"
                 : "bg-blue-500 text-white"
