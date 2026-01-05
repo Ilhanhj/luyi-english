@@ -3,6 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 import logo from '@/public/images/logo-luyi.png';
+import { useLanguage } from "@/contexts/language-context";
+import { translations } from "@/lib/translations";
+
 
 const TikTokIcon = ({ className }: { className?: string }) => (
   <svg
@@ -31,14 +34,6 @@ const InstagramIcon = ({ className }: { className?: string }) => (
     </svg>
 );
 
-
-const quickLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#tutors", label: "Tutor" },
-    { href: "#pricing", label: "Harga" },
-    { href: "#contact", label: "Kontak" },
-];
-
 const socialLinks = [
   { Icon: InstagramIcon, href: "#", label: "Instagram" },
   { Icon: TikTokIcon, href: "#", label: "TikTok" },
@@ -50,11 +45,20 @@ const contactInfo = [
 ];
 
 export default function Footer() {
+  const { language } = useLanguage();
+  const t = translations[language];
   const currentYear = new Date().getFullYear();
+  
+  const quickLinks = [
+      { href: "#home", label: t.nav.home },
+      { href: "#tutors", label: t.nav.tutors },
+      { href: "#pricing", label: t.nav.pricing },
+      { href: "#contact", label: t.nav.contact },
+  ];
 
   return (
     <footer className="bg-slate-900/40 border-t border-white/10 mt-16 md:mt-24">
-      <div className="container mx-auto px-4 md:px-6 py-12 animate-in fade-in slide-in-from-bottom-12 duration-700">
+      <div className="container mx-auto px-4 md:px-6 py-12" data-aos="fade-up">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
           <div className="flex flex-col gap-4 items-center md:items-start text-center md:text-left">
@@ -68,12 +72,12 @@ export default function Footer() {
                 />
             </Link>
             <p className="text-gray-400 text-sm max-w-xs">
-              Learn English the fun and easy way with our professional tutors.
+              {t.footer.tagline}
             </p>
           </div>
 
           <div>
-            <h3 className="font-semibold text-white mb-4 text-center md:text-left">Quick Links</h3>
+            <h3 className="font-semibold text-white mb-4 text-center md:text-left">{t.footer.quickLinks}</h3>
             <ul className="space-y-2 text-center md:text-left">
               {quickLinks.map((link) => (
                 <li key={link.label}>
@@ -86,7 +90,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-white mb-4 text-center md:text-left">Contact Us</h3>
+            <h3 className="font-semibold text-white mb-4 text-center md:text-left">{t.footer.contactUs}</h3>
             <ul className="space-y-3 text-center md:text-left">
               {contactInfo.map(({ Icon, text, href }) => (
                 <li key={text}>
@@ -100,7 +104,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-white mb-4 text-center md:text-left">Follow Us</h3>
+            <h3 className="font-semibold text-white mb-4 text-center md:text-left">{t.footer.followUs}</h3>
             <div className="flex items-center justify-center md:justify-start gap-4">
               {socialLinks.map(({ Icon, href, label }) => (
                 <a
@@ -120,7 +124,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-8 text-center text-sm text-gray-500">
-          <p>&copy; {currentYear} LuyiEnglish. All rights reserved.</p>
+          <p>&copy; {currentYear} LuyiEnglish. {t.footer.rights}</p>
         </div>
       </div>
     </footer>

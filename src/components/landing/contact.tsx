@@ -2,8 +2,8 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Instagram, Send } from "lucide-react";
-import SectionTitle from "./section-title";
-import { Sparkles } from "./sparkles";
+import { useLanguage } from "@/contexts/language-context";
+import { translations } from "@/lib/translations";
 
 const TikTokIcon = ({ className }: { className?: string }) => (
   <svg
@@ -23,24 +23,27 @@ const socialLinks = [
   ];
 
 export default function Contact() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <section id="contact" className="py-16 md:py-24 relative">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="relative glass-card p-8 md:p-12 overflow-hidden rounded-3xl animate-in fade-in slide-in-from-bottom-12 duration-700">
+        <div className="relative glass-card p-8 md:p-12 overflow-hidden rounded-3xl" data-aos="fade-up">
           
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 z-10 relative">
             <div className="text-center md:text-left">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-amber-400">
-                Jangan Tunggu Lagi, Kuasai Bahasa Inggris Sekarang!
+                {t.contact.title}
               </h2>
-              <p className="mt-4 text-gray-300">Ambil langkah pertama menuju masa depan yang lebih cerah. Hubungi kami untuk sesi trial gratis.</p>
+              <p className="mt-4 text-gray-300">{t.contact.subtitle}</p>
             </div>
             
             <div className="flex flex-col items-center gap-4">
                <Button asChild size="lg" className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-bold rounded-full shadow-lg shadow-blue-500/40 transition-all duration-300 hover:scale-105 hover:shadow-blue-500/60 hover:-translate-y-px px-8 py-6 text-lg">
                 <Link href="https://wa.me/6281234567890" target="_blank">
                   <Send className="mr-2" />
-                  Chat Us Now
+                  {t.contact.cta}
                 </Link>
               </Button>
                <div className="flex items-center gap-4 mt-2">

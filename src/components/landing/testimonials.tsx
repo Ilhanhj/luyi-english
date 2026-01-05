@@ -16,6 +16,8 @@ import SectionSubtitle from "./section-subtitle";
 import { Button } from "@/components/ui/button";
 import { MoveRight } from "lucide-react";
 import { testimonials } from "@/lib/data";
+import { useLanguage } from "@/contexts/language-context";
+import { translations } from "@/lib/translations";
 
 const SpeechBubble = ({ children }: { children: React.ReactNode }) => (
   <div className="relative">
@@ -25,6 +27,9 @@ const SpeechBubble = ({ children }: { children: React.ReactNode }) => (
 );
 
 export default function Testimonials() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <section
       id="testimonials"
@@ -34,11 +39,10 @@ export default function Testimonials() {
         <div
           className="text-center mb-12"
           data-aos="fade-up"
-          data-aos-duration="800"
         >
-          <SectionTitle>Apa Kata Mereka?</SectionTitle>
+          <SectionTitle>{t.testimonials.title}</SectionTitle>
           <SectionSubtitle>
-            Cerita nyata dari para siswa yang belajar bersama LuyiEnglish
+            {t.testimonials.subtitle}
           </SectionSubtitle>
         </div>
 
@@ -77,10 +81,10 @@ export default function Testimonials() {
           <CarouselNext className="hidden sm:flex -right-12 glass-card text-white hover:bg-white/20" />
         </Carousel>
         
-        <div className="text-center mt-12 animate-in fade-in slide-in-from-bottom-12 duration-700">
+        <div className="text-center mt-12" data-aos="fade-up" data-aos-delay="300">
           <Button asChild variant="outline" size="lg" className="glass-card border-white/10 text-white backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover:scale-105 hover:-translate-y-px px-8 py-6 text-lg">
             <Link href="/testimonials-gallery">
-              Lihat Semua Testimoni <MoveRight className="ml-2 h-5 w-5" />
+              {t.testimonials.cta} <MoveRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
         </div>

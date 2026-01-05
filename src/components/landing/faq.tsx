@@ -1,4 +1,6 @@
 
+"use client";
+
 import {
   Accordion,
   AccordionContent,
@@ -8,20 +10,25 @@ import {
 import { faqItems } from "@/lib/data";
 import SectionTitle from "./section-title";
 import SectionSubtitle from "./section-subtitle";
+import { useLanguage } from "@/contexts/language-context";
+import { translations } from "@/lib/translations";
 
 export default function Faq() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <section id="faq" className="py-16 md:py-24 relative">
       <div className="container mx-auto px-4 md:px-6 relative">
-        <div className="text-center mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700">
-          <SectionTitle>Pertanyaan yang Sering Diajukan</SectionTitle>
+        <div className="text-center mb-12" data-aos="fade-up">
+          <SectionTitle>{t.faq.title}</SectionTitle>
           <SectionSubtitle>
-            Tidak menemukan jawabanmu? Hubungi kami langsung.
+            {t.faq.subtitle}
           </SectionSubtitle>
         </div>
-        <div className="max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom-12 duration-700">
+        <div className="max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
           <Accordion type="single" collapsible className="w-full space-y-4">
-            {faqItems.map((item) => (
+            {t.faq.items.map((item) => (
               <AccordionItem key={item.id} value={item.id} className="glass-card overflow-hidden !border-white/10">
                 <AccordionTrigger className="text-left font-semibold text-base hover:no-underline px-6 py-4 text-white hover:bg-white/5 transition-colors">
                   {item.question}
