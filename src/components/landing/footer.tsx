@@ -64,6 +64,7 @@ export default function Footer() {
   // Samakan rasionya
   width={160}
   height={51}
+  unoptimized
   className="w-40 object-contain opacity-90 hover:opacity-100 transition-opacity" 
 />
             </Link>
