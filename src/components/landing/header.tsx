@@ -123,7 +123,6 @@ export default function Header() {
   priority // Tambahkan ini biar logo loading paling duluan (LCP Optimization)
   className={cn(
     "object-contain transition-all duration-500",
-    // HAPUS CLASS 'invert' DISINI
     isScrolled ? "w-28 md:w-32" : "w-32 md:w-40"
   )}
 />
@@ -205,7 +204,7 @@ export default function Header() {
 
               <SheetHeader className="p-8 border-b border-white/5 text-left">
                  <SheetTitle className="sr-only">Menu</SheetTitle>
-                 <Image src="/images/logo-luyi-v2.png" alt="LuyiEnglish" width={140} height={40} className="w-32 object-contain invert opacity-90" />
+                 <Image src="/images/logo-luyi-v2.png" alt="LuyiEnglish" width={140} height={40} className="w-32 object-contain opacity-90" />
               </SheetHeader>
 
               <nav className="flex flex-col p-6 space-y-2">

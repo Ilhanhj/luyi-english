@@ -65,7 +65,6 @@ export default function Footer() {
   width={160}
   height={51}
   className="w-40 object-contain opacity-90 hover:opacity-100 transition-opacity" 
-  // HAPUS CLASS 'invert' DISINI JUGA
 />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
