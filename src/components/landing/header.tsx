@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Send, Globe, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import logo from '@/public/images/logo-luyi.png';
+import logo from '@/public/images/logo-luyi-v2.png';
 import { useLanguage } from "@/contexts/language-context";
 import { translations } from "@/lib/translations";
 
