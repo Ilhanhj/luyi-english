@@ -114,16 +114,19 @@ export default function Header() {
         )}
       >
         <Link href="/" className="flex items-center gap-2 relative z-50 group">
-          <Image
-             src={logo}
-             alt="LuyiEnglish Logo"
-             width={160}
-             height={45}
-             className={cn(
-                 "object-contain invert transition-all duration-500",
-                 isScrolled ? "w-28 md:w-32" : "w-32 md:w-40"
-             )}
-           />
+        <Image
+  src={logo}
+  alt="LuyiEnglish Logo"
+  // Rasio 3.1 (Sesuai aslinya 5834x1868)
+  width={160} 
+  height={51} 
+  priority // Tambahkan ini biar logo loading paling duluan (LCP Optimization)
+  className={cn(
+    "object-contain transition-all duration-500",
+    // HAPUS CLASS 'invert' DISINI
+    isScrolled ? "w-28 md:w-32" : "w-32 md:w-40"
+  )}
+/>
         </Link>
 
         {/* DESKTOP NAV */}

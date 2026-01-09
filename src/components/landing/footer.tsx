@@ -59,13 +59,15 @@ export default function Footer() {
           {/* 1. BRAND COLUMN */}
           <div className="space-y-6">
             <Link href="#home" className="inline-block transition-transform hover:scale-105">
-               <Image
-                 src={logo}
-                 alt="LuyiEnglish Logo"
-                 width={160}
-                 height={45}
-                 className="w-40 object-contain invert opacity-90 hover:opacity-100 transition-opacity"
-               />
+            <Image
+  src={logo}
+  alt="LuyiEnglish Logo"
+  // Samakan rasionya
+  width={160}
+  height={51}
+  className="w-40 object-contain opacity-90 hover:opacity-100 transition-opacity" 
+  // HAPUS CLASS 'invert' DISINI JUGA
+/>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
               {t.footer.tagline}
