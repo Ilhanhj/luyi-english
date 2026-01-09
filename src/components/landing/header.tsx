@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Send, Globe, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import logo from '@/public/images/logo-luyi-v2.png';
+
 import { useLanguage } from "@/contexts/language-context";
 import { translations } from "@/lib/translations";
 
@@ -115,7 +115,7 @@ export default function Header() {
       >
         <Link href="/" className="flex items-center gap-2 relative z-50 group">
         <Image
-  src={logo}
+  src="/images/logo-luyi-v2.png"
   alt="LuyiEnglish Logo"
   // Rasio 3.1 (Sesuai aslinya 5834x1868)
   width={160} 
@@ -205,7 +205,7 @@ export default function Header() {
 
               <SheetHeader className="p-8 border-b border-white/5 text-left">
                  <SheetTitle className="sr-only">Menu</SheetTitle>
-                 <Image src={logo} alt="LuyiEnglish" width={140} height={40} className="w-32 object-contain invert opacity-90" />
+                 <Image src="/images/logo-luyi-v2.png" alt="LuyiEnglish" width={140} height={40} className="w-32 object-contain invert opacity-90" />
               </SheetHeader>
 
               <nav className="flex flex-col p-6 space-y-2">

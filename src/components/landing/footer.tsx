@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Mail, Phone, Heart, ArrowUpRight } from "lucide-react";
-import logo from '@/public/images/logo-luyi-v2.png';
 import { useLanguage } from "@/contexts/language-context";
 import { translations } from "@/lib/translations";
 
@@ -60,7 +59,7 @@ export default function Footer() {
           <div className="space-y-6">
             <Link href="#home" className="inline-block transition-transform hover:scale-105">
             <Image
-  src={logo}
+  src="/images/logo-luyi-v2.png"
   alt="LuyiEnglish Logo"
   // Samakan rasionya
   width={160}
