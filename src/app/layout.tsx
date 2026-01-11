@@ -6,10 +6,6 @@ import { LanguageProvider } from "@/contexts/language-context";
 export const metadata: Metadata = {
   title: "Luyi English Course - Belajar Bahasa Inggris Menyenangkan",
   description: "Kursus bahasa inggris terbaik...",
-  // 👇 Tambahkan bagian ini:
-  icons: {
-    icon: "/images/favicon.png", // Arahkan ke file logo kamu yang teks putih tadi
-  },
 };
 
 export default function RootLayout({
