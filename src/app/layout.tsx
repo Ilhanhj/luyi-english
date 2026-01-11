@@ -1,12 +1,15 @@
-import type {Metadata} from 'next';
-import './globals.css';
+import type { Metadata } from "next";
+import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
-import { LanguageProvider } from '@/contexts/language-context';
+import { LanguageProvider } from "@/contexts/language-context";
 
 export const metadata: Metadata = {
-  title: 'LuyiEnglish - Belajar Bahasa Inggris Online',
-  description: 'Belajar bahasa Inggris dengan tutor berpengalaman. Jadwalkan kelas percobaan gratis Anda hari ini!',
-  keywords: ['belajar bahasa inggris', 'kursus inggris online', 'tutor inggris', 'ielts', 'toefl'],
+  title: "Luyi English Course - Belajar Bahasa Inggris Menyenangkan",
+  description: "Kursus bahasa inggris terbaik...",
+  // 👇 Tambahkan bagian ini:
+  icons: {
+    icon: "/images/favicon.png", // Arahkan ke file logo kamu yang teks putih tadi
+  },
 };
 
 export default function RootLayout({
