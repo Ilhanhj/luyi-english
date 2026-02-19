@@ -111,7 +111,7 @@ export default function Header() {
         className={cn(
           "pointer-events-auto transition-all duration-500 ease-in-out flex items-center justify-between",
           !isScrolled && "w-full bg-transparent px-6 py-6 md:px-12 border-b border-transparent",
-          isScrolled && "w-[95%] md:w-[85%] max-w-6xl mt-4 rounded-full bg-slate-900/80 backdrop-blur-xl border border-white/10 shadow-2xl px-6 py-3"
+          isScrolled && "w-[95%] md:w-[85%] max-w-6xl mt-4 rounded-full bg-slate-900/80 backdrop-blur-xl border border-white/10 shadow-2xl px-6 py-3",
         )}
       >
         <Link href="/" className="flex items-center gap-2 relative z-50 group">
@@ -165,10 +165,10 @@ export default function Header() {
             size={isScrolled ? "sm" : "default"}
             className={cn(
               "bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold rounded-full shadow-[0_0_15px_rgba(37,99,235,0.4)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(37,99,235,0.6)] border-0",
-              isScrolled ? "h-9 px-5 text-sm" : "h-11 px-6"
+              isScrolled ? "h-9 px-5 text-sm" : "h-11 px-6",
             )}
           >
-            <Link href="https://wa.me/6281234567890" target="_blank">
+            <Link href={`https://wa.me/6289526437454?text=Halo%20Admin%20Luyi%20English!%0A%0ASaya%20tertarik%20untuk%20mendaftar%20kelas%20nih.%20Boleh%20minta%20info%20lebih%20lanjut%3F`} target="_blank">
               <Send className={cn("mr-2 fill-white/20", isScrolled ? "w-3 h-3" : "w-4 h-4")} />
               {t.nav.chat}
             </Link>
@@ -208,7 +208,7 @@ export default function Header() {
                       onClick={(e) => handleNavClick(e, link.href)}
                       className={cn(
                         "group flex items-center justify-between text-lg font-medium px-4 py-4 rounded-2xl transition-all duration-300 border border-transparent",
-                        isActive ? "bg-white/10 text-white border-white/5 shadow-inner" : "text-slate-400 hover:text-white hover:bg-white/5"
+                        isActive ? "bg-white/10 text-white border-white/5 shadow-inner" : "text-slate-400 hover:text-white hover:bg-white/5",
                       )}
                       style={{ animationDelay: `${i * 50}ms` }}
                     >
@@ -220,7 +220,11 @@ export default function Header() {
 
                 <div className="mt-8 pt-8 border-t border-white/5 space-y-6">
                   <Button asChild className="w-full h-14 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold rounded-2xl shadow-lg text-lg">
-                    <Link href="https://wa.me/6281234567890" target="_blank" onClick={() => setIsOpen(false)}>
+                    <Link
+                      href={`https://wa.me/6289526437454?text=Halo%20Admin%20Luyi%20English!%0A%0ASaya%20tertarik%20untuk%20mendaftar%20kelas%20nih.%20Boleh%20minta%20info%20lebih%20lanjut%3F`}
+                      target="_blank"
+                      onClick={() => setIsOpen(false)}
+                    >
                       <Send className="mr-3 h-5 w-5" /> {t.nav.chat}
                     </Link>
                   </Button>

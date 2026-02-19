@@ -1,25 +1,19 @@
+import { StaticImageData } from "next/image";
 
-import { StaticImageData } from 'next/image';
-
-export interface Tutor {
-  id: string;
-  name: string;
-  photoUrl: string;
-  photoHint: string;
-  specialization: string;
-  rating: number;
-  bio: string;
-  review: {
-    quote: string;
-    author: string;
-  };
+export interface Testimonial {
+  quote: string;
+  author: string;
 }
 
-export type Testimonial = {
-  id: string;
-  imageUrl: string;
-  imageAlt: string;
-};
+export interface Tutor {
+  id: number;
+  name: string;
+  role: string;
+  experience: string;
+  bio: string;
+  image: string;
+  testimonials: Testimonial[];
+}
 
 export interface PricingPackage {
   id: string;
@@ -40,10 +34,10 @@ export interface FAQItem {
 }
 
 export interface CompanyLogo {
-    id: string;
-    name: string;
-    logoUrl: string;
-    logoHint: string;
+  id: string;
+  name: string;
+  logoUrl: string;
+  logoHint: string;
 }
 
 export interface GalleryTestimonial {

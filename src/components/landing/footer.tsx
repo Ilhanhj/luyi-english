@@ -48,7 +48,7 @@ export default function Footer() {
     {
       name: "WhatsApp",
       icon: WhatsappIcon,
-      href: "https://wa.me/6281234567890",
+      href: `https://wa.me/6289526437454?text=Halo%20Admin%20Luyi%20English!%0A%0ASaya%20tertarik%20untuk%20mendaftar%20kelas%20nih.%20Boleh%20minta%20info%20lebih%20lanjut%3F`,
       color: "hover:bg-green-600 hover:border-green-500",
     },
   ];
@@ -115,7 +115,7 @@ export default function Footer() {
           </div>
 
           {/* 3. PROGRAMS (Static for now) */}
-          <div>
+          {/* <div>
             <h3 className="font-bold text-white mb-6 text-lg relative inline-block">
               Program
               <span className="absolute -bottom-2 left-0 w-1/2 h-1 bg-blue-500 rounded-full"></span>
@@ -128,7 +128,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* 4. CONTACT INFO */}
           <div>
@@ -137,12 +137,12 @@ export default function Footer() {
               <span className="absolute -bottom-2 left-0 w-1/2 h-1 bg-emerald-500 rounded-full"></span>
             </h3>
             <ul className="space-y-4 text-sm text-slate-400">
-              <li className="flex items-start gap-3 group">
+              {/* <li className="flex items-start gap-3 group">
                 <div className="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center border border-white/10 group-hover:border-emerald-500/50 transition-colors shrink-0">
                   <MapPin className="w-4 h-4 text-emerald-500" />
                 </div>
                 <span className="leading-relaxed">Jl. Pendidikan No. 123, Jakarta Selatan, Indonesia</span>
-              </li>
+              </li> */}
               <li className="flex items-center gap-3 group">
                 <div className="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center border border-white/10 group-hover:border-blue-500/50 transition-colors shrink-0">
                   <Mail className="w-4 h-4 text-blue-500" />
@@ -155,8 +155,12 @@ export default function Footer() {
                 <div className="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center border border-white/10 group-hover:border-amber-500/50 transition-colors shrink-0">
                   <Phone className="w-4 h-4 text-amber-500" />
                 </div>
-                <Link href="https://wa.me/6281234567890" target="_blank" className="hover:text-white transition-colors">
-                  +62 812 3456 7890
+                <Link
+                  href={`https://wa.me/6289526437454?text=Halo%20Admin%20Luyi%20English!%0A%0ASaya%20tertarik%20untuk%20mendaftar%20kelas%20nih.%20Boleh%20minta%20info%20lebih%20lanjut%3F`}
+                  target="_blank"
+                  className="hover:text-white transition-colors"
+                >
+                  +62 895 2643 7454
                 </Link>
               </li>
             </ul>
