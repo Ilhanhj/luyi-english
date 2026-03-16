@@ -143,14 +143,14 @@ export default function Footer() {
                 </div>
                 <span className="leading-relaxed">Jl. Pendidikan No. 123, Jakarta Selatan, Indonesia</span>
               </li> */}
-              <li className="flex items-center gap-3 group">
+              {/* <li className="flex items-center gap-3 group">
                 <div className="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center border border-white/10 group-hover:border-blue-500/50 transition-colors shrink-0">
                   <Mail className="w-4 h-4 text-blue-500" />
                 </div>
                 <Link href="mailto:hello@luyienglish.com" className="hover:text-white transition-colors">
                   hello@luyienglish.com
                 </Link>
-              </li>
+              </li> */}
               <li className="flex items-center gap-3 group">
                 <div className="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center border border-white/10 group-hover:border-amber-500/50 transition-colors shrink-0">
                   <Phone className="w-4 h-4 text-amber-500" />
