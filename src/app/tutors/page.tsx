@@ -2,9 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-// HAPUS Link import yang lama jika tidak dipakai di tempat lain
-// import Link from "next/link";
-import Link from "next/link"; // Tetap pakai Link untuk CTA Button WA
+import Link from "next/link";
 import { Search, Star, Users, Briefcase, Sparkles, GraduationCap, ArrowUpRight, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -15,9 +13,8 @@ import { useLanguage } from "@/contexts/language-context";
 import { translations } from "@/lib/translations";
 import { cn } from "@/lib/utils";
 import { tutors as getTutors } from "@/lib/data";
-import { TutorModal } from "@/components/ui/tutor-modal"; // <--- 1. IMPORT MODAL
+import { TutorModal } from "@/components/ui/tutor-modal";
 
-// ... (Helper deriveCategory sama kayak sebelumnya) ...
 const deriveCategory = (role: string) => {
   const r = role.toLowerCase();
   if (r.includes("ielts") || r.includes("toefl") || r.includes("toeic")) return "ielts";
@@ -35,7 +32,7 @@ export default function TutorsPage() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [mounted, setMounted] = useState(false);
 
-  // --- 2. STATE UNTUK MODAL ---
+  // State untuk Modal
   const [selectedTutor, setSelectedTutor] = useState<any | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -57,16 +54,16 @@ export default function TutorsPage() {
     return matchesSearch && matchesCategory;
   });
 
+  // UBAH DISINI: Pakai safe chaining (?.) biar web nggak crash kalau file translation belum diupdate
   const categories = [
-    { id: "all", label: t.tutorsPage.filters.all },
-    { id: "ielts", label: t.tutorsPage.filters.ielts },
-    { id: "business", label: t.tutorsPage.filters.business },
-    { id: "conversation", label: t.tutorsPage.filters.conversation },
-    { id: "kids", label: t.tutorsPage.filters.kids },
-    { id: "grammar", label: t.tutorsPage.filters.grammar },
+    { id: "all", label: t.tutorsPage?.filters?.all || "Semua" },
+    { id: "ielts", label: t.tutorsPage?.filters?.ielts || "IELTS / TOEFL" },
+    { id: "business", label: t.tutorsPage?.filters?.business || "Bisnis" },
+    { id: "conversation", label: t.tutorsPage?.filters?.conversation || "Percakapan" },
+    { id: "kids", label: t.tutorsPage?.filters?.kids || "Anak-anak" },
+    { id: "grammar", label: t.tutorsPage?.filters?.grammar || "Tata Bahasa" },
   ];
 
-  // --- FUNCTION BUKA MODAL ---
   const handleTutorClick = (tutor: any) => {
     setSelectedTutor(tutor);
     setIsModalOpen(true);
@@ -82,31 +79,31 @@ export default function TutorsPage() {
       <Header />
 
       <main className="flex-1 pt-32 pb-20 px-4 md:px-6 relative z-10">
-        {/* HEADER SECTION (Sama kayak sebelumnya) */}
+        {/* HEADER SECTION */}
         <div className="text-center max-w-3xl mx-auto mb-16 relative" data-aos="fade-up">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[100px] -z-10" />
           <Badge variant="outline" className="mb-4 glass-card text-amber-300 border-amber-500/30 gap-1">
             <Sparkles className="w-3 h-3" /> Official Mentors
           </Badge>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-white to-amber-200 tracking-tight mb-6">{t.tutorsPage.title}</h1>
-          <p className="text-slate-400 text-lg leading-relaxed">{t.tutorsPage.subtitle}</p>
+          <h1 className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-white to-amber-200 tracking-tight mb-6">{t.tutorsPage?.title || "Temui Tutor Kami"}</h1>
+          <p className="text-slate-400 text-lg leading-relaxed">{t.tutorsPage?.subtitle || "Belajar dengan praktisi ahli yang membuat bahasa Inggris jadi lebih mudah dan menyenangkan."}</p>
         </div>
 
-        {/* FILTERS (Sama kayak sebelumnya) */}
+        {/* FILTERS */}
         <div className="max-w-6xl mx-auto mb-12 space-y-8" data-aos="fade-up" data-aos-delay="100">
-          {/* Search & Category Buttons Code ... (Copy paste yang lama) */}
           <div className="relative max-w-xl mx-auto">
             <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none text-slate-500">
               <Search className="w-5 h-5" />
             </div>
             <Input
               type="text"
-              placeholder={t.tutorsPage.searchPlaceholder}
+              placeholder={t.tutorsPage?.searchPlaceholder || "Cari nama tutor..."}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="pl-12 h-14 rounded-full bg-slate-900/60 border-white/10 text-white placeholder:text-slate-500 focus:border-amber-400/50 focus:ring-amber-400/20 transition-all shadow-lg backdrop-blur-md"
             />
           </div>
+
           <div className="flex flex-wrap justify-center gap-2 md:gap-3">
             {categories.map((cat) => (
               <button
@@ -127,10 +124,7 @@ export default function TutorsPage() {
 
         {/* === TUTORS GRID === */}
         <div className="max-w-[1400px] mx-auto">
-          {" "}
-          {/* Lebarin containernya dikit biar lega */}
           {filteredTutors.length > 0 ? (
-            // UBAH DISINI: md:grid-cols-3, lg:grid-cols-4
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
               {filteredTutors.map((tutor, index) => (
                 <div
@@ -138,19 +132,11 @@ export default function TutorsPage() {
                   onClick={() => handleTutorClick(tutor)}
                   data-aos="fade-up"
                   data-aos-delay={100 + index * 50}
-                  // UBAH DISINI: h-[400px] (biar ga kepanjangan)
                   className="group relative h-[400px] rounded-[2rem] overflow-hidden border border-white/10 bg-slate-900/30 backdrop-blur-md transition-[transform,box-shadow,border-color] duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl hover:border-amber-500/40 cursor-pointer"
                 >
                   {/* IMAGE LAYER */}
                   <div className="absolute inset-0 z-0">
-                    <Image
-                      src={tutor.image}
-                      alt={tutor.name}
-                      fill
-                      // UBAH DISINI: Pakai unoptimized biar tajem
-                      unoptimized={true}
-                      className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-                    />
+                    <Image src={tutor.image} alt={tutor.name} fill unoptimized={true} className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
                   </div>
 
@@ -174,7 +160,6 @@ export default function TutorsPage() {
                       <div className="flex justify-between items-start gap-2">
                         <div>
                           <p className="text-amber-400 text-[10px] font-bold tracking-wider uppercase mb-0.5 flex items-center gap-2">{tutor.specialization}</p>
-                          {/* UBAH DISINI: Text jadi xl biar muat */}
                           <h3 className="text-xl font-extrabold text-white group-hover:text-amber-100 transition-colors leading-tight drop-shadow-md line-clamp-1">{tutor.name}</h3>
                         </div>
 
@@ -189,7 +174,8 @@ export default function TutorsPage() {
                         <div className="flex items-center gap-1.5">
                           <Users className="w-3.5 h-3.5 text-emerald-400" />
                           <span className="text-xs font-medium text-slate-200">
-                            {tutor.students} <span className="text-slate-500 text-[10px]">{t.tutorsPage.card.students}</span>
+                            {/* UBAH DISINI: Antisipasi crash kalau t.tutorsPage.card.students belum ada */}
+                            {tutor.students} <span className="text-slate-500 text-[10px]">{t.tutorsPage?.card?.students || "murid"}</span>
                           </span>
                         </div>
                         <div className="flex items-center gap-1.5">
@@ -205,7 +191,6 @@ export default function TutorsPage() {
           ) : (
             // EMPTY STATE
             <div className="text-center py-24 glass-card rounded-[3rem] max-w-2xl mx-auto border-dashed border-white/10" data-aos="zoom-in">
-              {/* ... (Code Empty State sama) ... */}
               <div className="w-20 h-20 bg-slate-800/50 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
                 <Search className="w-10 h-10 text-slate-500" />
               </div>
@@ -225,32 +210,31 @@ export default function TutorsPage() {
           )}
         </div>
 
-        {/* CTA BOTTOM (Sama kayak sebelumnya) */}
+        {/* CTA BOTTOM */}
         <div className="mt-32 mb-10 max-w-5xl mx-auto relative" data-aos="zoom-in">
           <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/30 to-amber-500/30 rounded-[3rem] blur-2xl opacity-50 -z-10"></div>
           <div className="glass-card p-10 md:p-16 rounded-[2.5rem] text-center border border-white/20 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 via-amber-300 to-blue-400 opacity-70"></div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6">{t.tutorsPage.cta.title}</h2>
-            <p className="text-slate-200 text-lg mb-10 max-w-2xl mx-auto leading-relaxed opacity-90">{t.tutorsPage.cta.subtitle}</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6">{t.tutorsPage?.cta?.title || "Siap Mulai Belajar?"}</h2>
+            <p className="text-slate-200 text-lg mb-10 max-w-2xl mx-auto leading-relaxed opacity-90">{t.tutorsPage?.cta?.subtitle || "Hubungi admin kami untuk informasi kelas lebih lanjut."}</p>
             <Button
               asChild
               size="lg"
               className="bg-gradient-to-r from-amber-400 to-orange-500 text-slate-900 font-bold rounded-full h-14 px-10 text-lg shadow-[0_0_30px_rgba(251,191,36,0.4)] hover:shadow-[0_0_50px_rgba(251,191,36,0.6)] hover:scale-105 transition-all"
             >
               <Link
-                href={`https://wa.me/6289526437454?text=Halo%20Admin%20Luyi%20English!%0A%0ASaya%20tertarik%20untuk%20mendaftar%20kelas%20nih.%20Boleh%20minta%20info%20lebih%20lanjut%3F`}
+                href="https://wa.me/6289526437454?text=Halo%20Admin%20Luyi%20English!%0A%0ASaya%20tertarik%20untuk%20mendaftar%20kelas%20nih.%20Boleh%20minta%20info%20lebih%20lanjut%3F"
                 target="_blank"
                 className="flex items-center gap-2"
               >
                 <Send className="w-5 h-5" />
-                {t.tutorsPage.cta.btn}
+                {t.tutorsPage?.cta?.btn || "Chat Admin Sekarang"}
               </Link>
             </Button>
           </div>
         </div>
       </main>
 
-      {/* 4. PASANG MODAL DI SINI (Di luar Main, sebelum Footer) */}
       <TutorModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} tutor={selectedTutor} />
 
       <Footer />
