@@ -20,7 +20,7 @@ export const tutors = (t?: any): Tutor[] => [
     role: "Founder & Speaking/Grammar Expert",
     experience: "5 Tahun",
     bio: "No longer worry to speak English! Di kelas Miss Luyi, media visual dan audio-visual punya peran besar. Kita akan fokus membedah 'Real Life English Conversation' agar kamu percaya diri ngomong Inggris tanpa takut salah grammar.",
-    image: "/images/tutors/miss-luyi.png",
+    image: "/images/tutors/ms-miss-luyi.png",
     testimonials: [
       {
         quote: "Having class with Miss Luyi is very enjoyable, easy to follow, and very enthusiastic. You can choose what you wanna learn. The class schedule is adaptive too!",
@@ -39,10 +39,10 @@ export const tutors = (t?: any): Tutor[] => [
   {
     id: 2,
     name: "Mr. Han",
-    role: "Speaking Expert",
+    role: "Speaking/Grammar Expert",
     experience: "4 Tahun",
     bio: "Belajar bahasa Inggris itu harusnya seru, bukan bikin panik!  Di kelas ini, rasanya kayak lagi ngobrol santai sama temen. Kita bakal hajar perbanyak praktek dan bedah kasus real-life. Teorinya gimana? Tenang, Mr bakal bongkar penjelasannya pakai penje;asan super simpel sampai kamu ngerasa 'Ohh, cuma gini doang!'. Pondasi teori dijamin kokoh, tapi kamu tetap bisa ngomong inggris dengan pede! 🚀✨",
-    image: "/images/tutors/han.png",
+    image: "/images/tutors/mr-han.png",
     testimonials: [
       {
         quote:
@@ -67,7 +67,7 @@ export const tutors = (t?: any): Tutor[] => [
     role: "TOEFL/IELTS & Speaking Expert",
     experience: "6 Tahun",
     bio: "Gaya mengajar saya santai, interaktif, dan tidak kaku. Materi dan metode saya sesuaikan dengan level, kebutuhan, dan target masing-masing murid, terutama untuk penggunaan Bahasa Inggris sehari-hari.",
-    image: "/images/tutors/shalsa.png",
+    image: "/images/tutors/ms-shalsa.png",
     testimonials: [
       {
         quote: "Miss Salsa my lovely mentor, thanks to you my Visa to Dubai has been approved and I will be leaving next Wednesday!",
@@ -89,7 +89,7 @@ export const tutors = (t?: any): Tutor[] => [
     role: "IELTS, Speaking & Writing Specialist",
     experience: "3.5 Tahun",
     bio: "Lulusan Pendidikan Bahasa Inggris Universitas Brawijaya yang sedang menempuh S2. Saya fokus membantu murid mencapai target skor IELTS dan meningkatkan kemampuan akademik bahasa Inggris mereka.",
-    image: "/images/tutors/indi.png",
+    image: "/images/tutors/ms-indi.png",
     testimonials: [
       {
         quote: "Thanks to Miss's guidance, I passed the IELTS on my first attempt, and many of the questions were exactly the same as practiced in class.",
@@ -111,7 +111,7 @@ export const tutors = (t?: any): Tutor[] => [
     role: "TOEFL & English for Kids",
     experience: "8 Tahun",
     bio: "Learning English with fun! Saya menggunakan metode audio, video, dan visual learning yang disesuaikan dengan kebutuhan dan gaya belajar unik setiap murid.",
-    image: "/images/tutors/dhita.png",
+    image: "/images/tutors/ms-dhita.png",
     testimonials: [
       {
         quote: "Selama bimbingan belajar oleh Miss Dhita aku mendapat juara dalam Olimpiade Bahasa Inggris tingkat SMP.",
@@ -125,7 +125,7 @@ export const tutors = (t?: any): Tutor[] => [
     role: "TOEIC/TOEFL & Speaking Coach",
     experience: "5 Tahun",
     bio: "Fokus dalam komunikasi praktis dan real-life English. Metode saya interaktif, diskusi aktif, dan support penuh buat tiap student agar belajar English jadi lebih fun, jelas, dan relevan.",
-    image: "/images/tutors/rita.png",
+    image: "/images/tutors/ms-rita.png",
     testimonials: [
       {
         quote: "I enjoyed our first class, it feels like we didn't in the study circumstances. And it's increase my motivation to learn more about english.",
@@ -139,7 +139,7 @@ export const tutors = (t?: any): Tutor[] => [
     role: "Speaking & English for Kids",
     experience: "+2 Tahun",
     bio: "My class method is fun learning and speak a lot! Kita akan banyak bermain games dan deeptalk seru biar kamu gak bosan belajar bahasa Inggris.",
-    image: "/images/tutors/nafiisa.png",
+    image: "/images/tutors/ms-nafiisa.png",
     testimonials: [
       {
         quote: "Kelas sama Miss Nafiisa seru ada games-nya.",
@@ -161,7 +161,7 @@ export const tutors = (t?: any): Tutor[] => [
     role: "Speaking Specialist",
     experience: "2 Tahun",
     bio: "'We Listen, We Don't Judge!' Itu motto kelas saya. Saya pastikan kamu nyaman dan percaya diri tanpa takut atau ragu untuk bicara. Let's have a conversation with me!",
-    image: "/images/tutors/jihan.png",
+    image: "/images/tutors/ms-jihan.png",
     testimonials: [
       {
         quote: "You're already build my confidence to speak english and always know something that I need Ka Jihan.",
@@ -183,7 +183,7 @@ export const tutors = (t?: any): Tutor[] => [
     role: "Speaking & Grammar",
     experience: "1.5 Tahun",
     bio: "Saya menjelaskan pelajaran dengan inovatif dan detail, namun tetap humble menghargai proses belajar setiap siswa. Kita perbaiki speaking skill bukan cuma teori, tapi praktik.",
-    image: "/images/tutors/titin.png",
+    image: "/images/tutors/ms-titin.png",
     testimonials: [
       {
         quote: "Miss Titin explains lessons clearly, teaches in an innovative and detailed way.",
@@ -205,7 +205,7 @@ export const tutors = (t?: any): Tutor[] => [
     role: "Speaking & Grammar Expert",
     experience: "3 Tahun",
     bio: "Background saya Tours & Travel, jadi saya terbiasa pakai bahasa Inggris di situasi nyata. Grammar aku jelasin pelan dan simpel, speaking kita latih step by step sampai kamu terbiasa ngomong tanpa mikir lama.",
-    image: "/images/tutors/kenis.png",
+    image: "/images/tutors/ms-kenis.png",
     testimonials: [
       {
         quote: "Sekarang jadi lebih berani ngomong Inggris.",
@@ -227,7 +227,7 @@ export const tutors = (t?: any): Tutor[] => [
     role: "Speaking English Coach",
     experience: "3 Tahun",
     bio: "I teach English in a relaxed, café-style atmosphere. Kelas saya fleksibel, didesain biar kamu merasa pede ngomong dan menikmati proses belajarnya.",
-    image: "/images/tutors/eki.png",
+    image: "/images/tutors/mr-eki.png",
     testimonials: [
       {
         quote: "Sejauh ini diajarin Kak Eki seru banget, materi masuk, dan ngebantu banget memperlancar bahasa Inggris saya.",
@@ -245,7 +245,7 @@ export const tutors = (t?: any): Tutor[] => [
     role: "Speaking & English for Corporate  ",
     experience: "2 Tahun",
     bio: "I'm not just a tutor, but your English speaking companion! Belajar Inggris gak harus susah. Di kelas saya, suasananya fun, mudah, dan interaktif seperti ngobrol biasa.",
-    image: "/images/tutors/siska.png",
+    image: "/images/tutors/ms-siska.png",
     testimonials: [
       {
         quote: "Sessions feel more like real conversations than lessons. I can see a big improvement in my speaking fluency.",
@@ -267,7 +267,7 @@ export const tutors = (t?: any): Tutor[] => [
     role: "Speaking & Confidence",
     experience: "± 1 Tahun",
     bio: "Saya membantu murid mengembangkan kemampuan berbicara bahasa Inggris dengan percaya diri melalui pendekatan public speaking dan pengembangan diri. Siap presentasi akademik maupun profesional!",
-    image: "/images/tutors/kuni.png",
+    image: "/images/tutors/ms-kuni.png",
     testimonials: [
       {
         quote: "Penyampaian terstruktur, tenang dan meyakinkan.",
@@ -289,7 +289,7 @@ export const tutors = (t?: any): Tutor[] => [
     role: "Speaking & Translation",
     experience: "2 Tahun",
     bio: "Lulusan Pendidikan Bahasa Inggris yang fokus pada praktik berbicara aktif. Tujuannya agar siswa lebih percaya diri dan terbiasa menggunakan bahasa Inggris dalam situasi sehari-hari.",
-    image: "/images/tutors/kania.png",
+    image: "/images/tutors/ms-kania.png",
     testimonials: [
       {
         quote: "The learning sessions run well.",
@@ -311,7 +311,7 @@ export const tutors = (t?: any): Tutor[] => [
     role: "Speaking Tutor",
     experience: "1 Tahun",
     bio: "Kita singkirkan buku teks yang kaku! Kita fokus ngobrol santai tentang hal-hal yang kamu suka, jadi kemampuan bicaramu bisa langsung terasah tanpa terasa seperti belajar.",
-    image: "/images/tutors/thea.png",
+    image: "/images/tutors/ms-thea.png",
     testimonials: [
       {
         quote: "Miss Thea telaten, sabar, cara mengajarnya juga cepet dipahami. Best banget!",
@@ -333,7 +333,7 @@ export const tutors = (t?: any): Tutor[] => [
     role: "Speaking & Grammar",
     experience: "3 Tahun",
     bio: "Caz ciz cuzzz, kita praktik! Kelas saya penuh praktik langsung agar English terasa hidup, mudah dipakai, dan membangun kepercayaan diri. Bukan cuma teori, tapi langsung bicara.",
-    image: "/images/tutors/riris.png",
+    image: "/images/tutors/ms-riris.png",
     testimonials: [
       {
         quote: "Belajar bareng Miss Riris seneng banget. Penjelasannya simpel, jelas, dan langsung masuk.",
